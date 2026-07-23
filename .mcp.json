@@ -2,7 +2,11 @@
   "mcpServers": {
     "higgsfield": {
       "type": "http",
-      "url": "https://mcp.higgsfield.ai/mcp"
+      "url": "https://mcp.higgsfield.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${HIGGSFIELD_API_KEY}",
+        "X-Higgsfield-Secret": "${HIGGSFIELD_SECRET}"
+      }
     }
   }
 }
