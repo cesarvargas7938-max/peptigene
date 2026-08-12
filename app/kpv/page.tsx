@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// Asesor que recibe las solicitudes de KPV (Stiven · Asesoría nutricional)
-const WHATSAPP_PHONE = "573012344785";
-const ASESOR = "Stiven";
+// Asesor que recibe las solicitudes de KPV (Andrés · Atención general)
+const WHATSAPP_PHONE = "573225217753";
+const ASESOR = "Andrés";
 
 type FormState = {
   nombre: string;
