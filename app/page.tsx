@@ -194,6 +194,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* BANNER KPV */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 pb-24">
+        <div className="bg-olive-50 border border-olive-200 rounded-3xl p-8 md:p-12 grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="eyebrow text-olive-600 mb-3">— Programa KPV</p>
+            <h2 className="display-xl text-3xl md:text-4xl text-olive-900 mb-4">
+              ¿Te interesa el<br />
+              <span className="italic font-normal text-olive-700">péptido KPV?</span>
+            </h2>
+            <p className="text-olive-800/80 leading-relaxed max-w-lg">
+              Completa una evaluación previa de un minuto y recibe orientación
+              personalizada por WhatsApp. Conoce sus puntos a favor, en contra y
+              contraindicaciones antes de empezar.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row lg:justify-end gap-4">
+            <Link
+              href="/kpv"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-olive-900 text-cream-50 rounded-full text-sm font-medium hover:bg-olive-800 transition-colors"
+            >
+              Hacer evaluación KPV
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FILOSOFÍA con imagen lateral */}
       <section id="filosofia" className="bg-olive-50 py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

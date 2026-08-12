@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { products, categories } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 
@@ -96,6 +97,28 @@ export default function CatalogoPage() {
               ))}
             </div>
           )}
+
+          {/* Banner KPV */}
+          <div className="mt-10 bg-olive-900 text-cream-50 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <p className="eyebrow text-olive-300 mb-2">— Programa KPV</p>
+              <h2 className="font-display text-2xl md:text-3xl">
+                ¿Buscas el péptido KPV?
+              </h2>
+              <p className="text-cream-100/80 mt-2 max-w-lg">
+                Haz una evaluación previa y recibe orientación personalizada por WhatsApp.
+              </p>
+            </div>
+            <Link
+              href="/kpv"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-cream-50 text-olive-900 rounded-full text-sm font-medium hover:bg-olive-200 transition-colors whitespace-nowrap"
+            >
+              Hacer evaluación KPV
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
