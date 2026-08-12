@@ -24,6 +24,9 @@ export function Header() {
             <Link href="/catalogo" className="link-under text-olive-800 hover:text-olive-600">
               Catálogo
             </Link>
+            <Link href="/analisis-medicos" className="link-under text-olive-800 hover:text-olive-600">
+              Análisis médicos
+            </Link>
             <Link href="/envios" className="link-under text-olive-800 hover:text-olive-600">
               Envíos
             </Link>
@@ -67,6 +70,7 @@ export function Header() {
           <nav className="md:hidden pb-4 flex flex-col gap-3 text-sm">
             <Link href="/" onClick={() => setOpen(false)} className="py-2 text-olive-800">Inicio</Link>
             <Link href="/catalogo" onClick={() => setOpen(false)} className="py-2 text-olive-800">Catálogo</Link>
+            <Link href="/analisis-medicos" onClick={() => setOpen(false)} className="py-2 text-olive-800">Análisis médicos</Link>
             <Link href="/envios" onClick={() => setOpen(false)} className="py-2 text-olive-800">Envíos</Link>
             <Link href="/contacto" onClick={() => setOpen(false)} className="py-2 text-olive-800">Contacto</Link>
           </nav>

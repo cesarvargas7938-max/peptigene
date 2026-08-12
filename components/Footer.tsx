@@ -29,6 +29,7 @@ export function Footer() {
           <div>
             <h4 className="eyebrow text-olive-300 mb-4">Información</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/analisis-medicos" className="hover:text-olive-300 transition">Análisis médicos</Link></li>
               <li><Link href="/envios" className="hover:text-olive-300 transition">Envíos y devoluciones</Link></li>
               <li><Link href="/contacto" className="hover:text-olive-300 transition">Contacto</Link></li>
               <li><Link href="/terminos" className="hover:text-olive-300 transition">Términos y condiciones</Link></li>
