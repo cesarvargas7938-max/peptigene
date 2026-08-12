@@ -223,6 +223,28 @@ export const products: Product[] = [
     stock: 37,
     imageUrl: "/images/producto-veloz-bcaa-recovery.jpg",
   },
+  {
+    slug: "kpv-peptido",
+    name: "KPV · Péptido Antiinflamatorio",
+    category: "Péptidos",
+    tagline: "Tripéptido derivado de la α-MSH (Lisina-Prolina-Valina)",
+    description:
+      "KPV es el fragmento C-terminal de la α-MSH, un tripéptido estudiado por su actividad antiinflamatoria a través de la inhibición de la vía NF-κB, sin efecto sobre la pigmentación. Producto de carácter educativo destinado únicamente a investigación: no es un medicamento aprobado y no existe una dosis ni esquema oficial validado en humanos. Antes de cualquier adquisición se solicita completar una evaluación previa.",
+    benefits: [
+      "Acción antiinflamatoria vía NF-κB",
+      "Reduce citoquinas (TNF-α, IL-1β, IL-6)",
+      "Autofocalización en intestino inflamado (PepT1)",
+      "Sin efecto sobre la pigmentación",
+    ],
+    usage:
+      "Producto solo para investigación. Requiere evaluación previa: completa el formulario en /kpv para recibir orientación personalizada por WhatsApp antes de considerar cualquier protocolo.",
+    ingredients: ["KPV (Lisina-Prolina-Valina)", "Manitol (excipiente)"],
+    price: 220000,
+    stock: 15,
+    badge: "Requiere evaluación",
+    highlight: "Solo investigación",
+    imageUrl: "/images/producto-kpv-peptido.jpg",
+  },
 ];
 
 export const categories = [
@@ -230,6 +252,7 @@ export const categories = [
   { slug: "rendimiento", name: "Rendimiento", count: 2 },
   { slug: "recuperacion", name: "Recuperación", count: 2 },
   { slug: "bienestar", name: "Bienestar", count: 3 },
+  { slug: "peptidos", name: "Péptidos", count: 1 },
 ];
 
 export const getProductBySlug = (slug: string) =>

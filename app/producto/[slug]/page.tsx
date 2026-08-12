@@ -108,19 +108,38 @@ export default function ProductPage({ params }: Props) {
             )}
           </div>
 
-          <AddToCartButton
-            slug={product.slug}
-            name={product.name}
-            price={product.price}
-          />
+          {product.category === "Péptidos" ? (
+            <>
+              <Link
+                href="/kpv"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-olive-900 text-cream-50 rounded-full text-sm font-medium hover:bg-olive-800 transition-colors"
+              >
+                Hacer evaluación previa
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <p className="mt-4 text-xs text-olive-700/70">
+                Producto para investigación · Requiere evaluación previa antes de la compra
+              </p>
+            </>
+          ) : (
+            <>
+              <AddToCartButton
+                slug={product.slug}
+                name={product.name}
+                price={product.price}
+              />
 
-          <p className="mt-4 text-xs text-olive-700/70">
-            {product.stock > 10
-              ? "✓ Disponible · Envío en 2–4 días hábiles"
-              : product.stock > 0
-              ? `Últimas ${product.stock} unidades · Envío en 2–4 días hábiles`
-              : "Agotado temporalmente"}
-          </p>
+              <p className="mt-4 text-xs text-olive-700/70">
+                {product.stock > 10
+                  ? "✓ Disponible · Envío en 2–4 días hábiles"
+                  : product.stock > 0
+                  ? `Últimas ${product.stock} unidades · Envío en 2–4 días hábiles`
+                  : "Agotado temporalmente"}
+              </p>
+            </>
+          )}
 
           <div className="mt-10 space-y-6">
             <section>
