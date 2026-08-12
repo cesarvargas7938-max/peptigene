@@ -3,11 +3,85 @@
 import { useState } from "react";
 import Link from "next/link";
 
+// Asesor que recibe las solicitudes de KPV (Stiven · Asesoría nutricional)
+const WHATSAPP_PHONE = "573012344785";
+const ASESOR = "Stiven";
+
+type FormState = {
+  nombre: string;
+  correo: string;
+  telefono: string;
+  edad: string;
+  peso: string;
+  sexo: string;
+  objetivo: string;
+  via: string;
+  caso: string;
+  screening: string[];
+  medicamentos: string;
+  alergias: string;
+  experiencia: string;
+};
+
+const INITIAL: FormState = {
+  nombre: "",
+  correo: "",
+  telefono: "",
+  edad: "",
+  peso: "",
+  sexo: "",
+  objetivo: "",
+  via: "",
+  caso: "",
+  screening: [],
+  medicamentos: "",
+  alergias: "",
+  experiencia: "",
+};
+
 export default function KpvPage() {
+  const [form, setForm] = useState<FormState>(INITIAL);
   const [sent, setSent] = useState(false);
+
+  const update = (field: keyof FormState, value: string) =>
+    setForm((f) => ({ ...f, [field]: value }));
+
+  const toggleScreening = (item: string) =>
+    setForm((f) => ({
+      ...f,
+      screening: f.screening.includes(item)
+        ? f.screening.filter((s) => s !== item)
+        : [...f.screening, item],
+    }));
+
+  const buildMessage = () => {
+    const L: string[] = [];
+    L.push("*Solicitud de evaluación KPV — Peptigene*");
+    L.push("");
+    L.push(`*Nombre:* ${form.nombre || "—"}`);
+    L.push(`*Correo:* ${form.correo || "—"}`);
+    L.push(`*Teléfono:* ${form.telefono || "—"}`);
+    L.push(
+      `*Edad:* ${form.edad || "—"}   *Peso:* ${form.peso ? form.peso + " kg" : "—"}   *Sexo:* ${form.sexo || "—"}`
+    );
+    L.push("");
+    L.push(`*Motivo de interés:* ${form.objetivo || "—"}`);
+    L.push(`*Vía de interés:* ${form.via || "—"}`);
+    if (form.caso.trim()) L.push(`*Su caso:* ${form.caso.trim()}`);
+    L.push("");
+    L.push(
+      `*Tamizaje de seguridad:* ${form.screening.length ? form.screening.join(", ") : "Ninguna condición marcada"}`
+    );
+    L.push(`*Medicamentos actuales:* ${form.medicamentos.trim() || "—"}`);
+    L.push(`*Alergias:* ${form.alergias.trim() || "—"}`);
+    L.push(`*Experiencia con péptidos:* ${form.experiencia.trim() || "—"}`);
+    return L.join("\n");
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(buildMessage())}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -22,8 +96,9 @@ export default function KpvPage() {
       </h1>
       <p className="text-lg text-olive-700/80 max-w-2xl mb-8">
         KPV es un tripéptido (Lisina–Prolina–Valina) derivado de la α-MSH con
-        propiedades antiinflamatorias. Completa este formulario de tamizaje para
-        que nuestro equipo evalúe tu caso antes de cualquier protocolo.
+        propiedades antiinflamatorias. Completa este tamizaje y, al enviarlo,
+        se abrirá WhatsApp con tus respuestas listas para que nuestro equipo
+        te responda ahí mismo.
       </p>
 
       {/* Aviso legal destacado */}
@@ -45,17 +120,32 @@ export default function KpvPage() {
           {sent ? (
             <div className="bg-olive-100 border border-olive-200 rounded-2xl p-8 text-center">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-olive-200 flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-olive-900" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 32 32" className="w-8 h-8 text-olive-900" fill="currentColor">
+                  <path d="M16.001 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.74 6.4L3.2 28.8l6.56-1.72a12.74 12.74 0 0 0 6.24 1.62h.01c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.8-12.81-12.8Zm5.84 15.42c-.32-.16-1.9-.94-2.19-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55-.18-.01-.4-.01-.61-.01-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.29.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z" />
                 </svg>
               </div>
-              <h2 className="font-display text-2xl text-olive-900 mb-2">¡Solicitud recibida!</h2>
-              <p className="text-olive-800 mb-1">
-                Nuestro equipo revisará tu tamizaje y te contactará para agendar una valoración.
+              <h2 className="font-display text-2xl text-olive-900 mb-2">Abrimos WhatsApp</h2>
+              <p className="text-olive-800 mb-4">
+                Tus respuestas ya están cargadas en un mensaje para <strong>{ASESOR}</strong>.
+                Solo pulsa <strong>enviar</strong> en WhatsApp y te responderemos ahí mismo.
               </p>
-              <p className="text-sm text-olive-700/70">
-                (Demo académica · No se envía ni almacena ninguna información realmente.)
-              </p>
+              <a
+                href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(buildMessage())}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white rounded-full text-sm font-medium hover:bg-[#1f9d54] transition-colors"
+              >
+                <svg viewBox="0 0 32 32" className="w-5 h-5" fill="currentColor">
+                  <path d="M16.001 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.74 6.4L3.2 28.8l6.56-1.72a12.74 12.74 0 0 0 6.24 1.62h.01c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.8-12.81-12.8Zm5.84 15.42c-.32-.16-1.9-.94-2.19-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55-.18-.01-.4-.01-.61-.01-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.29.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z" />
+                </svg>
+                ¿No se abrió? Toca aquí
+              </a>
+              <button
+                onClick={() => setSent(false)}
+                className="block mx-auto mt-5 text-sm text-olive-700 underline hover:text-olive-900"
+              >
+                ← Editar mis respuestas
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-cream-50 border border-olive-100 rounded-2xl p-6 md:p-8 space-y-8">
@@ -63,14 +153,18 @@ export default function KpvPage() {
               <fieldset className="space-y-5">
                 <legend className="eyebrow text-olive-600 mb-4">1 · Datos personales</legend>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <Field label="Nombre completo" required />
-                  <Field label="Correo electrónico" type="email" required />
-                  <Field label="Teléfono / WhatsApp" type="tel" required />
-                  <Field label="Edad" type="number" required />
-                  <Field label="Peso (kg)" type="number" />
+                  <Field label="Nombre completo" required value={form.nombre} onChange={(v) => update("nombre", v)} />
+                  <Field label="Correo electrónico" type="email" value={form.correo} onChange={(v) => update("correo", v)} />
+                  <Field label="Teléfono / WhatsApp" type="tel" required value={form.telefono} onChange={(v) => update("telefono", v)} />
+                  <Field label="Edad" type="number" required value={form.edad} onChange={(v) => update("edad", v)} />
+                  <Field label="Peso (kg)" type="number" value={form.peso} onChange={(v) => update("peso", v)} />
                   <label className="block">
                     <span className="block text-xs text-olive-700 mb-1.5">Sexo biológico</span>
-                    <select className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700">
+                    <select
+                      value={form.sexo}
+                      onChange={(e) => update("sexo", e.target.value)}
+                      className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700"
+                    >
                       <option value="">Selecciona…</option>
                       <option>Femenino</option>
                       <option>Masculino</option>
@@ -85,7 +179,12 @@ export default function KpvPage() {
                 <legend className="eyebrow text-olive-600 mb-4">2 · Motivo de interés</legend>
                 <label className="block">
                   <span className="block text-xs text-olive-700 mb-1.5">¿Qué buscas abordar con KPV? *</span>
-                  <select required className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700">
+                  <select
+                    required
+                    value={form.objetivo}
+                    onChange={(e) => update("objetivo", e.target.value)}
+                    className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700"
+                  >
                     <option value="">Selecciona…</option>
                     <option>Inflamación intestinal / digestiva (EII, colitis)</option>
                     <option>Salud y reparación de la piel</option>
@@ -94,20 +193,31 @@ export default function KpvPage() {
                     <option>Otro / no estoy seguro</option>
                   </select>
                 </label>
-                <label className="block">
+                <div className="block">
                   <span className="block text-xs text-olive-700 mb-1.5">Vía de administración de interés</span>
                   <div className="grid sm:grid-cols-3 gap-3">
                     {["Subcutánea", "Oral", "Tópica"].map((v) => (
                       <label key={v} className="flex items-center gap-2 p-3 border border-olive-200 rounded-xl cursor-pointer hover:bg-olive-50 text-sm text-olive-900">
-                        <input type="radio" name="via" className="accent-olive-700" />
+                        <input
+                          type="radio"
+                          name="via"
+                          checked={form.via === v}
+                          onChange={() => update("via", v)}
+                          className="accent-olive-700"
+                        />
                         {v}
                       </label>
                     ))}
                   </div>
-                </label>
+                </div>
                 <label className="block">
                   <span className="block text-xs text-olive-700 mb-1.5">Cuéntanos brevemente tu caso</span>
-                  <textarea rows={4} className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700 resize-none" />
+                  <textarea
+                    rows={4}
+                    value={form.caso}
+                    onChange={(e) => update("caso", e.target.value)}
+                    className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700 resize-none"
+                  />
                 </label>
               </fieldset>
 
@@ -121,7 +231,12 @@ export default function KpvPage() {
                 <div className="grid sm:grid-cols-2 gap-2.5">
                   {SCREENING.map((item) => (
                     <label key={item} className="flex items-start gap-2.5 p-3 border border-olive-200 rounded-xl cursor-pointer hover:bg-olive-50 text-sm text-olive-900">
-                      <input type="checkbox" className="accent-olive-700 mt-0.5" />
+                      <input
+                        type="checkbox"
+                        checked={form.screening.includes(item)}
+                        onChange={() => toggleScreening(item)}
+                        className="accent-olive-700 mt-0.5"
+                      />
                       <span>{item}</span>
                     </label>
                   ))}
@@ -129,16 +244,31 @@ export default function KpvPage() {
                 <div className="grid md:grid-cols-2 gap-4 pt-2">
                   <label className="block">
                     <span className="block text-xs text-olive-700 mb-1.5">Medicamentos actuales</span>
-                    <input className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700" placeholder="Ninguno / especifica" />
+                    <input
+                      value={form.medicamentos}
+                      onChange={(e) => update("medicamentos", e.target.value)}
+                      className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700"
+                      placeholder="Ninguno / especifica"
+                    />
                   </label>
                   <label className="block">
                     <span className="block text-xs text-olive-700 mb-1.5">Alergias conocidas</span>
-                    <input className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700" placeholder="Ninguna / especifica" />
+                    <input
+                      value={form.alergias}
+                      onChange={(e) => update("alergias", e.target.value)}
+                      className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700"
+                      placeholder="Ninguna / especifica"
+                    />
                   </label>
                 </div>
                 <label className="block">
                   <span className="block text-xs text-olive-700 mb-1.5">¿Has usado péptidos antes? ¿Cuáles?</span>
-                  <input className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700" placeholder="No / especifica" />
+                  <input
+                    value={form.experiencia}
+                    onChange={(e) => update("experiencia", e.target.value)}
+                    className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700"
+                    placeholder="No / especifica"
+                  />
                 </label>
               </fieldset>
 
@@ -155,14 +285,24 @@ export default function KpvPage() {
                 <label className="flex items-start gap-3 text-sm text-olive-800">
                   <input required type="checkbox" className="accent-olive-700 mt-1" />
                   <span>
-                    Autorizo que el equipo revise mis respuestas para evaluar mi caso. *
+                    Autorizo que el equipo revise mis respuestas por WhatsApp para evaluar mi caso. *
                   </span>
                 </label>
               </fieldset>
 
-              <button type="submit" className="px-8 py-4 bg-olive-900 text-cream-50 rounded-full text-sm font-medium hover:bg-olive-800 transition-colors">
-                Enviar solicitud de evaluación
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#25d366] text-white rounded-full text-sm font-medium hover:bg-[#1f9d54] transition-colors"
+              >
+                <svg viewBox="0 0 32 32" className="w-5 h-5" fill="currentColor">
+                  <path d="M16.001 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.74 6.4L3.2 28.8l6.56-1.72a12.74 12.74 0 0 0 6.24 1.62h.01c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.8-12.81-12.8Zm5.84 15.42c-.32-.16-1.9-.94-2.19-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55-.18-.01-.4-.01-.61-.01-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.29.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z" />
+                </svg>
+                Enviar por WhatsApp
               </button>
+              <p className="text-xs text-olive-700/70">
+                Al enviar se abrirá WhatsApp con tus respuestas ya escritas. Solo debes pulsar
+                enviar dentro de la aplicación.
+              </p>
             </form>
           )}
         </div>
@@ -270,10 +410,14 @@ function Field({
   label,
   type = "text",
   required,
+  value,
+  onChange,
 }: {
   label: string;
   type?: string;
   required?: boolean;
+  value: string;
+  onChange: (value: string) => void;
 }) {
   return (
     <label className="block">
@@ -284,6 +428,8 @@ function Field({
       <input
         type={type}
         required={required}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         className="w-full px-4 py-3 bg-cream-100 border border-olive-200 rounded-lg text-olive-900 focus:outline-none focus:border-olive-700 transition"
       />
     </label>
