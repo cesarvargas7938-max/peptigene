@@ -2,7 +2,7 @@
   "_nota": "Versión para máquina de personaje/FICHA_PERSONAJE.md. 'descripcion' reemplaza {PERSONAJE} en shots/shotlist.json junto con soul_id. soul_id y referencia se llenan al entrenar y aprobar el personaje en Higgsfield.",
   "nombre": "Cesar",
   "rol": "estratega de contenido para médicos (no es médico)",
-  "soul_id": null,
+  "soul_id": "1828938c-a1ca-4438-8c85-2d952b7c7ee4",
   "referencia": "assets/personaje/cesar_referencia.png",
   "descripcion": "a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather shoes, no glasses",
   "negativo": "glasses, sunglasses, doctor coat, lab coat, stethoscope, scrubs, visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, deformed hands",
@@ -31,5 +31,6 @@
     "faltan": [
       "opcional: perfil puro (90°)"
     ]
-  }
+  },
+  "soul_tipo": "soul_2"
 }
