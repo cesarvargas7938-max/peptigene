@@ -12,7 +12,7 @@ Reglas que aplican a todos los looks:
 
 ---
 
-## Look 1 · Ejecutivo
+## Look 1 · Ejecutivo — ❌ no aprobado
 
 | | |
 |---|---|
@@ -27,7 +27,7 @@ Prompt:
 
 ---
 
-## Look 2 · Smart casual — consultor
+## Look 2 · Smart casual — consultor — ❌ no aprobado
 
 | | |
 |---|---|
@@ -42,7 +42,7 @@ Prompt:
 
 ---
 
-## Look 3 · Total white — lifestyle (su estilo real)
+## Look 3 · Total white — lifestyle (su estilo real) — ❌ no aprobado
 
 | | |
 |---|---|
@@ -72,7 +72,7 @@ Prompt:
 
 ---
 
-## Look 5 · Estudio / podcast
+## Look 5 · Estudio / podcast — ❌ no aprobado
 
 | | |
 |---|---|
@@ -92,4 +92,6 @@ Prompt:
 1. En `personaje/personaje.json` → `looks.<id>.prompt` está el texto de cada look.
 2. En la shotlist, `{PERSONAJE}` = `descripcion_base` + el prompt del look del video + `soul_id`.
 3. El reel "El café" usa **solo el Look 4 · Urbano** (aprobado).
-4. Antes de usar un look nuevo en un video, se genera 1 retrato de prueba con el Soul y se aprueba.
+4. Solo el Look 4 está aprobado. Los looks 1, 2, 3 y 5 no convencieron en las pruebas y no se
+   usan hasta rehacerlos.
+5. Antes de usar un look nuevo en un video, se genera 1 retrato de prueba con el Soul y se aprueba.

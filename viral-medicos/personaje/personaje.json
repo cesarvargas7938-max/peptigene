@@ -15,15 +15,21 @@
   "looks": {
     "ejecutivo": {
       "nombre": "Look 1 · Ejecutivo",
-      "prompt": "wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather oxford shoes"
+      "prompt": "wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather oxford shoes",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
     },
     "smart_casual": {
       "nombre": "Look 2 · Smart casual",
-      "prompt": "wearing an unstructured camel beige blazer over a plain white crew-neck t-shirt, slim navy chinos, brown suede loafers, silver metal watch on left wrist"
+      "prompt": "wearing an unstructured camel beige blazer over a plain white crew-neck t-shirt, slim navy chinos, brown suede loafers, silver metal watch on left wrist",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
     },
     "total_white": {
       "nombre": "Look 3 · Total white",
-      "prompt": "wearing a white t-shirt with a thin black patterned trim on the collar, straight white trousers, clean white sneakers"
+      "prompt": "wearing a white t-shirt with a thin black patterned trim on the collar, straight white trousers, clean white sneakers",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
     },
     "urbano": {
       "nombre": "Look 4 · Urbano",
@@ -38,7 +44,9 @@
     },
     "estudio": {
       "nombre": "Look 5 · Estudio / podcast",
-      "prompt": "wearing a fine-knit black crew-neck sweater with sleeves slightly pushed up, silver metal watch"
+      "prompt": "wearing a fine-knit black crew-neck sweater with sleeves slightly pushed up, silver metal watch",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
     }
   },
   "look_reel_cafe": "urbano",
