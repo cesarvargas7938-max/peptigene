@@ -1,0 +1,308 @@
+{
+  "_nota": "Prompts en inglés porque los modelos responden mejor así. {PERSONAJE} = el personaje de César en Higgsfield. 'ancla' = primeras palabras de la frase en la voz; 'dur' solo se usa si la toma siguiente no tiene ancla o si es la última.",
+  "tomas": [
+    {
+      "id": "01_hook_cafe",
+      "bloque": "hook",
+      "inicio": 0,
+      "dur": 2.0,
+      "prompt_imagen": "extreme close-up at table level of a paper coffee cup at the very edge of a white doctor's office desk, a man's elbow in a navy suit sleeve about to push it, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "the elbow slowly pushes the cup toward the edge, the cup tilts, camera static; cut before it falls",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/tension.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/01_hook_cafe.mp4"
+    },
+    {
+      "id": "02_cuarta_pared",
+      "bloque": "cuarta pared",
+      "ancla": "por qué sigues",
+      "habla": true,
+      "prompt_imagen": "{PERSONAJE} crouching and leaning into frame in the foreground, looking into the lens with a playful smirk, doctor's office desk with the coffee cup at its edge in the background, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he talks to camera with expressive hand gestures, camera static",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/pop.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/02_cuarta_pared.mp4"
+    },
+    {
+      "id": "03_tren_impacto",
+      "bloque": "impacto 1",
+      "ancla": "llamado",
+      "desfase": 0.4,
+      "dur": 1.2,
+      "prompt_imagen": "{PERSONAJE} crouching in the foreground on a cobblestone street, a subway train coming down the street behind him, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "the train rushes forward and hits the camera, motion blur, camera shake",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/bocina_tren.wav",
+          "en": 0.0
+        },
+        {
+          "archivo": "assets/sfx/impacto.wav",
+          "en": 0.9
+        }
+      ],
+      "clip": "clips/03_tren_impacto.mp4"
+    },
+    {
+      "id": "04_tren_costado",
+      "bloque": "impacto 1",
+      "dur": 1.0,
+      "prompt_imagen": "ground-level shot, side of a silver train passing inches from the lens on a street, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "the train passes very fast from right to left, strong motion blur",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/04_tren_costado.mp4"
+    },
+    {
+      "id": "05_tren_cortina",
+      "bloque": "problema",
+      "ancla": "cuando un médico",
+      "overlay": "assets/overlays/reels_medicos_virales.png",
+      "prompt_imagen": "side view of a subway train passing on a street, brick building behind, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "the train passes steadily from right to left, camera static",
+      "sfx": [],
+      "clip": "clips/05_tren_cortina.mp4"
+    },
+    {
+      "id": "06_metro_sentado",
+      "bloque": "problema",
+      "ancla": "qué subo hoy",
+      "habla": true,
+      "prompt_imagen": "{PERSONAJE} sitting in a subway car on an orange seat, looking at his phone, frustrated, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he looks at his phone, then looks up at camera annoyed and says the line",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/06_metro_sentado.mp4"
+    },
+    {
+      "id": "07_anden",
+      "bloque": "problema",
+      "ancla": "grabo el procedimiento",
+      "prompt_imagen": "{PERSONAJE} walking on a subway platform holding a phone and a camera, carrying a black briefcase, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he walks toward camera looking at the phone and the camera, confused",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/07_anden.mp4"
+    },
+    {
+      "id": "08_entrada_metro",
+      "bloque": "problema",
+      "ancla": "qué gancho",
+      "prompt_imagen": "{PERSONAJE} walking up the stairs out of a subway entrance with green railings, holding his phone, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he walks up and toward camera",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/08_entrada_metro.mp4"
+    },
+    {
+      "id": "09_fachada",
+      "bloque": "problema",
+      "ancla": "el problema es",
+      "overlay": "assets/overlays/reels_medicos_virales_2.png",
+      "prompt_imagen": "wide shot, {PERSONAJE} small in frame walking with a briefcase in front of a neoclassical stock exchange building with columns and flags, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he walks left to right across the frame, camera static",
+      "sfx": [],
+      "clip": "clips/09_fachada.mp4"
+    },
+    {
+      "id": "10_ferrari_cae",
+      "bloque": "impacto 2",
+      "ancla": "importante el",
+      "punto": "fin",
+      "dur": 1.2,
+      "prompt_imagen": "same wide shot, {PERSONAJE} small in frame walking in front of the stock exchange building, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "a black Ferrari falls from the sky and crushes him, bounces, dust cloud, camera static",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/caida_silbido.wav",
+          "en": 0.0
+        },
+        {
+          "archivo": "assets/sfx/impacto_carro.wav",
+          "en": 0.6
+        },
+        {
+          "archivo": "assets/sfx/alarma_carro.wav",
+          "en": 0.8
+        }
+      ],
+      "clip": "clips/10_ferrari_cae.mp4"
+    },
+    {
+      "id": "11_ferrari_mano",
+      "bloque": "impacto 2",
+      "dur": 1.5,
+      "prompt_imagen": "close-up on cobblestones: a man's hand in a navy suit sleeve with a watch sticking out from under a black Ferrari, a black briefcase beside it, vertical 9:16, photorealistic",
+      "prompt_video": "the fingers twitch slightly, camera static",
+      "sfx": [],
+      "clip": "clips/11_ferrari_mano.mp4"
+    },
+    {
+      "id": "12_gurus_1",
+      "bloque": "enemigo",
+      "ancla": "si le preguntas",
+      "habla": true,
+      "overlay": "assets/overlays/gurus.png",
+      "prompt_imagen": "{PERSONAJE} walking toward camera on a busy downtown street with tall buildings, holding a black briefcase, raising one finger, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he walks toward camera talking and gesturing confidently",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/12_gurus_1.mp4"
+    },
+    {
+      "id": "12b_gurus_1b",
+      "bloque": "enemigo",
+      "ancla": "o a cualquier gurú",
+      "habla": true,
+      "overlay": "assets/overlays/gurus_2.png",
+      "prompt_imagen": "{PERSONAJE} walking toward camera on a busy downtown street, closer framing, holding a black briefcase, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he keeps walking and talking, dismissive hand wave",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/12b_gurus_1b.mp4"
+    },
+    {
+      "id": "13_gurus_2",
+      "bloque": "enemigo",
+      "ancla": "te van a decir",
+      "habla": true,
+      "prompt_imagen": "{PERSONAJE} standing on a downtown street, mocking gesture with both hands, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he talks to camera with an ironic expression and air quotes",
+      "sfx": [],
+      "clip": "clips/13_gurus_2.mp4"
+    },
+    {
+      "id": "14_maletin",
+      "bloque": "maletín",
+      "ancla": "cuando lo único",
+      "habla": true,
+      "prompt_imagen": "{PERSONAJE} in front of a stock exchange building lifting a black briefcase to chest height with both hands, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he lifts the briefcase and starts opening the latches while talking",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/click_maletin.wav",
+          "en": 0.3
+        }
+      ],
+      "clip": "clips/14_maletin.mp4"
+    },
+    {
+      "id": "15_destello",
+      "bloque": "maletín",
+      "ancla": "esto",
+      "punto": "fin",
+      "dur": 1.0,
+      "prompt_imagen": "{PERSONAJE} opening a black briefcase toward camera, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "bright golden-white light bursts out of the briefcase and fills the screen",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/destello.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/15_destello.mp4"
+    },
+    {
+      "id": "16_skyline_rayo",
+      "bloque": "transición",
+      "dur": 2.5,
+      "prompt_imagen": "aerial view of a big city skyline at golden hour, a vertical beam of white light shooting into the sky from the streets, vertical 9:16, cinematic",
+      "prompt_video": "slow push-in, the beam of light pulses",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/rayo.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/16_skyline_rayo.mp4"
+    },
+    {
+      "id": "17_cta",
+      "bloque": "CTA",
+      "ancla": "si quieres saber",
+      "habla": true,
+      "overlay": "assets/overlays/lead_magnet.png",
+      "prompt_imagen": "{PERSONAJE} standing in a park with trees at golden hour holding a paper coffee cup, facing camera, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he takes a sip of coffee and talks to camera, relaxed",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/whoosh.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/17_cta.mp4"
+    },
+    {
+      "id": "17b_cta_comenta",
+      "bloque": "CTA",
+      "ancla": "comenta pacientes",
+      "habla": true,
+      "overlay": "assets/overlays/comentario_pacientes.png",
+      "prompt_imagen": "{PERSONAJE} in the park holding the coffee cup, medium close-up, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_video": "he points down toward the comments and smiles",
+      "sfx": [
+        {
+          "archivo": "assets/sfx/pop.wav",
+          "en": 0.0
+        }
+      ],
+      "clip": "clips/17b_cta_comenta.mp4"
+    },
+    {
+      "id": "18_cierre",
+      "bloque": "cierre",
+      "ancla": "te lo mando",
+      "punto": "fin",
+      "dur": 3.0,
+      "prompt_imagen": "(no se genera: reutiliza clips/17_cta.mp4)",
+      "prompt_video": "(no se genera)",
+      "oscurecer": true,
+      "sfx": [
+        {
+          "archivo": "assets/sfx/pop.wav",
+          "en": 0.2
+        }
+      ],
+      "clip": "clips/17_cta.mp4",
+      "reutiliza": "17_cta"
+    }
+  ],
+  "overlays": {
+    "reels_medicos_virales": "3 vertical thumbnails of social media reels by doctors: a dermatologist talking to camera in a clinic, a plastic surgeon explaining with a whiteboard, a dentist smiling in scrubs; realistic phone-shot look, no text",
+    "reels_medicos_virales_2": "3 vertical reel thumbnails: a doctor walking in a hospital hallway talking to camera, a nutritionist in a kitchen, an orthopedist holding a spine model; realistic, no text",
+    "gurus": "3 vertical thumbnails of generic marketing gurus talking to camera: a man in a black t-shirt with a podcast mic, a woman in a home office with ring light, a young man in a car; realistic, no text, fictional people",
+    "gurus_2": "3 vertical thumbnails: a man in a gym talking to camera, a man on a rooftop with sunglasses, a woman at a coworking space; realistic, no text, fictional people"
+  }
+}

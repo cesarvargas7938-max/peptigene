@@ -1,0 +1,31 @@
+{
+  "_nota": "Versión para máquina de personaje/FICHA_PERSONAJE.md. 'descripcion' reemplaza {PERSONAJE} en shots/shotlist.json junto con soul_id. soul_id y referencia se llenan al entrenar y aprobar el personaje en Higgsfield.",
+  "nombre": "Cesar",
+  "rol": "estratega de contenido para médicos (no es médico)",
+  "soul_id": null,
+  "referencia": "assets/personaje/cesar_referencia.png",
+  "descripcion": "a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather shoes, no glasses",
+  "negativo": "glasses, sunglasses, doctor coat, lab coat, stethoscope, scrubs, visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, deformed hands",
+  "retrato_prompt": "portrait of {PERSONAJE}, confident slight smile looking into the lens, standing on a city street with brick buildings, vertical 9:16, 35mm lens, natural daylight, improved skin and lighting while keeping his exact facial features, cinematic, photorealistic",
+  "props": {
+    "cafe": "plain white paper coffee cup without logo",
+    "maletin": "black rigid leather briefcase with silver latches",
+    "celular": "black smartphone without logo, screen not readable",
+    "camara": "small black compact camera"
+  },
+  "fotos_entrenamiento": {
+    "minimo": 5,
+    "actuales": [
+      "assets/fotos_cara/01_mirador_sonrisa_sin_gafas.jpg",
+      "assets/fotos_cara/02_cuerpo_entero_gafas_verdes.jpg",
+      "assets/fotos_cara/03_selfie_toalla_gafas_rojas.jpg",
+      "assets/fotos_cara/04_selfie_adidas_gafas_rojas.jpg"
+    ],
+    "faltan": [
+      "2 de frente sin gafas, cara neutra",
+      "perfil izquierdo y perfil derecho",
+      "2 en tres cuartos",
+      "1 medio cuerpo con camisa o saco"
+    ]
+  }
+}
