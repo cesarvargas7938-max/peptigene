@@ -1,0 +1,19 @@
+{
+  "arroba": "@tucuenta",
+  "fuente": "Montserrat",
+  "tamano": 64,
+  "tamano_enfasis": 150,
+  "palabras_por_bloque": 3,
+  "enfasis": [
+    "se va a caer",
+    "pacientes",
+    "esto",
+    "nada",
+    "gancho"
+  ],
+  "voz_inicio": 2.0,
+  "volumen_musica": 0.12,
+  "cola_final": 0.5,
+  "palabra_clave": "PACIENTES",
+  "volumen_sfx": 0.6
+}

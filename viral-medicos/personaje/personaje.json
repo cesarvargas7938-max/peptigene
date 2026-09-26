@@ -1,0 +1,88 @@
+{
+  "_nota": "Versión para máquina de personaje/FICHA_PERSONAJE.md. 'descripcion' reemplaza {PERSONAJE} en shots/shotlist.json junto con soul_id. soul_id y referencia se llenan al entrenar y aprobar el personaje en Higgsfield. 'descripcion' = descripcion_base + look urbano (el aprobado para el reel). Ver personaje/VESTUARIOS.md. REGLA: el rostro sale siempre de rostro_maestro (imagen 4); para cambiar ropa se edita esa imagen, no se genera desde cero.",
+  "nombre": "Cesar",
+  "rol": "estratega de contenido para médicos (no es médico)",
+  "soul_id": "1828938c-a1ca-4438-8c85-2d952b7c7ee4",
+  "referencia": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gus2S4ZJPfHRFHzXsC14YRPGbw/hf_20260926_212000_8ddac15a-7e35-494e-a417-50d833e1aa8d.png",
+  "voz": {
+    "voice_id": "a69bf8a3-6752-43de-bc90-c39d26f4f300",
+    "voice_type": "element",
+    "nombre": "Cesar voz",
+    "modelo_audio": "seed_audio"
+  },
+  "descripcion": "a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, no glasses, wearing an open black cotton overshirt over a plain white t-shirt, black slim jeans, white sneakers, silver metal watch on left wrist",
+  "descripcion_base": "a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, no glasses",
+  "looks": {
+    "ejecutivo": {
+      "nombre": "Look 1 · Ejecutivo",
+      "prompt": "wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather oxford shoes",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
+    },
+    "smart_casual": {
+      "nombre": "Look 2 · Smart casual",
+      "prompt": "wearing an unstructured camel beige blazer over a plain white crew-neck t-shirt, slim navy chinos, brown suede loafers, silver metal watch on left wrist",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
+    },
+    "total_white": {
+      "nombre": "Look 3 · Total white",
+      "prompt": "wearing a white t-shirt with a thin black patterned trim on the collar, straight white trousers, clean white sneakers",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
+    },
+    "urbano": {
+      "nombre": "Look 4 · Urbano",
+      "prompt": "wearing an open black cotton overshirt over a plain white t-shirt, black slim jeans, white sneakers, holding a black smartphone",
+      "principal": true,
+      "aprobado": true,
+      "imagen_aprobada": {
+        "job_id": "8ddac15a-7e35-494e-a417-50d833e1aa8d",
+        "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gus2S4ZJPfHRFHzXsC14YRPGbw/hf_20260926_212000_8ddac15a-7e35-494e-a417-50d833e1aa8d.png",
+        "nota": "aprobada tal cual por el usuario el 26/09/2026"
+      }
+    },
+    "estudio": {
+      "nombre": "Look 5 · Estudio / podcast",
+      "prompt": "wearing a fine-knit black crew-neck sweater with sleeves slightly pushed up, silver metal watch",
+      "aprobado": false,
+      "nota": "no aprobado: las imágenes de prueba no convencieron; no usar hasta rehacer"
+    }
+  },
+  "look_reel_cafe": "urbano",
+  "negativo": "glasses, sunglasses, doctor coat, lab coat, stethoscope, scrubs, visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, deformed hands",
+  "retrato_prompt": "portrait of {PERSONAJE}, confident slight smile looking into the lens, standing on a city street with brick buildings, vertical 9:16, 35mm lens, natural daylight, improved skin and lighting while keeping his exact facial features, cinematic, photorealistic",
+  "props": {
+    "cafe": "plain white paper coffee cup without logo",
+    "maletin": "black rigid leather briefcase with silver latches",
+    "celular": "black smartphone without logo, screen not readable",
+    "camara": "small black compact camera"
+  },
+  "fotos_entrenamiento": {
+    "minimo": 5,
+    "actuales": [
+      "assets/fotos_cara/01_mirador_sonrisa_sin_gafas.jpg",
+      "assets/fotos_cara/02_cuerpo_entero_gafas_verdes.jpg",
+      "assets/fotos_cara/03_selfie_toalla_gafas_rojas.jpg",
+      "assets/fotos_cara/04_selfie_adidas_gafas_rojas.jpg",
+      "assets/fotos_cara/05_frente_neutra_rocas.jpg",
+      "assets/fotos_cara/06_frente_sonrisa_gorra.jpg",
+      "assets/fotos_cara/07_tres_cuartos_der_piscina.jpg",
+      "assets/fotos_cara/08_tres_cuartos_mirando_arriba.jpg",
+      "assets/fotos_cara/09_cuerpo_entero_sonrisa.jpg",
+      "assets/fotos_cara/10_frente_neutra_piscina.jpg",
+      "assets/fotos_cara/11_tres_cuartos_izq_sonrisa.jpg"
+    ],
+    "faltan": [
+      "opcional: perfil puro (90°)"
+    ]
+  },
+  "soul_tipo": "soul_2",
+  "rostro_maestro": {
+    "job_id": "8ddac15a-7e35-494e-a417-50d833e1aa8d",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gus2S4ZJPfHRFHzXsC14YRPGbw/hf_20260926_212000_8ddac15a-7e35-494e-a417-50d833e1aa8d.png",
+    "regla": "Toda imagen del personaje parte de esta imagen (medias role image_references, value = job_id). El rostro no se cambia nunca; solo cambian ropa, pose y fondo cuando el usuario lo pide.",
+    "modelo_edicion": "gpt_image_2_5 (quality medium, 2k, 9:16) ~1 crédito; alternativa nano_banana_2 2k ~2 créditos",
+    "prompt_cambio_vestuario": "Keep the exact same man from the reference image: identical face, facial features, beard, hairline, haircut, skin tone and body proportions. Do not change his face in any way. Only change his clothing to: {ROPA}. {ESCENA}. Photorealistic, real skin texture, vertical 9:16."
+  }
+}

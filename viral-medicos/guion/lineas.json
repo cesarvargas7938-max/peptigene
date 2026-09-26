@@ -1,0 +1,19 @@
+{
+  "_nota": "Cada línea se genera como un audio aparte con la voz de César (IA). 'pausa' = silencio después de la línea, en segundos. Las pausas largas dejan espacio para el tren, el Ferrari y el destello.",
+  "lineas": [
+    {"texto": "¿Por qué sigues viendo este video si ni siquiera tiene gancho?", "pausa": 0.25},
+    {"texto": "Viste el café, viste mi codo y pensaste: se va a caer.", "pausa": 0.25},
+    {"texto": "Y eso es gracias a un sesgo psicológico llamado…", "pausa": 2.2},
+    {"texto": "Cuando un médico quiere conseguir pacientes en redes, siempre piensa lo mismo:", "pausa": 0.2},
+    {"texto": "¿Qué subo hoy?", "pausa": 0.2},
+    {"texto": "¿Grabo el procedimiento o hablo a cámara?", "pausa": 0.2},
+    {"texto": "¿Qué gancho uso?", "pausa": 0.25},
+    {"texto": "El problema es que nada de eso funciona si te olvidas de lo más importante, el…", "pausa": 2.8},
+    {"texto": "Si le preguntas a la agencia que te maneja las redes,", "pausa": 0.15},
+    {"texto": "o a cualquier gurú que nunca le ha llenado la agenda a un consultorio,", "pausa": 0.15},
+    {"texto": "te van a decir que hagas contenido educativo, o que muestres tu día a día.", "pausa": 0.2},
+    {"texto": "Cuando lo único que realmente importa es esto.", "pausa": 3.6},
+    {"texto": "Si quieres saber por qué tus videos no te traen pacientes, y cómo hacer uno que sí,", "pausa": 0.2},
+    {"texto": "comenta PACIENTES en este video y te lo mando.", "pausa": 0.3}
+  ]
+}
