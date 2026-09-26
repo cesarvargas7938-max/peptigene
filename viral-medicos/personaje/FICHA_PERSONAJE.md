@@ -57,7 +57,7 @@ hace creíble el salto metro → andén → Bolsa → parque. Una sola pinta, si
 | Prohibido | Bata médica, logos, gorras, el hilo rojo. |
 
 Imagen de referencia aprobada: [look urbano](https://d8j0ntlcm91z4.cloudfront.net/user_3Gus2S4ZJPfHRFHzXsC14YRPGbw/hf_20260926_212000_8ddac15a-7e35-494e-a417-50d833e1aa8d.png)
-(tiene inconsistencias por corregir antes de usarla como referencia final).
+(aprobada tal cual como referencia final).
 
 **Contraste con la referencia:** el reel original usa traje y maletín para verse "de negocios".
 Con el look urbano el personaje se ve como creador que sabe del algoritmo. El maletín se mantiene
