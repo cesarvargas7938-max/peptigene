@@ -21,12 +21,15 @@
       "assets/fotos_cara/03_selfie_toalla_gafas_rojas.jpg",
       "assets/fotos_cara/04_selfie_adidas_gafas_rojas.jpg",
       "assets/fotos_cara/05_frente_neutra_rocas.jpg",
-      "assets/fotos_cara/06_frente_sonrisa_gorra.jpg"
+      "assets/fotos_cara/06_frente_sonrisa_gorra.jpg",
+      "assets/fotos_cara/07_tres_cuartos_der_piscina.jpg",
+      "assets/fotos_cara/08_tres_cuartos_mirando_arriba.jpg",
+      "assets/fotos_cara/09_cuerpo_entero_sonrisa.jpg",
+      "assets/fotos_cara/10_frente_neutra_piscina.jpg",
+      "assets/fotos_cara/11_tres_cuartos_izq_sonrisa.jpg"
     ],
     "faltan": [
-      "opcional: perfil izquierdo y perfil derecho",
-      "opcional: 1-2 en tres cuartos",
-      "opcional: 1 medio cuerpo con camisa o saco"
+      "opcional: perfil puro (90°)"
     ]
   }
 }

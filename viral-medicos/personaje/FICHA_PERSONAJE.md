@@ -113,7 +113,7 @@ visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, 
 
 ## 9. Fotos para entrenar el Soul Character
 
-El kit pide **5 a 20 fotos**. Hoy hay **6** en `assets/fotos_cara/`, así que ya se cumple el mínimo:
+El kit pide **5 a 20 fotos**. Hoy hay **11** en `assets/fotos_cara/`:
 
 | Archivo | Sirve para | Problema |
 |---|---|---|
@@ -123,16 +123,21 @@ El kit pide **5 a 20 fotos**. Hoy hay **6** en `assets/fotos_cara/`, así que ya
 | `04_selfie_adidas_gafas_rojas.jpg` | ⚠️ Rasgos y barba de cerca | Gafas rojas + logo + persona de fondo |
 | `05_frente_neutra_rocas.jpg` | ✅ La mejor: frente, cara neutra, ojos a la vista, barba y línea del pelo nítidas | Gafas subidas en la cabeza (no tapan la cara) |
 | `06_frente_sonrisa_gorra.jpg` | ✅ Frente, sonrisa con dientes, medio cuerpo | Gorra con logo tapa el pelo; pájaro encima; tatuaje visible |
+| `07_tres_cuartos_der_piscina.jpg` | ✅ Tres cuartos mirando a su izquierda, cara seria | Cara algo pequeña en el encuadre |
+| `08_tres_cuartos_mirando_arriba.jpg` | ✅ Tres cuartos, mentón levantado (línea de mandíbula) | Casi igual a la 07 |
+| `09_cuerpo_entero_sonrisa.jpg` | ✅ Cuerpo entero, sonrisa, complexión real | Tatuaje visible |
+| `10_frente_neutra_piscina.jpg` | ✅ Frente, cara neutra, luz pareja | Cara pequeña, ojos entrecerrados |
+| `11_tres_cuartos_izq_sonrisa.jpg` | ✅ Tres cuartos / casi perfil hacia su derecha, sonrisa | Tatuaje visible |
 
-**Para que el parecido quede mejor (opcional, 2–4 fotos más, sin gafas):**
+**Cobertura de ángulos:**
 
-- [x] 2 de frente
-- [ ] 1 de perfil izquierdo y 1 de perfil derecho
-- [ ] 1–2 en tres cuartos (girado ~45°)
-- [ ] 1 medio cuerpo con camisa o saco (idealmente de vestir)
+- [x] Frente (05, 06, 10, 01)
+- [x] Tres cuartos hacia ambos lados (07, 08, 11)
+- [x] Cuerpo entero (02, 09)
+- [ ] Perfil puro (90°): no hay, pero la 11 se acerca. Opcional.
 
-Sin perfiles ni tres cuartos, el modelo acierta de frente pero puede fallar en las tomas de lado
-(06 metro, 09 fachada, 14 maletín).
+Los tatuajes visibles en las fotos de entrenamiento no importan: en las tomas el traje los tapa
+y el negativo del prompt los excluye.
 
 ---
 
