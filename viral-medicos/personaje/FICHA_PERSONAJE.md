@@ -40,6 +40,9 @@ pero **no** puede tocar nada de esta lista.
 
 ## 3. Vestuario (idéntico en todas las tomas)
 
+> Este es el **Look 1 · Ejecutivo**, el del reel "El café". Los demás looks para otros videos
+> están en `personaje/VESTUARIOS.md`.
+
 El reel de referencia funciona porque él se ve **igual en todas las locaciones**: eso es lo que
 hace creíble el salto metro → andén → Bolsa → parque. Una sola pinta, sin variaciones.
 
@@ -83,7 +86,9 @@ hace creíble el salto metro → andén → Bolsa → parque. Una sola pinta, si
 ## 6. Voz
 
 - **Tono:** conversacional rápido, tipo reel. Energía media-alta, sin sonar a locutor.
-- **Acento:** español latino neutro (si hay nota de voz tuya, se clona y manda la tuya).
+- **Voz clonada:** lista en Higgsfield como "Cesar voz" (`voice_id` en `personaje.json`), a partir de una nota de voz de 22 s.
+  El audio original no se guarda en el repositorio porque venía de un chat privado.
+- **Acento:** el de la nota de voz original.
 - **Ritmo:** frases cortas, pausas marcadas antes de los impactos (ya están en `guion/lineas.json`).
 - **Énfasis:** "se va a caer", "nada", "esto", "PACIENTES".
 

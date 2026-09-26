@@ -1,10 +1,41 @@
 {
-  "_nota": "Versión para máquina de personaje/FICHA_PERSONAJE.md. 'descripcion' reemplaza {PERSONAJE} en shots/shotlist.json junto con soul_id. soul_id y referencia se llenan al entrenar y aprobar el personaje en Higgsfield.",
+  "_nota": "Versión para máquina de personaje/FICHA_PERSONAJE.md. 'descripcion' reemplaza {PERSONAJE} en shots/shotlist.json junto con soul_id. soul_id y referencia se llenan al entrenar y aprobar el personaje en Higgsfield. 'descripcion' = descripcion_base + look ejecutivo (el del reel). Ver personaje/VESTUARIOS.md.",
   "nombre": "Cesar",
   "rol": "estratega de contenido para médicos (no es médico)",
   "soul_id": "1828938c-a1ca-4438-8c85-2d952b7c7ee4",
   "referencia": "assets/personaje/cesar_referencia.png",
+  "voz": {
+    "voice_id": "a69bf8a3-6752-43de-bc90-c39d26f4f300",
+    "voice_type": "element",
+    "nombre": "Cesar voz",
+    "modelo_audio": "seed_audio"
+  },
   "descripcion": "a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather shoes, no glasses",
+  "descripcion_base": "a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, no glasses",
+  "looks": {
+    "ejecutivo": {
+      "nombre": "Look 1 · Ejecutivo",
+      "principal": true,
+      "prompt": "wearing a slim navy blue two-piece suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left wrist, black leather oxford shoes"
+    },
+    "smart_casual": {
+      "nombre": "Look 2 · Smart casual",
+      "prompt": "wearing an unstructured camel beige blazer over a plain white crew-neck t-shirt, slim navy chinos, brown suede loafers, silver metal watch on left wrist"
+    },
+    "total_white": {
+      "nombre": "Look 3 · Total white",
+      "prompt": "wearing a white t-shirt with a thin black patterned trim on the collar, straight white trousers, clean white sneakers"
+    },
+    "urbano": {
+      "nombre": "Look 4 · Urbano",
+      "prompt": "wearing an open black cotton overshirt over a plain white t-shirt, black slim jeans, white sneakers, holding a black smartphone"
+    },
+    "estudio": {
+      "nombre": "Look 5 · Estudio / podcast",
+      "prompt": "wearing a fine-knit black crew-neck sweater with sleeves slightly pushed up, silver metal watch"
+    }
+  },
+  "look_reel_cafe": "ejecutivo",
   "negativo": "glasses, sunglasses, doctor coat, lab coat, stethoscope, scrubs, visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, deformed hands",
   "retrato_prompt": "portrait of {PERSONAJE}, confident slight smile looking into the lens, standing on a city street with brick buildings, vertical 9:16, 35mm lens, natural daylight, improved skin and lighting while keeping his exact facial features, cinematic, photorealistic",
   "props": {
