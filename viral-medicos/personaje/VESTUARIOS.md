@@ -1,5 +1,25 @@
 # Vestuarios del personaje — catálogo de looks
 
+## ⚠️ Regla principal: el rostro de la imagen 4 no se toca
+
+El rostro aprobado es el de la **imagen 4** (look urbano, caminando en la calle):
+[ver imagen](https://d8j0ntlcm91z4.cloudfront.net/user_3Gus2S4ZJPfHRFHzXsC14YRPGbw/hf_20260926_212000_8ddac15a-7e35-494e-a417-50d833e1aa8d.png)
+(job_id `8ddac15a-7e35-494e-a417-50d833e1aa8d`).
+
+Las generaciones desde cero con el Soul no mantuvieron bien el parecido, así que a partir de ahora:
+
+1. **Cambio de vestuario = editar la imagen 4**, no generar una imagen nueva desde cero.
+   Se pasa la imagen 4 como referencia (`image_references`) y solo se cambia la ropa (y si se pide, pose o fondo).
+2. Modelo: `gpt_image_2_5` (calidad medium, 2k, 9:16, ~1 crédito). Alternativa: `nano_banana_2` 2k (~2 créditos).
+3. Prompt base (en `personaje.json` → `rostro_maestro.prompt_cambio_vestuario`):
+   > Keep the exact same man from the reference image: identical face, facial features, beard, hairline,
+   > haircut, skin tone and body proportions. Do not change his face in any way. Only change his clothing
+   > to: {ROPA}. {ESCENA}.
+4. Si la cara cambia en el resultado, se descarta y se repite; nunca se aprueba una imagen con otro rostro.
+5. Las tomas del reel también parten de la imagen 4 (o de una edición aprobada de ella).
+
+---
+
 El personaje es siempre el mismo (rasgos de la sección 2 de `FICHA_PERSONAJE.md`). Lo único que
 cambia entre videos es la ropa. **Dentro de un mismo video se usa un solo look**, para que se vea
 continuo aunque cambie de locación.

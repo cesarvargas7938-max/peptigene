@@ -30,6 +30,9 @@ Todo lo demás lo decides tú: eliges la mejor variante de cada toma revisando f
 - Genera 3 retratos con `soul_2` + `soul_id` con el look aprobado (Look 4 · Urbano, ver
   `personaje/personaje.json` → `descripcion`), piel y luz mejoradas pero sin cambiar sus rasgos. Nunca bata médica: César no es médico.
 - Guarda el aprobado en `assets/personaje/` (es la referencia de todas las tomas).
+- **Rostro aprobado = imagen 4** (`personaje.json` → `rostro_maestro`). Cada imagen del personaje
+  se hace editando esa imagen como referencia; para cambiar vestuario solo se cambia la ropa.
+  Ver `personaje/VESTUARIOS.md`.
 
 ## Paso 3 · Voz (sin grabar)
 - Si hay un audio en `assets/audio/muestra/` (una nota de voz vieja de César, 10 s a 3 min),
