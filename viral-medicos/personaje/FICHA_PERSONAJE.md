@@ -34,28 +34,34 @@ pero **no** puede tocar nada de esta lista.
 | Piel | Trigueña clara / oliva, se broncea fácil. |
 | Complexión | Delgado-atlético, hombros medios. |
 | Sonrisa | Amplia, muestra dientes superiores, se le achinan un poco los ojos (foto 01). |
-| Marcas | Tatuaje en el antebrazo **izquierdo** (queda tapado por el traje: no debe aparecer). Hilo rojo en la muñeca derecha (se quita para el personaje). |
+| Marcas | Tatuaje en el antebrazo **izquierdo** (con el look urbano puede asomar si se remanga; mejor mangas abajo). Hilo rojo en la muñeca derecha (se quita para el personaje). |
 
 ---
 
 ## 3. Vestuario (idéntico en todas las tomas)
 
-> Este es el **Look 1 · Ejecutivo**, el del reel "El café". Los demás looks para otros videos
-> están en `personaje/VESTUARIOS.md`.
+> **Aprobado: Look 4 · Urbano** (elegido por César el 26/09/2026). Es el que usa el reel "El café".
+> Los demás looks siguen disponibles para otros videos en `personaje/VESTUARIOS.md`.
 
 El reel de referencia funciona porque él se ve **igual en todas las locaciones**: eso es lo que
 hace creíble el salto metro → andén → Bolsa → parque. Una sola pinta, sin variaciones.
 
 | Pieza | Especificación |
 |---|---|
-| Traje | Azul marino, dos piezas, corte slim, solapa de muesca, 2 botones. |
-| Camisa | Blanca lisa, cuello italiano. |
-| Corbata | Azul muy oscuro / casi negra, lisa, nudo simple. |
-| Pañuelo | Blanco doblado recto en el bolsillo del pecho (detalle de la referencia). |
-| Zapatos | Negros de cuero, tipo *monk strap* o Oxford. |
+| Capa exterior | Overshirt negro de algodón, abierto, sin logos. |
+| Camiseta | Blanca lisa, cuello redondo. |
+| Pantalón | Jean negro slim. |
+| Zapatos | Tenis blancos limpios, sin marca visible. |
 | Reloj | Plateado con correa de metal, muñeca izquierda (sale en el close-up de la mano bajo el Ferrari). |
 | Gafas | **Ninguna.** Los ojos tienen que verse para que funcione la cuarta pared y el lipsync. |
-| Prohibido | Bata médica, logos, gorras, el hilo rojo, tatuajes visibles. |
+| Prohibido | Bata médica, logos, gorras, el hilo rojo. |
+
+Imagen de referencia aprobada: [look urbano](https://d8j0ntlcm91z4.cloudfront.net/user_3Gus2S4ZJPfHRFHzXsC14YRPGbw/hf_20260926_212000_8ddac15a-7e35-494e-a417-50d833e1aa8d.png)
+(tiene inconsistencias por corregir antes de usarla como referencia final).
+
+**Contraste con la referencia:** el reel original usa traje y maletín para verse "de negocios".
+Con el look urbano el personaje se ve como creador que sabe del algoritmo. El maletín se mantiene
+como prop del ciclo del destello; contrasta a propósito con la ropa casual.
 
 ---
 
@@ -106,10 +112,7 @@ hace creíble el salto metro → andén → Bolsa → parque. Una sola pinta, si
 
 Esto es lo que reemplaza `{PERSONAJE}` en `shots/shotlist.json` junto con el `soul_id` de César:
 
-> a slim athletic Latino man with a short dark crop haircut with low fade,
-> short well-groomed dark beard, dark brown eyes, olive skin, wearing a slim navy blue two-piece
-> suit, crisp white shirt, dark navy solid tie, white pocket square, silver metal watch on left
-> wrist, black leather shoes, no glasses
+> a slim athletic Latino man with a short dark crop haircut with low fade, short well-groomed dark beard, dark brown eyes, olive skin, no glasses, wearing an open black cotton overshirt over a plain white t-shirt, black slim jeans, white sneakers, silver metal watch on left wrist
 
 **Negativo (lo que se evita):** glasses, sunglasses, doctor coat, lab coat, stethoscope, scrubs,
 visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, deformed hands.
@@ -141,8 +144,8 @@ El kit pide **5 a 20 fotos**. Hoy hay **11** en `assets/fotos_cara/`:
 - [x] Cuerpo entero (02, 09)
 - [ ] Perfil puro (90°): no hay, pero la 11 se acerca. Opcional.
 
-Los tatuajes visibles en las fotos de entrenamiento no importan: en las tomas el traje los tapa
-y el negativo del prompt los excluye.
+Los tatuajes visibles en las fotos de entrenamiento no importan: en las tomas las mangas del
+overshirt los tapan y el negativo del prompt los excluye.
 
 ---
 
@@ -152,7 +155,7 @@ Un retrato se aprueba solo si cumple todo:
 
 - [ ] Se reconoce a César al primer vistazo (ojos, barba, línea del pelo)
 - [ ] Mismo corte y barba de la sección 2
-- [ ] Vestuario exacto de la sección 3 (traje marino, camisa blanca, corbata oscura, pañuelo)
+- [ ] Vestuario exacto de la sección 3 (overshirt negro abierto, camiseta blanca, jean negro, tenis blancos)
 - [ ] Sin gafas, sin bata, sin tatuajes, sin hilo rojo
 - [ ] Piel mejorada pero con textura real
 - [ ] Manos con 5 dedos y proporciones correctas

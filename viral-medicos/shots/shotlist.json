@@ -6,7 +6,7 @@
       "bloque": "hook",
       "inicio": 0,
       "dur": 2.0,
-      "prompt_imagen": "extreme close-up at table level of a paper coffee cup at the very edge of a white doctor's office desk, a man's elbow in a navy suit sleeve about to push it, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
+      "prompt_imagen": "extreme close-up at table level of a paper coffee cup at the very edge of a white doctor's office desk, a man's elbow in a black cotton overshirt sleeve about to push it, vertical 9:16, ultra wide 16mm lens, low camera angle, natural daylight, cinematic, photorealistic",
       "prompt_video": "the elbow slowly pushes the cup toward the edge, the cup tilts, camera static; cut before it falls",
       "sfx": [
         {
@@ -156,7 +156,7 @@
       "id": "11_ferrari_mano",
       "bloque": "impacto 2",
       "dur": 1.5,
-      "prompt_imagen": "close-up on cobblestones: a man's hand in a navy suit sleeve with a watch sticking out from under a black Ferrari, a black briefcase beside it, vertical 9:16, photorealistic",
+      "prompt_imagen": "close-up on cobblestones: a man's hand in a black cotton overshirt sleeve with a watch sticking out from under a black Ferrari, a black briefcase beside it, vertical 9:16, photorealistic",
       "prompt_video": "the fingers twitch slightly, camera static",
       "sfx": [],
       "clip": "clips/11_ferrari_mano.mp4"

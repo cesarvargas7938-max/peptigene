@@ -12,7 +12,7 @@ Reglas que aplican a todos los looks:
 
 ---
 
-## Look 1 · Ejecutivo — *el del reel "El café"* (principal)
+## Look 1 · Ejecutivo
 
 | | |
 |---|---|
@@ -57,7 +57,7 @@ Prompt:
 
 ---
 
-## Look 4 · Urbano — creador
+## Look 4 · Urbano — creador ✅ APROBADO (principal, reel "El café")
 
 | | |
 |---|---|
@@ -91,5 +91,5 @@ Prompt:
 
 1. En `personaje/personaje.json` → `looks.<id>.prompt` está el texto de cada look.
 2. En la shotlist, `{PERSONAJE}` = `descripcion_base` + el prompt del look del video + `soul_id`.
-3. El reel "El café" usa **solo el Look 1**.
+3. El reel "El café" usa **solo el Look 4 · Urbano** (aprobado).
 4. Antes de usar un look nuevo en un video, se genera 1 retrato de prueba con el Soul y se aprueba.

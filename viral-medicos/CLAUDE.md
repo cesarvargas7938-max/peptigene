@@ -27,8 +27,8 @@ Todo lo demás lo decides tú: eliges la mejor variante de cada toma revisando f
 - Fotos en `assets/fotos_cara/` (5–20). Súbelas a Higgsfield (media_upload → PUT de los bytes
   con curl → media_confirm) y entrena un Soul Character (`show_characters`, action=train,
   type=soul_2, name="Cesar"). Tarda ~10 min: mientras tanto adelanta el paso 3.
-- Genera 3 retratos con `soul_2` + `soul_id`: traje azul marino, camisa blanca, corbata oscura,
-  piel y luz mejoradas pero sin cambiar sus rasgos. Nunca bata médica: César no es médico.
+- Genera 3 retratos con `soul_2` + `soul_id` con el look aprobado (Look 4 · Urbano, ver
+  `personaje/personaje.json` → `descripcion`), piel y luz mejoradas pero sin cambiar sus rasgos. Nunca bata médica: César no es médico.
 - Guarda el aprobado en `assets/personaje/` (es la referencia de todas las tomas).
 
 ## Paso 3 · Voz (sin grabar)
