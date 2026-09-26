@@ -113,25 +113,26 @@ visible tattoos, red string bracelet, logos, text, plastic skin, extra fingers, 
 
 ## 9. Fotos para entrenar el Soul Character
 
-El kit pide **5 a 20 fotos**. Hoy hay **4** en `assets/fotos_cara/`:
+El kit pide **5 a 20 fotos**. Hoy hay **6** en `assets/fotos_cara/`, así que ya se cumple el mínimo:
 
 | Archivo | Sirve para | Problema |
 |---|---|---|
-| `01_mirador_sonrisa_sin_gafas.jpg` | ✅ La mejor: cara limpia, sonrisa, medio cuerpo | — |
+| `01_mirador_sonrisa_sin_gafas.jpg` | ✅ Cara limpia, sonrisa, medio cuerpo | — |
 | `02_cuerpo_entero_gafas_verdes.jpg` | ✅ Cuerpo entero y proporciones | Gafas tapan los ojos, cara pequeña |
 | `03_selfie_toalla_gafas_rojas.jpg` | ⚠️ Rasgos y barba de cerca | Gafas rojas tiñen los ojos |
 | `04_selfie_adidas_gafas_rojas.jpg` | ⚠️ Rasgos y barba de cerca | Gafas rojas + logo + persona de fondo |
+| `05_frente_neutra_rocas.jpg` | ✅ La mejor: frente, cara neutra, ojos a la vista, barba y línea del pelo nítidas | Gafas subidas en la cabeza (no tapan la cara) |
+| `06_frente_sonrisa_gorra.jpg` | ✅ Frente, sonrisa con dientes, medio cuerpo | Gorra con logo tapa el pelo; pájaro encima; tatuaje visible |
 
-**Qué falta (mínimo 4–6 fotos más, todas sin gafas):**
+**Para que el parecido quede mejor (opcional, 2–4 fotos más, sin gafas):**
 
-- [ ] 2 de frente, cara seria y neutra, buena luz (ventana o exterior con sombra)
+- [x] 2 de frente
 - [ ] 1 de perfil izquierdo y 1 de perfil derecho
-- [ ] 2 en tres cuartos (girado ~45°)
+- [ ] 1–2 en tres cuartos (girado ~45°)
 - [ ] 1 medio cuerpo con camisa o saco (idealmente de vestir)
-- [ ] Recientes, con el mismo corte de pelo y barba que tienes ahora
 
-Con 2 de las 4 actuales con gafas rojas, el modelo puede "aprender" las gafas o un tono rojizo
-en los ojos. Por eso las fotos nuevas **sin gafas** son la prioridad.
+Sin perfiles ni tres cuartos, el modelo acierta de frente pero puede fallar en las tomas de lado
+(06 metro, 09 fachada, 14 maletín).
 
 ---
 

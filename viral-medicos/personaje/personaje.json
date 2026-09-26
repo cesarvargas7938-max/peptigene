@@ -19,13 +19,14 @@
       "assets/fotos_cara/01_mirador_sonrisa_sin_gafas.jpg",
       "assets/fotos_cara/02_cuerpo_entero_gafas_verdes.jpg",
       "assets/fotos_cara/03_selfie_toalla_gafas_rojas.jpg",
-      "assets/fotos_cara/04_selfie_adidas_gafas_rojas.jpg"
+      "assets/fotos_cara/04_selfie_adidas_gafas_rojas.jpg",
+      "assets/fotos_cara/05_frente_neutra_rocas.jpg",
+      "assets/fotos_cara/06_frente_sonrisa_gorra.jpg"
     ],
     "faltan": [
-      "2 de frente sin gafas, cara neutra",
-      "perfil izquierdo y perfil derecho",
-      "2 en tres cuartos",
-      "1 medio cuerpo con camisa o saco"
+      "opcional: perfil izquierdo y perfil derecho",
+      "opcional: 1-2 en tres cuartos",
+      "opcional: 1 medio cuerpo con camisa o saco"
     ]
   }
 }
