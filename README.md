@@ -28,6 +28,7 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 | `npm run build` | Build de producción (genera páginas estáticas)        |
 | `npm run start` | Servidor de producción (requiere `build` previo)      |
 | `npm run lint`  | Linter de Next.js                                     |
+| `npm test`      | Pruebas del motor de evaluación (`lib/evaluacion.ts`)  |
 
 ## Estructura del proyecto
 
@@ -47,6 +48,7 @@ peptigene/
 │   ├── carrito/page.tsx          # Carrito persistente
 │   ├── checkout/page.tsx         # Checkout demo (sin pago real)
 │   ├── contacto/page.tsx         # Formulario de contacto
+│   ├── evaluacion/page.tsx       # Tamizaje para tratamiento con péptidos
 │   ├── envios/page.tsx           # Información de envíos
 │   ├── terminos/page.tsx         # Términos y condiciones
 │   └── politica-privacidad/page.tsx
@@ -57,6 +59,7 @@ peptigene/
 │   └── ProductCard.tsx           # Tarjeta de producto reutilizable
 ├── lib/
 │   ├── products.ts               # Catálogo ficticio (8 productos)
+│   ├── evaluacion.ts             # Motor de reglas del tamizaje (contraindicaciones, labs, dosis)
 │   └── cart-context.tsx          # Context API + localStorage
 ├── tailwind.config.ts            # Paleta verde oliva + tipografías
 ├── next.config.js
@@ -116,6 +119,32 @@ Aunque es un proyecto académico, se incluye el SEO técnico estándar para demo
 - **JetBrains Mono** (eyebrow): etiquetas y metadatos.
 
 Las tres se cargan desde Google Fonts.
+
+## Evaluación para tratamiento con péptidos (`/evaluacion`)
+
+Herramienta de tamizaje para tratamientos de pérdida de peso con tirzepatida o retatrutida. Es un apoyo clínico: la decisión final y la prescripción corresponden a un profesional de la salud.
+
+**Cómo funciona**
+
+1. Se responde el cuestionario (suplementos, alergias, pancreatitis, tiroides/MEN2, vesícula, medicamentos, ejercicio, edad/peso/estatura, peso ideal) más condiciones de salud y, opcionalmente, se pega el perfil metabólico en texto libre.
+2. El motor (`lib/evaluacion.ts`) aplica las reglas y produce hallazgos de tres niveles:
+   - **Contraindicación** → veredicto **NO APTO** (CMT/MEN2, menor de 18, embarazo/lactancia, pancreatitis previa, enfermedad GI grave, hipersensibilidad, trastorno alimentario, IMC < 25, lipasa/amilasa > 3× o calcitonina elevada).
+   - **Precaución** → **REQUIERE EVALUACIÓN MÉDICA** (DM1, insulina o sulfonilureas, otro GLP-1, warfarina, anticonceptivos orales, vesícula, ≥ 75 años, ERC, hepatopatía, retinopatía, salud mental, TSH alterada, TG ≥ 500, transaminasas > 3×, IMC 25–29.9 sin comorbilidad, meta de peso irreal, formulario incompleto, retatrutida por ser investigacional).
+   - **Información** → no cambia el veredicto (metformina, levotiroxina, prediabetes por laboratorio, HOMA-IR, dislipidemia, sedentarismo…).
+3. Si no hay contraindicaciones, se sugiere **2.5 mg subcutáneos semanales durante 4 semanas**, con escalado de 2.5 mg cada ≥ 4 semanas según criterio médico (máximo 15 mg tirzepatida / 12 mg retatrutida).
+4. El resultado se puede copiar como texto (para WhatsApp o historia clínica) y guardar en el navegador.
+
+**Perfil metabólico reconocido**: glucosa, HbA1c, insulina (calcula HOMA-IR), colesterol total/LDL/HDL, triglicéridos, TSH, calcitonina, creatinina (estima TFG con CKD-EPI 2021), TFG, ALT/AST, lipasa, amilasa, ácido úrico, vitamina D, B12, hemoglobina y ferritina. Formato libre: `Glucosa 108 mg/dL`, `HbA1c: 6.1%`, `TG = 220`, uno por línea o separados por coma.
+
+**Para afinar el sistema** todo vive en `lib/evaluacion.ts`:
+
+- `LABS`: rangos de referencia y comentarios por analito.
+- `REGLAS_MEDICAMENTOS`: fármacos detectados en texto libre y su nivel.
+- `COMORBILIDADES`: opciones del formulario y cuáles cuentan para la indicación por IMC.
+- `evaluar()`: reglas de contraindicación/precaución y criterio de IMC.
+- `planDosis()`: dosis inicial, escalado y notas.
+
+Las reglas tienen pruebas en `scripts/evaluacion.test.mjs`; se ejecutan con `npm test` (Node 22.18+).
 
 ## Lo que NO incluye este proyecto
 
