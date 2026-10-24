@@ -7,6 +7,8 @@
 // IMPORTANTE: es una herramienta de apoyo. La decisión final y la prescripción
 // corresponden siempre a un profesional de la salud.
 
+import { planEstiloVida, planEstiloVidaTexto, type PlanEstiloVida } from "./estilo-vida.ts";
+
 export type Tratamiento = "tirzepatida" | "retatrutida";
 export type Sexo = "femenino" | "masculino" | "";
 export type SiNo = "si" | "no" | "";
@@ -128,6 +130,7 @@ export type Resultado = {
   antropometria: Antropometria;
   laboratorios: Laboratorio[];
   plan: PlanDosis | null;
+  estiloVida: PlanEstiloVida | null;
   camposFaltantes: string[];
 };
 
@@ -1026,7 +1029,9 @@ export function evaluar(r: Respuestas): Resultado {
         ? `${nombre} podría ser candidata a ${nombreTratamiento(r.tratamiento)}, pero requiere evaluación médica antes de iniciar.`
         : `${nombre} es candidata al tratamiento con ${nombreTratamiento(r.tratamiento)}. Dosis inicial sugerida: ${plan?.dosisInicialMg} mg semanal.`;
 
-  return { veredicto, resumen, hallazgos: h, antropometria: antro, laboratorios: labs, plan, camposFaltantes: faltantes };
+  const estiloVida = veredicto === "NO_APTO" ? null : planEstiloVida(r, labs);
+
+  return { veredicto, resumen, hallazgos: h, antropometria: antro, laboratorios: labs, plan, estiloVida, camposFaltantes: faltantes };
 }
 
 export function nombreTratamiento(t: Tratamiento): string {
@@ -1110,6 +1115,10 @@ export function resumenTexto(r: Respuestas, res: Resultado): string {
     lineas.push(
       `Plan sugerido: ${res.plan.dosisInicialMg} mg SC semanal por ${res.plan.duracionInicialSemanas} semanas; ${res.plan.escalado}`,
     );
+  }
+  if (res.estiloVida) {
+    lineas.push("");
+    lineas.push(planEstiloVidaTexto(res.estiloVida));
   }
   lineas.push("");
   lineas.push("Herramienta de apoyo. La decisión final corresponde al médico tratante.");

@@ -183,3 +183,46 @@ test("ejemplo completo con perfil metabólico alterado es APTO con comorbilidade
   assert.ok(c.includes("INFO_DISLIPIDEMIA"));
   assert.ok(c.includes("INFO_ANTICONCEPCION"));
 });
+
+test("plan de estilo de vida: metabolismo, macros e hidratación", () => {
+  const res = evaluar({ ...base, sexo: "femenino", edad: 35, pesoKg: 85, estaturaCm: 157, pesoIdealKg: 65, ejercicio: "regular" });
+  const p = res.estiloVida;
+  assert.ok(p);
+  // Mifflin-St Jeor mujer: 10*85 + 6.25*157 - 5*35 - 161 = 1495
+  assert.equal(p.metabolismo.tmbKcal, 1495);
+  assert.equal(p.metabolismo.factorActividad, 1.55);
+  assert.equal(p.metabolismo.getKcal, 2317);
+  assert.ok(p.metabolismo.caloriasObjetivo >= 1200);
+  assert.ok(p.metabolismo.caloriasObjetivo < p.metabolismo.getKcal - 400);
+  assert.equal(p.macros.proteinaG, 123); // 1.5 g/kg acotado a 2 g/kg del peso con IMC 25
+  assert.equal(p.hidratacion.litrosDia, 2.8);
+  assert.equal(p.ritmo.kgMeta, 20);
+  assert.ok(p.ritmo.semanasEstimadas > 20 && p.ritmo.semanasEstimadas < 40);
+  assert.equal(p.supuestos.length, 0);
+});
+
+test("plan de estilo de vida: nunca por debajo del mínimo seguro y asume datos faltantes", () => {
+  const res = evaluar({ ...base, sexo: "", edad: null, pesoKg: 60, estaturaCm: 150, ejercicio: "no", comorbilidades: ["hipertension"] });
+  const p = res.estiloVida;
+  assert.ok(p);
+  assert.equal(p.metabolismo.caloriasObjetivo, 1200);
+  assert.ok(p.supuestos.length >= 2);
+  assert.ok(p.ajustesMetabolicos.some((x) => x.startsWith("Hipertensión")));
+});
+
+test("plan de estilo de vida: ajustes por laboratorio y función renal", () => {
+  const res = evaluar({ ...base, perfilMetabolico: "Glucosa 110, Insulina 20, Triglicéridos 210, Vitamina D 18, TFG 45" });
+  const p = res.estiloVida;
+  assert.ok(p);
+  assert.equal(p.macros.proteinaGporKg, 0.9);
+  const a = p.ajustesMetabolicos.join("\n");
+  assert.ok(a.includes("Resistencia a la insulina"));
+  assert.ok(a.includes("Triglicéridos 210"));
+  assert.ok(a.includes("Vitamina D 18"));
+  assert.ok(a.includes("Función renal"));
+});
+
+test("no apto no genera plan de estilo de vida", () => {
+  const res = evaluar({ ...base, tiroidesCmtMen2: "si" });
+  assert.equal(res.estiloVida, null);
+});

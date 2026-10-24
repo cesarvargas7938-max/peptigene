@@ -13,6 +13,7 @@ import {
   type SiNo,
   type Veredicto,
 } from "@/lib/evaluacion";
+import type { PlanEstiloVida } from "@/lib/estilo-vida";
 
 const STORAGE_KEY = "peptigene_evaluaciones";
 
@@ -478,6 +479,72 @@ function ListaHallazgos({ nivel, hallazgos }: { nivel: Nivel; hallazgos: Hallazg
   );
 }
 
+function Bloque({ titulo, children }: { titulo: string; children: React.ReactNode }) {
+  return (
+    <details className="group border border-olive-200 rounded-lg bg-cream-50">
+      <summary className="cursor-pointer px-3 py-2.5 text-sm font-medium text-olive-900 flex items-center justify-between">
+        {titulo}
+        <span className="text-olive-500 group-open:rotate-90 transition-transform">›</span>
+      </summary>
+      <div className="px-3 pb-3 text-xs text-olive-800 leading-relaxed space-y-1.5">{children}</div>
+    </details>
+  );
+}
+
+function EstiloVidaPanel({ plan }: { plan: PlanEstiloVida }) {
+  const m = plan.metabolismo;
+  return (
+    <div>
+      <h4 className="eyebrow text-olive-600 mb-2">Plan de estilo de vida</h4>
+      <div className="grid grid-cols-3 gap-2 mb-3">
+        <Dato valor={`${m.getKcal}`} etiqueta="kcal gasto/día" />
+        <Dato valor={`${m.caloriasObjetivo}`} etiqueta="kcal objetivo" />
+        <Dato valor={`${plan.hidratacion.litrosDia} L`} etiqueta="agua/día" />
+        <Dato valor={`${plan.macros.proteinaG} g`} etiqueta="proteína" />
+        <Dato valor={`${plan.macros.carbohidratosG} g`} etiqueta="carbohidratos" />
+        <Dato valor={`${plan.macros.grasasG} g`} etiqueta="grasas" />
+      </div>
+      <p className="text-xs text-olive-700 mb-3">
+        TMB {m.tmbKcal} kcal · factor de actividad {m.factorActividad} · déficit {m.deficitKcal} kcal · ritmo esperado{" "}
+        {plan.ritmo.kgSemanaMin}–{plan.ritmo.kgSemanaMax} kg/semana
+        {plan.ritmo.semanasEstimadas ? ` · meta de ${plan.ritmo.kgMeta} kg en ~${plan.ritmo.semanasEstimadas} semanas` : ""}.
+      </p>
+      <div className="space-y-2">
+        <Bloque titulo="💧 Hidratación">
+          {plan.hidratacion.pautas.map((x) => <p key={x}>• {x}</p>)}
+        </Bloque>
+        <Bloque titulo="🍽️ Alimentación">
+          {plan.alimentacion.pautas.map((x) => <p key={x}>• {x}</p>)}
+        </Bloque>
+        <Bloque titulo="🏋️ Ejercicio">
+          <p>• <strong>Fuerza:</strong> {plan.ejercicio.fuerza}</p>
+          <p>• <strong>Cardio:</strong> {plan.ejercicio.cardio}</p>
+          <p>• {plan.ejercicio.pasos}</p>
+          {plan.ejercicio.pautas.map((x) => <p key={x}>• {x}</p>)}
+        </Bloque>
+        <Bloque titulo="🧬 Ajustes según perfil metabólico">
+          {plan.ajustesMetabolicos.map((x) => <p key={x}>• {x}</p>)}
+        </Bloque>
+        <Bloque titulo="📈 Ritmo y seguimiento">
+          {plan.seguimiento.map((x) => <p key={x}>• {x}</p>)}
+          {plan.supuestos.length > 0 && (
+            <p className="pt-1 text-olive-600 italic">Supuestos: {plan.supuestos.join(" ")}</p>
+          )}
+        </Bloque>
+      </div>
+    </div>
+  );
+}
+
+function Dato({ valor, etiqueta }: { valor: string; etiqueta: string }) {
+  return (
+    <div className="bg-olive-50 border border-olive-100 rounded-lg px-2 py-2 text-center">
+      <p className="font-display text-lg text-olive-900 leading-tight">{valor}</p>
+      <p className="text-[10px] text-olive-700/80">{etiqueta}</p>
+    </div>
+  );
+}
+
 function ResultadoPanel({
   resultado,
   onCopiar,
@@ -527,6 +594,8 @@ function ResultadoPanel({
           </ul>
         </div>
       )}
+
+      {resultado.estiloVida && <EstiloVidaPanel plan={resultado.estiloVida} />}
 
       <ListaHallazgos nivel="contraindicacion" hallazgos={por("contraindicacion")} />
       <ListaHallazgos nivel="precaucion" hallazgos={por("precaucion")} />

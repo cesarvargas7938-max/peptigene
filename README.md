@@ -60,6 +60,7 @@ peptigene/
 ├── lib/
 │   ├── products.ts               # Catálogo ficticio (8 productos)
 │   ├── evaluacion.ts             # Motor de reglas del tamizaje (contraindicaciones, labs, dosis)
+│   ├── estilo-vida.ts            # Plan de hidratación, alimentación y ejercicio según metabolismo
 │   └── cart-context.tsx          # Context API + localStorage
 ├── tailwind.config.ts            # Paleta verde oliva + tipografías
 ├── next.config.js
@@ -132,7 +133,8 @@ Herramienta de tamizaje para tratamientos de pérdida de peso con tirzepatida o 
    - **Precaución** → **REQUIERE EVALUACIÓN MÉDICA** (DM1, insulina o sulfonilureas, otro GLP-1, warfarina, anticonceptivos orales, vesícula, ≥ 75 años, ERC, hepatopatía, retinopatía, salud mental, TSH alterada, TG ≥ 500, transaminasas > 3×, IMC 25–29.9 sin comorbilidad, meta de peso irreal, formulario incompleto). Retatrutida se evalúa con las mismas reglas que tirzepatida; solo cambia la dosis máxima.
    - **Información** → no cambia el veredicto (metformina, levotiroxina, prediabetes por laboratorio, HOMA-IR, dislipidemia, sedentarismo…).
 3. Si no hay contraindicaciones, se sugiere **2.5 mg subcutáneos semanales durante 4 semanas**, con escalado de 2.5 mg cada ≥ 4 semanas según criterio médico (máximo 15 mg tirzepatida / 12 mg retatrutida).
-4. El resultado se puede copiar como texto (para WhatsApp o historia clínica) y guardar en el navegador.
+4. Para toda persona apta o con precauciones se genera un **plan de estilo de vida** (`lib/estilo-vida.ts`): metabolismo basal (Mifflin-St Jeor) y gasto total según nivel de ejercicio, objetivo calórico con déficit de 500–750 kcal sin bajar del mínimo seguro, macros (proteína 1.3–1.5 g/kg), hidratación (33 mL/kg, mínimo 2 L), pautas de alimentación y ejercicio por nivel, ritmo esperado de 0.5–1 % del peso por semana, y ajustes según comorbilidades y laboratorios (resistencia a la insulina, triglicéridos, colesterol, hígado graso, hipertensión, función renal, vitamina D, B12, hierro, TSH, SOP, apnea).
+5. El resultado se puede copiar como texto (para WhatsApp o historia clínica) y guardar en el navegador.
 
 **Perfil metabólico reconocido**: glucosa, HbA1c, insulina (calcula HOMA-IR), colesterol total/LDL/HDL, triglicéridos, TSH, calcitonina, creatinina (estima TFG con CKD-EPI 2021), TFG, ALT/AST, lipasa, amilasa, ácido úrico, vitamina D, B12, hemoglobina y ferritina. Formato libre: `Glucosa 108 mg/dL`, `HbA1c: 6.1%`, `TG = 220`, uno por línea o separados por coma.
 
@@ -143,6 +145,7 @@ Herramienta de tamizaje para tratamientos de pérdida de peso con tirzepatida o 
 - `COMORBILIDADES`: opciones del formulario y cuáles cuentan para la indicación por IMC.
 - `evaluar()`: reglas de contraindicación/precaución y criterio de IMC.
 - `planDosis()`: dosis inicial, escalado y notas.
+- `lib/estilo-vida.ts`: factores de actividad, déficit, macros, hidratación, pautas y ajustes metabólicos.
 
 Las reglas tienen pruebas en `scripts/evaluacion.test.mjs`; se ejecutan con `npm test` (Node 22.18+).
 
