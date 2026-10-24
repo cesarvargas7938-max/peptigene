@@ -41,12 +41,12 @@ test("persona sin contraindicaciones es APTA con 2.5 mg", () => {
   assert.ok(res.resumen.includes("2.5 mg"));
 });
 
-test("retatrutida siempre queda en REQUIERE_EVALUACION por ser investigacional", () => {
+test("retatrutida se evalúa con las mismas reglas que tirzepatida", () => {
   const res = evaluar({ ...base, tratamiento: "retatrutida" });
-  assert.equal(res.veredicto, "REQUIERE_EVALUACION");
-  assert.ok(codigos(res).includes("PR_RETATRUTIDA_INVESTIGACIONAL"));
+  assert.equal(res.veredicto, "APTO");
   assert.equal(res.plan.dosisInicialMg, 2.5);
   assert.equal(res.plan.dosisMaximaMg, 12);
+  assert.ok(res.resumen.includes("retatrutida"));
 });
 
 test("contraindicaciones absolutas producen NO_APTO sin plan", () => {

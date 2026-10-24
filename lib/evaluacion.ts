@@ -1008,17 +1008,6 @@ export function evaluar(r: Respuestas): Resultado {
     });
   }
 
-  // Nota regulatoria sobre retatrutida
-  if (r.tratamiento === "retatrutida") {
-    h.push({
-      nivel: "precaucion",
-      codigo: "PR_RETATRUTIDA_INVESTIGACIONAL",
-      titulo: "Retatrutida es un fármaco en investigación",
-      detalle:
-        "No cuenta con aprobación regulatoria (FDA, EMA, INVIMA) para uso clínico. Su uso fuera de ensayos clínicos es responsabilidad exclusiva del médico tratante y requiere consentimiento informado explícito.",
-    });
-  }
-
   // --- Veredicto --------------------------------------------------------
   const orden: Record<Nivel, number> = { contraindicacion: 0, precaucion: 1, info: 2 };
   h.sort((a, b) => orden[a.nivel] - orden[b.nivel]);
@@ -1063,9 +1052,7 @@ export function planDosis(t: Tratamiento, veredicto: Veredicto): PlanDosis {
     ],
   };
   if (t === "retatrutida") {
-    base.notas.unshift(
-      "En ensayos clínicos de fase 2 la retatrutida se inició con 2 mg; 2.5 mg es la dosis de inicio definida por este protocolo. Dosis máxima estudiada: 12 mg.",
-    );
+    base.notas.push("Retatrutida: dosis máxima estudiada en ensayos clínicos 12 mg. Se evalúa con los mismos criterios que tirzepatida.");
   }
   if (condicionado) {
     base.notas.unshift("Plan condicionado: iniciar solo después de resolver las precauciones señaladas y con aval médico.");
