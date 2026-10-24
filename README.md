@@ -149,6 +149,14 @@ Herramienta de tamizaje para tratamientos de pérdida de peso con tirzepatida o 
 
 Las reglas tienen pruebas en `scripts/evaluacion.test.mjs`; se ejecutan con `npm test` (Node 22.18+).
 
+**Informe PDF**: `lib/informe-html.ts` genera el informe imprimible (evaluación, dosis, hallazgos, laboratorios, cuestionario y plan de estilo de vida). Para producirlo:
+
+```bash
+node scripts/informe-pdf.mjs informes/paciente.json informes/paciente.pdf
+```
+
+El JSON tiene los mismos campos que el formulario (ver `respuestasVacias` en `lib/evaluacion.ts`). Requiere Playwright (ya en `devDependencies`) y Chromium; si Chromium está en otra ruta, usar la variable `CHROMIUM_PATH`. La carpeta `informes/` está ignorada por git porque contiene datos de pacientes.
+
 ## Lo que NO incluye este proyecto
 
 Por ser una demo académica:
