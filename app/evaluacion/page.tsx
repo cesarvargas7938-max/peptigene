@@ -14,6 +14,7 @@ import {
   type Veredicto,
 } from "@/lib/evaluacion";
 import type { PlanEstiloVida } from "@/lib/estilo-vida";
+import { informeHtml } from "@/lib/informe-html";
 
 const STORAGE_KEY = "peptigene_evaluaciones";
 
@@ -138,6 +139,17 @@ export default function EvaluacionPage() {
     } catch {
       /* sin almacenamiento disponible */
     }
+  };
+
+  const descargarPdf = () => {
+    if (!resultado) return;
+    const w = window.open("", "_blank");
+    if (!w) return;
+    w.document.open();
+    w.document.write(informeHtml(r, resultado));
+    w.document.close();
+    w.focus();
+    setTimeout(() => w.print(), 400);
   };
 
   const copiar = async () => {
@@ -348,7 +360,7 @@ export default function EvaluacionPage() {
         <aside className="lg:col-span-2 space-y-6">
           <div id="resultado" className="lg:sticky lg:top-24 space-y-6">
             {resultado ? (
-              <ResultadoPanel resultado={resultado} onCopiar={copiar} copiado={copiado} onGuardar={guardar} />
+              <ResultadoPanel resultado={resultado} onCopiar={copiar} copiado={copiado} onGuardar={guardar} onPdf={descargarPdf} />
             ) : (
               <div className="bg-cream-50 border border-dashed border-olive-300 rounded-2xl p-6 text-sm text-olive-700">
                 Completa el formulario y pulsa <strong>Evaluar aptitud</strong>. El resultado aparecerá aquí con el detalle
@@ -550,11 +562,13 @@ function ResultadoPanel({
   onCopiar,
   copiado,
   onGuardar,
+  onPdf,
 }: {
   resultado: Resultado;
   onCopiar: () => void;
   copiado: boolean;
   onGuardar: () => void;
+  onPdf: () => void;
 }) {
   const por = (n: Nivel) => resultado.hallazgos.filter((h) => h.nivel === n);
   return (
@@ -637,6 +651,9 @@ function ResultadoPanel({
       <div className="flex flex-wrap gap-2 pt-2">
         <button type="button" onClick={onCopiar} className="px-4 py-2 bg-olive-900 text-cream-50 rounded-full text-xs font-medium hover:bg-olive-800 transition-colors">
           {copiado ? "Copiado ✓" : "Copiar resumen"}
+        </button>
+        <button type="button" onClick={onPdf} className="px-4 py-2 bg-olive-700 text-cream-50 rounded-full text-xs font-medium hover:bg-olive-600 transition-colors">
+          Descargar PDF
         </button>
         <button type="button" onClick={onGuardar} className="px-4 py-2 border border-olive-300 text-olive-800 rounded-full text-xs hover:border-olive-700 transition-colors">
           Guardar en este navegador
