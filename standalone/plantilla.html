@@ -1,0 +1,419 @@
+<title>Evaluación Peptigene</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: formulario a la izquierda, panel de resultado pegajoso a la derecha; una columna en el celular. */
+  :root {
+    --bg: #ffffff; --fg: #064e3b; --muted: #047857; --surface: #f0fdf8; --line: #bef7dc; --line-strong: #84f0c1;
+    --accent: #10b981; --accent-deep: #064e3b; --on-accent: #ffffff; --soft: #e6fcf1;
+    --warn-bg: #fffbeb; --warn-line: #fde68a; --warn-fg: #78350f; --bad-bg: #fef2f2; --bad-line: #fecaca; --bad-fg: #7f1d1d;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Outfit", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "Courier New", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1512; --fg: #d9fbeb; --muted: #6ee7b7; --surface: #10211a; --line: #1f3d31; --line-strong: #2f5c49;
+      --accent: #34d399; --accent-deep: #0f3d2e; --on-accent: #06281d; --soft: #142a21;
+      --warn-bg: #2a2410; --warn-line: #6b5a1a; --warn-fg: #fde68a; --bad-bg: #2a1414; --bad-line: #6b2a2a; --bad-fg: #fecaca;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1512; --fg: #d9fbeb; --muted: #6ee7b7; --surface: #10211a; --line: #1f3d31; --line-strong: #2f5c49;
+    --accent: #34d399; --accent-deep: #0f3d2e; --on-accent: #06281d; --soft: #142a21;
+    --warn-bg: #2a2410; --warn-line: #6b5a1a; --warn-fg: #fde68a; --bad-bg: #2a1414; --bad-line: #6b2a2a; --bad-fg: #fecaca;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  .panel > *, .informe-wrap { min-width: 0; max-width: 100%; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0;
+    padding-block: 28px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(34px, 6vw, 56px); line-height: 0.98; letter-spacing: -0.03em; margin: 0 0 12px; text-wrap: balance; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--muted); }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 24px; margin: 0; letter-spacing: -0.01em; }
+  h3 { font-size: 12px; margin: 0 0 8px; }
+  .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .intro { max-width: 60ch; color: var(--fg); opacity: 0.85; margin: 0 0 10px; }
+  .aviso { font-size: 13px; background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; max-width: 60ch; margin: 0 0 28px; }
+  .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; align-items: start; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .sticky { position: static; } }
+  .sticky { position: sticky; top: 16px; }
+  form { display: grid; gap: 20px; min-width: 0; }
+  section.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 520px) { .fields { grid-template-columns: 1fr; } }
+  label.campo { display: block; min-width: 0; }
+  label.campo > span, .pregunta { display: block; font-size: 14px; margin-bottom: 6px; }
+  input[type=text], input[type=number], select, textarea { width: 100%; padding: 11px 13px; background: var(--bg); color: var(--fg); border: 1px solid var(--line-strong); border-radius: 10px; font: inherit; font-size: 15px; }
+  textarea { resize: vertical; }
+  input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .seg { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; max-width: 320px; }
+  .seg.tres { grid-template-columns: repeat(3, 1fr); max-width: 460px; }
+  .seg button, .chips label { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--fg); font: inherit; font-size: 14px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent-deep); color: #ffffff; border-color: var(--accent-deep); }
+  .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 520px) { .chips { grid-template-columns: 1fr; } }
+  .chips label { display: flex; gap: 8px; align-items: flex-start; font-size: 13.5px; }
+  .chips label:has(input:checked) { background: var(--soft); border-color: var(--accent); }
+  .chips input { margin-top: 3px; accent-color: var(--accent); }
+  .pregunta-bloque { display: grid; gap: 6px; }
+  .detalle[hidden] { display: none; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { padding: 13px 24px; border-radius: 999px; border: 1px solid var(--accent-deep); background: var(--accent-deep); color: #ffffff; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .btn.sec { background: transparent; color: var(--fg); border-color: var(--line-strong); }
+  .btn.sm { padding: 8px 14px; font-size: 12.5px; }
+  .btn:disabled { opacity: 0.5; cursor: default; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: grid; gap: 16px; min-width: 0; }
+  .panel.vacio { border-style: dashed; font-size: 14px; color: var(--muted); }
+  .badge { display: inline-block; border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.APTO { background: #059669; color: #ffffff; }
+  .badge.REQUIERE_EVALUACION { background: #fbbf24; color: #451a03; }
+  .badge.NO_APTO { background: #dc2626; color: #ffffff; }
+  .cabecera { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .imc { text-align: right; }
+  .imc b { display: block; font-family: var(--font-display); font-size: 30px; font-weight: 500; line-height: 1; }
+  .imc small { font-size: 11px; color: var(--muted); }
+  .resumen { margin: 0; font-size: 14.5px; }
+  .dosis { background: var(--accent-deep); color: #ffffff; border-radius: 14px; padding: 14px 16px; }
+  .dosis.cond { background: var(--warn-bg); color: var(--warn-fg); border: 1px solid var(--warn-line); }
+  .dosis .eyebrow { color: inherit; opacity: 0.8; }
+  .dosis .num { font-family: var(--font-display); font-size: 30px; font-weight: 500; margin: 4px 0 2px; }
+  .dosis .num small { font-size: 14px; font-family: var(--font-body); opacity: 0.8; }
+  .dosis p { margin: 0; font-size: 12.5px; opacity: 0.9; }
+  .dosis ul { margin: 8px 0 0; padding-left: 18px; font-size: 12.5px; opacity: 0.92; }
+  .hallazgos { display: grid; gap: 6px; }
+  .h { border: 1px solid var(--line); background: var(--soft); border-radius: 10px; padding: 8px 12px; font-size: 13.5px; }
+  .h.precaucion { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn-fg); }
+  .h.contraindicacion { background: var(--bad-bg); border-color: var(--bad-line); color: var(--bad-fg); }
+  .h p { margin: 2px 0 0 18px; font-size: 12px; opacity: 0.9; }
+  .h b { display: block; }
+  .h b::before { font-family: var(--font-mono); display: inline-block; width: 18px; }
+  .h.info b::before { content: "·"; } .h.precaucion b::before { content: "!"; } .h.contraindicacion b::before { content: "✕"; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  td { padding: 5px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+  td.num { font-family: var(--font-mono); white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+  .estado { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 10.5px; font-weight: 600; background: var(--soft); }
+  .estado.alto, .estado.bajo { background: var(--warn-bg); color: var(--warn-fg); border: 1px solid var(--warn-line); }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .tile { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 7px; text-align: center; font-size: 10.5px; color: var(--muted); }
+  .tile b { display: block; font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--fg); line-height: 1.2; }
+  details { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+  summary { cursor: pointer; padding: 9px 12px; font-size: 13.5px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; }
+  summary::after { content: "›"; color: var(--muted); transition: transform .15s; }
+  details[open] summary::after { transform: rotate(90deg); }
+  details div { padding: 0 12px 10px; font-size: 12.5px; }
+  details p { margin: 0 0 6px; }
+  .nota-metab { font-size: 12px; color: var(--muted); margin: 0; }
+  .historial ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; max-height: 240px; overflow-y: auto; }
+  .historial li { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .historial li button.cargar { flex: 1; text-align: left; background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; }
+  .historial li small { display: block; font-size: 11px; color: var(--muted); }
+  .historial li button.x { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 16px; }
+  .informe-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: auto; background: #ffffff; color: #064e3b; }
+  .informe-wrap .informe { padding: 24px; }
+  .toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--accent-deep); color: #ffffff; padding: 10px 18px; border-radius: 999px; font-size: 13px; z-index: 20; }
+  @media (prefers-reduced-motion: reduce) { summary::after { transition: none; } }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">— Tratamiento con péptidos</p>
+  <h1>Evaluación<br><em>de aptitud.</em></h1>
+  <p class="intro">Tamizaje para tratamientos de pérdida de peso con tirzepatida o retatrutida. Responde el formulario, pega el perfil metabólico y obtén un veredicto con dosis inicial sugerida y plan de estilo de vida.</p>
+  <p class="aviso">Herramienta de apoyo clínico. No reemplaza la valoración médica: la decisión final y la prescripción corresponden a un profesional de la salud.</p>
+
+  <div class="grid">
+    <form id="form" novalidate>
+      <section class="card">
+        <div class="card-head"><h2>Tratamiento a evaluar</h2></div>
+        <div class="seg" id="seg-tratamiento" data-campo="tratamiento">
+          <button type="button" data-v="tirzepatida">Tirzepatida</button>
+          <button type="button" data-v="retatrutida">Retatrutida</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Datos de la persona</h2><span class="eyebrow">9 · 10</span></div>
+        <div class="fields">
+          <label class="campo"><span>Nombre</span><input type="text" id="f-nombre" data-campo="nombre"></label>
+          <label class="campo"><span>Sexo</span><select id="f-sexo" data-campo="sexo"><option value="">Selecciona</option><option value="femenino">Femenino</option><option value="masculino">Masculino</option></select></label>
+          <label class="campo"><span>Edad (años)</span><input type="number" min="0" id="f-edad" data-campo="edad" data-num></label>
+          <label class="campo"><span>Peso actual (kg)</span><input type="number" min="0" step="0.1" id="f-peso" data-campo="pesoKg" data-num></label>
+          <label class="campo"><span>Estatura (cm)</span><input type="number" min="0" id="f-estatura" data-campo="estaturaCm" data-num></label>
+          <label class="campo"><span>Peso ideal / meta (kg)</span><input type="number" min="0" step="0.1" id="f-ideal" data-campo="pesoIdealKg" data-num></label>
+        </div>
+        <p class="nota-metab" id="imc-preview" style="margin-top:10px"></p>
+        <div class="pregunta-bloque" id="bloque-embarazo" hidden style="margin-top:12px">
+          <span class="pregunta">¿Estás embarazada, en lactancia o planeas embarazo en los próximos meses?</span>
+          <div class="seg" data-campo="embarazoLactancia"><button type="button" data-v="si">Sí</button><button type="button" data-v="no">No</button></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Cuestionario</h2><span class="eyebrow">1 – 8</span></div>
+        <div style="display:grid;gap:16px">
+          <label class="campo"><span>1. ¿Te suplementas o tomas algún tipo de vitaminas? ¿Cuáles?</span><input type="text" id="f-suplementos" data-campo="suplementos" placeholder="Ej. Omega 3, vitamina D… o 'No'"></label>
+          <div id="preguntas"></div>
+          <label class="campo"><span>7. ¿Usas algún medicamento en este momento? ¿Cuál, en qué concentración y cada cuánto?</span><textarea rows="3" id="f-medicamentos" data-campo="medicamentos" placeholder="Ej. Metformina 850 mg cada 12 h… o 'No'"></textarea></label>
+          <div class="pregunta-bloque">
+            <span class="pregunta">8. ¿Haces ejercicio?</span>
+            <div class="seg tres" data-campo="ejercicio"><button type="button" data-v="no">No</button><button type="button" data-v="ocasional">Ocasional</button><button type="button" data-v="regular">Regular (≥3/sem)</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Condiciones de salud</h2><span class="eyebrow">Marca las que apliquen</span></div>
+        <div class="chips" id="comorbilidades"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Perfil metabólico</h2><span class="eyebrow">Opcional</span></div>
+        <p style="font-size:13px;margin:0 0 10px">Pega los resultados de laboratorio, un analito por línea o separados por coma. Se reconocen glucosa, HbA1c, insulina, perfil lipídico, TSH, calcitonina, creatinina, TFG, ALT/AST, lipasa, amilasa, ácido úrico, vitamina D, B12, hemoglobina y ferritina.</p>
+        <textarea rows="7" id="f-perfil" data-campo="perfilMetabolico" style="font-family:var(--font-mono);font-size:13px" placeholder="Glucosa 108 mg/dL
+HbA1c 6.0 %
+Colesterol total 215
+LDL 138
+HDL 42
+Triglicéridos 190
+TSH 2.3
+Creatinina 0.8
+Lipasa 41"></textarea>
+      </section>
+
+      <div class="acciones">
+        <button type="submit" class="btn" id="btn-evaluar">Evaluar aptitud</button>
+        <button type="button" class="btn sec" id="btn-ejemplo">Cargar ejemplo</button>
+        <button type="button" class="btn sec" id="btn-limpiar">Limpiar</button>
+      </div>
+    </form>
+
+    <aside class="sticky" style="display:grid;gap:16px;min-width:0">
+      <div id="resultado" class="panel vacio">Completa el formulario y pulsa <strong>Evaluar aptitud</strong>. El resultado aparecerá aquí con el detalle de contraindicaciones, precauciones, dosis inicial y plan de estilo de vida.</div>
+      <div id="historial" class="panel historial" hidden></div>
+    </aside>
+  </div>
+</div>
+
+<script>/*__ENGINE__*/</script>
+<script>
+(function () {
+  var PRINT_OK = /*__PRINT_OK__*/false;
+  var P = window.Peptigene;
+  var STORAGE = "peptigene_evaluaciones";
+  var r = Object.assign({}, P.respuestasVacias);
+  var resultado = null;
+  var guardadas = [];
+
+  var PREGUNTAS = [
+    ["alergiasMedicamentos", "2. ¿Tienes antecedentes de alergias a medicamentos?", "alergiasDetalle", "¿Cuáles?"],
+    ["pancreatitisFamiliar", "3. ¿Hay antecedentes de pancreatitis en tu familia?"],
+    ["tiroidesCmtMen2", "4. ¿Algún familiar cercano (o tú) ha tenido cáncer de tiroides (especialmente carcinoma medular) o síndrome MEN2?"],
+    ["vesicula", "5. ¿Alguna vez has tenido cálculos biliares o problemas en la vesícula?", "vesiculaDetalle", "¿Qué tipo de problemas? ¿Te operaron?"],
+    ["pancreatitisPersonal", "6a. ¿Has tenido pancreatitis?"],
+    ["dolorAbdominalInexplicado", "6b. ¿Has tenido dolor abdominal muy fuerte e inexplicado?"],
+    ["enfermedadGiGrave", "11. ¿Tienes alguna enfermedad gastrointestinal grave (gastroparesia, obstrucción, enfermedad inflamatoria intestinal activa)?"],
+    ["diabetesTipo1", "12. ¿Tienes diabetes tipo 1?"]
+  ];
+
+  var EJEMPLO = Object.assign({}, P.respuestasVacias, {
+    nombre: "María Pérez", tratamiento: "tirzepatida", edad: 38, sexo: "femenino", pesoKg: 92, estaturaCm: 162, pesoIdealKg: 68,
+    embarazoLactancia: "no", suplementos: "Omega 3 y vitamina D", alergiasMedicamentos: "si", alergiasDetalle: "Penicilina",
+    pancreatitisFamiliar: "no", pancreatitisPersonal: "no", dolorAbdominalInexplicado: "no", tiroidesCmtMen2: "no", vesicula: "no",
+    enfermedadGiGrave: "no", diabetesTipo1: "no", medicamentos: "Metformina 850 mg cada 12 horas", ejercicio: "ocasional",
+    comorbilidades: ["prediabetes"],
+    perfilMetabolico: "Glucosa 108 mg/dL\nHbA1c 6.0 %\nInsulina 22 µU/mL\nColesterol total 215\nLDL 138\nHDL 42\nTriglicéridos 190\nTSH 2.3\nCreatinina 0.8\nALT 38\nAST 29\nLipasa 41"
+  });
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+
+  // --- Construcción del formulario -------------------------------------
+  var cont = $("#preguntas"); cont.style.display = "grid"; cont.style.gap = "14px";
+  PREGUNTAS.forEach(function (p) {
+    var div = document.createElement("div"); div.className = "pregunta-bloque";
+    div.innerHTML = '<span class="pregunta">' + esc(p[1]) + '</span>' +
+      '<div class="seg" data-campo="' + p[0] + '"><button type="button" data-v="si">Sí</button><button type="button" data-v="no">No</button></div>' +
+      (p[2] ? '<input type="text" class="detalle" id="f-' + p[2] + '" data-campo="' + p[2] + '" placeholder="' + esc(p[3]) + '" hidden>' : "");
+    cont.appendChild(div);
+  });
+  var chips = $("#comorbilidades");
+  P.COMORBILIDADES.forEach(function (c) {
+    var l = document.createElement("label");
+    l.innerHTML = '<input type="checkbox" id="c-' + c.id + '" value="' + c.id + '"><span>' + esc(c.label) + '</span>';
+    chips.appendChild(l);
+  });
+
+  // --- Sincronización estado ↔ formulario ------------------------------
+  function setCampo(campo, valor) { r[campo] = valor; pintarForm(); }
+  $$("input[data-campo], textarea[data-campo], select[data-campo]").forEach(function (el) {
+    el.addEventListener("input", function () {
+      var v = el.value;
+      if (el.hasAttribute("data-num")) { var n = parseFloat(v.replace(",", ".")); v = isFinite(n) ? n : null; }
+      r[el.getAttribute("data-campo")] = v;
+      pintarForm();
+    });
+  });
+  $$(".seg").forEach(function (seg) {
+    var campo = seg.getAttribute("data-campo");
+    $$("button", seg).forEach(function (b) { b.addEventListener("click", function () { setCampo(campo, b.getAttribute("data-v")); }); });
+  });
+  $$("#comorbilidades input").forEach(function (cb) {
+    cb.addEventListener("change", function () {
+      r.comorbilidades = $$("#comorbilidades input").filter(function (x) { return x.checked; }).map(function (x) { return x.value; });
+    });
+  });
+
+  function pintarForm() {
+    $$("input[data-campo], textarea[data-campo], select[data-campo]").forEach(function (el) {
+      var v = r[el.getAttribute("data-campo")];
+      var s = v === null || v === undefined ? "" : String(v);
+      if (el.value !== s && document.activeElement !== el) el.value = s;
+    });
+    $$(".seg").forEach(function (seg) {
+      var v = r[seg.getAttribute("data-campo")];
+      $$("button", seg).forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-v") === v ? "true" : "false"); });
+    });
+    $$("#comorbilidades input").forEach(function (cb) { cb.checked = r.comorbilidades.indexOf(cb.value) >= 0; });
+    PREGUNTAS.forEach(function (p) { if (p[2]) $("#f-" + p[2]).hidden = r[p[0]] !== "si"; });
+    $("#bloque-embarazo").hidden = r.sexo !== "femenino";
+    var imc = r.pesoKg && r.estaturaCm ? Math.round((r.pesoKg / Math.pow(r.estaturaCm / 100, 2)) * 10) / 10 : null;
+    $("#imc-preview").textContent = imc ? "IMC calculado: " + imc : "";
+  }
+
+  // --- Evaluación y resultado -----------------------------------------
+  $("#form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    resultado = P.evaluar(r);
+    pintarResultado();
+    var el = $("#resultado"); if (el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  $("#btn-ejemplo").addEventListener("click", function () { r = Object.assign({}, EJEMPLO, { comorbilidades: EJEMPLO.comorbilidades.slice() }); pintarForm(); });
+  $("#btn-limpiar").addEventListener("click", function () { r = Object.assign({}, P.respuestasVacias, { comorbilidades: [] }); resultado = null; pintarForm(); pintarResultado(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+  var ETIQUETA = { APTO: "Apto", REQUIERE_EVALUACION: "Requiere evaluación médica", NO_APTO: "No apto" };
+  var NIVELES = [["contraindicacion", "Contraindicaciones"], ["precaucion", "Precauciones"], ["info", "Observaciones"]];
+
+  function lista(items) { return items.map(function (x) { return "<p>• " + esc(x) + "</p>"; }).join(""); }
+
+  function pintarResultado() {
+    var el = $("#resultado");
+    if (!resultado) { el.className = "panel vacio"; el.innerHTML = "Completa el formulario y pulsa <strong>Evaluar aptitud</strong>. El resultado aparecerá aquí con el detalle de contraindicaciones, precauciones, dosis inicial y plan de estilo de vida."; return; }
+    var res = resultado, a = res.antropometria, html = "";
+    html += '<div class="cabecera"><div><h3 class="eyebrow">Resultado</h3><span class="badge ' + res.veredicto + '">' + ETIQUETA[res.veredicto] + '</span></div>' +
+      (a.imc !== null ? '<div class="imc"><b>' + a.imc + '</b><small>IMC · ' + esc(a.categoriaImc) + '</small></div>' : "") + '</div>';
+    html += '<p class="resumen">' + esc(res.resumen) + '</p>';
+    if (res.plan) {
+      var p = res.plan, cond = res.veredicto !== "APTO";
+      html += '<div class="dosis' + (cond ? " cond" : "") + '"><span class="eyebrow">' + (cond ? "Plan condicionado a evaluación" : "Dosis inicial sugerida") + '</span>' +
+        '<div class="num">' + p.dosisInicialMg + ' mg <small>/ semana</small></div><p>' + esc(p.via) + '</p><p>' + esc(p.frecuencia) + ' · ' + p.duracionInicialSemanas + ' semanas iniciales</p>' +
+        '<p style="margin-top:6px">' + esc(p.escalado) + ' Máximo ' + p.dosisMaximaMg + ' mg.</p><ul>' + p.notas.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + '</ul></div>';
+    }
+    if (res.estiloVida) {
+      var ev = res.estiloVida, m = ev.metabolismo;
+      html += '<div><h3 class="eyebrow">Plan de estilo de vida</h3><div class="tiles">' +
+        '<div class="tile"><b>' + m.getKcal + '</b>kcal gasto/día</div><div class="tile"><b>' + m.caloriasObjetivo + '</b>kcal objetivo</div><div class="tile"><b>' + ev.hidratacion.litrosDia + ' L</b>agua/día</div>' +
+        '<div class="tile"><b>' + ev.macros.proteinaG + ' g</b>proteína</div><div class="tile"><b>' + ev.macros.carbohidratosG + ' g</b>carbohidratos</div><div class="tile"><b>' + ev.macros.grasasG + ' g</b>grasas</div></div>' +
+        '<p class="nota-metab" style="margin:8px 0 10px">TMB ' + m.tmbKcal + ' kcal · factor de actividad ' + m.factorActividad + ' · déficit ' + m.deficitKcal + ' kcal · ritmo esperado ' + ev.ritmo.kgSemanaMin + '–' + ev.ritmo.kgSemanaMax + ' kg/semana' +
+        (ev.ritmo.semanasEstimadas ? ' · meta de ' + ev.ritmo.kgMeta + ' kg en ~' + ev.ritmo.semanasEstimadas + ' semanas' : "") + '.</p><div style="display:grid;gap:6px">' +
+        '<details><summary>💧 Hidratación</summary><div>' + lista(ev.hidratacion.pautas) + '</div></details>' +
+        '<details><summary>🍽️ Alimentación</summary><div>' + lista(ev.alimentacion.pautas) + '</div></details>' +
+        '<details><summary>🏋️ Ejercicio</summary><div><p>• <b>Fuerza:</b> ' + esc(ev.ejercicio.fuerza) + '</p><p>• <b>Cardio:</b> ' + esc(ev.ejercicio.cardio) + '</p><p>• ' + esc(ev.ejercicio.pasos) + '</p>' + lista(ev.ejercicio.pautas) + '</div></details>' +
+        '<details><summary>🧬 Ajustes según perfil metabólico</summary><div>' + lista(ev.ajustesMetabolicos) + '</div></details>' +
+        '<details><summary>📈 Ritmo y seguimiento</summary><div>' + lista(ev.seguimiento) + (ev.supuestos.length ? '<p style="color:var(--muted);font-style:italic">Supuestos: ' + esc(ev.supuestos.join(" ")) + '</p>' : "") + '</div></details></div></div>';
+    }
+    NIVELES.forEach(function (n) {
+      var hs = res.hallazgos.filter(function (h) { return h.nivel === n[0]; });
+      if (!hs.length) return;
+      html += '<div><h3 class="eyebrow">' + n[1] + '</h3><div class="hallazgos">' + hs.map(function (h) { return '<div class="h ' + h.nivel + '"><b>' + esc(h.titulo) + '</b><p>' + esc(h.detalle) + '</p></div>'; }).join("") + '</div></div>';
+    });
+    if (res.laboratorios.length) {
+      html += '<div><h3 class="eyebrow">Perfil metabólico</h3><table><tbody>' + res.laboratorios.map(function (l) {
+        var est = l.estado === "normal" ? "Normal" : l.estado === "alto" ? "Alto" : l.estado === "bajo" ? "Bajo" : "—";
+        return '<tr><td>' + esc(l.nombre) + (l.comentario ? '<br><small style="color:var(--warn-fg)">' + esc(l.comentario) + '</small>' : "") + '</td><td class="num">' + l.valor + ' ' + esc(l.unidad) + '</td><td style="text-align:right"><span class="estado ' + l.estado + '" title="Referencia: ' + esc(l.rango) + '">' + est + '</span></td></tr>';
+      }).join("") + '</tbody></table></div>';
+    }
+    html += '<div class="acciones"><button type="button" class="btn sm" id="btn-copiar">Copiar resumen</button>' +
+      (PRINT_OK ? '<button type="button" class="btn sm" id="btn-pdf">Descargar PDF</button>' : '<button type="button" class="btn sm" id="btn-informe">Ver informe completo</button>') +
+      '<button type="button" class="btn sm sec" id="btn-guardar">Guardar en este navegador</button></div>' +
+      '<div id="informe-zona" hidden></div>';
+    el.className = "panel"; el.innerHTML = html;
+    $("#btn-copiar").addEventListener("click", copiar);
+    $("#btn-guardar").addEventListener("click", guardar);
+    if (PRINT_OK) $("#btn-pdf").addEventListener("click", descargarPdf);
+    else $("#btn-informe").addEventListener("click", verInforme);
+  }
+
+  function toast(msg) { var t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t); setTimeout(function () { t.remove(); }, 1800); }
+
+  function copiar() {
+    var texto = P.resumenTexto(r, resultado);
+    var ok = function () { toast("Resumen copiado"); };
+    var fallback = function () {
+      var ta = document.createElement("textarea"); ta.value = texto; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); ok(); } catch (e) { toast("Selecciona y copia el texto manualmente"); }
+      ta.remove();
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(texto).then(ok, fallback); else fallback();
+  }
+
+  function descargarPdf() {
+    var w = window.open("", "_blank");
+    if (!w) { toast("Permite ventanas emergentes para generar el PDF"); return; }
+    w.document.open(); w.document.write(P.informeHtml(r, resultado)); w.document.close(); w.focus();
+    setTimeout(function () { w.print(); }, 400);
+  }
+
+  // En el visor de artefactos no hay impresión: se muestra el informe dentro de la página con estilos aislados.
+  function verInforme() {
+    var zona = $("#informe-zona");
+    if (!zona.hidden) { zona.hidden = true; $("#btn-informe").textContent = "Ver informe completo"; return; }
+    var html = P.informeHtml(r, resultado);
+    var css = (html.match(/<style>([\s\S]*?)<\/style>/) || ["", ""])[1];
+    var body = (html.match(/<body>([\s\S]*?)<\/body>/) || ["", ""])[1];
+    css = css.replace(/@page[^}]*\}/g, "").replace(/(^|\})\s*([^{}]+)\{/g, function (_, pre, sel) {
+      var scoped = sel.split(",").map(function (s) {
+        s = s.trim(); if (!s) return "";
+        if (s === "body") return ".informe";
+        if (s === "*") return ".informe *";
+        return ".informe " + s;
+      }).join(", ");
+      return pre + " " + scoped + " {";
+    });
+    zona.innerHTML = '<div class="informe-wrap"><style>' + css + '</style><div class="informe">' + body + '</div></div>';
+    zona.hidden = false; $("#btn-informe").textContent = "Ocultar informe";
+  }
+
+  // --- Historial en el navegador --------------------------------------
+  function leerGuardadas() { try { guardadas = JSON.parse(localStorage.getItem(STORAGE) || "[]"); } catch (e) { guardadas = []; } }
+  function escribirGuardadas() { try { localStorage.setItem(STORAGE, JSON.stringify(guardadas)); } catch (e) { /* sin almacenamiento */ } }
+  function guardar() {
+    guardadas.unshift({ id: String(Date.now()), fecha: new Date().toISOString(), respuestas: r, veredicto: resultado.veredicto });
+    guardadas = guardadas.slice(0, 50); escribirGuardadas(); pintarHistorial(); toast("Evaluación guardada");
+  }
+  function pintarHistorial() {
+    var h = $("#historial");
+    if (!guardadas.length) { h.hidden = true; return; }
+    h.hidden = false;
+    h.innerHTML = '<h3 class="eyebrow">Evaluaciones guardadas</h3><ul>' + guardadas.map(function (g) {
+      return '<li><button type="button" class="cargar" data-id="' + g.id + '"><span>' + esc(g.respuestas.nombre || "Sin nombre") + '</span><small>' + new Date(g.fecha).toLocaleString("es-CO") + ' · ' + esc(g.respuestas.tratamiento) + '</small></button>' +
+        '<span class="badge ' + g.veredicto + '" style="font-size:10px;padding:2px 8px">' + ETIQUETA[g.veredicto].split(" ")[0] + (g.veredicto === "NO_APTO" ? " apto" : "") + '</span>' +
+        '<button type="button" class="x" data-id="' + g.id + '" aria-label="Eliminar">×</button></li>';
+    }).join("") + '</ul>';
+    $$("button.cargar", h).forEach(function (b) { b.addEventListener("click", function () {
+      var g = guardadas.filter(function (x) { return x.id === b.getAttribute("data-id"); })[0]; if (!g) return;
+      r = Object.assign({}, P.respuestasVacias, g.respuestas, { comorbilidades: (g.respuestas.comorbilidades || []).slice() });
+      resultado = P.evaluar(r); pintarForm(); pintarResultado(); window.scrollTo({ top: 0, behavior: "smooth" });
+    }); });
+    $$("button.x", h).forEach(function (b) { b.addEventListener("click", function () {
+      guardadas = guardadas.filter(function (x) { return x.id !== b.getAttribute("data-id"); }); escribirGuardadas(); pintarHistorial();
+    }); });
+  }
+
+  leerGuardadas(); pintarForm(); pintarHistorial();
+})();
+</script>

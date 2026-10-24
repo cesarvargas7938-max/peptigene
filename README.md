@@ -157,6 +157,8 @@ node scripts/informe-pdf.mjs informes/paciente.json informes/paciente.pdf
 
 El JSON tiene los mismos campos que el formulario (ver `respuestasVacias` en `lib/evaluacion.ts`). Requiere Playwright (ya en `devDependencies`) y Chromium; si Chromium está en otra ruta, usar la variable `CHROMIUM_PATH`. La carpeta `informes/` está ignorada por git porque contiene datos de pacientes.
 
+**Versión independiente (un solo archivo)**: `node scripts/build-standalone.mjs` genera `dist/peptigene-evaluacion.html`, el evaluador completo (formulario, reglas, plan de estilo de vida y botón Descargar PDF) en un archivo que se abre con doble clic sin instalar nada. La plantilla está en `standalone/plantilla.html` y usa el mismo motor empaquetado con esbuild. También genera `dist/artifact.html`, la variante para publicar en claude.ai (sin impresión; muestra el informe dentro de la página).
+
 ## Lo que NO incluye este proyecto
 
 Por ser una demo académica:
