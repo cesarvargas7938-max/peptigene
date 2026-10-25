@@ -214,7 +214,7 @@ export function informeHtml(r: Respuestas, res: Resultado, opciones: { fecha?: D
     <div>
       <p class="eyebrow" style="color:#059669">Tratamiento evaluado · ${esc(trat)}</p>
       <h1>${esc(r.nombre || "Paciente")}<br><em>evaluación de aptitud.</em></h1>
-      <span class="veredicto" style="background:${v.fondo};color:${v.color}">${v.texto}</span>
+      <span class="veredicto" style="background:${v.fondo};color:${v.color}">${v.texto}</span>${res.modalidad === "recomposicion" ? '<span class="veredicto" style="background:#e6fcf1;color:#064e3b;border:1px solid #84f0c1;margin-left:6px">RECOMPOSICIÓN CORPORAL</span>' : ""}
     </div>
   </div>
   <p class="resumen">${esc(res.resumen)}</p>

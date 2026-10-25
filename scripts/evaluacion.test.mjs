@@ -58,7 +58,7 @@ test("contraindicaciones absolutas producen NO_APTO sin plan", () => {
     [{ enfermedadGiGrave: "si" }, "CI_GI_GRAVE"],
     [{ alergiasMedicamentos: "si", alergiasDetalle: "Ozempic (semaglutida)" }, "CI_HIPERSENSIBILIDAD"],
     [{ comorbilidades: ["trastorno_alimentario"] }, "CI_TCA"],
-    [{ pesoKg: 70 }, "CI_SIN_INDICACION"],
+    [{ pesoKg: 58 }, "CI_IMC_BAJO"], // IMC 18.9
     [{ perfilMetabolico: "Lipasa 250 U/L" }, "CI_ENZIMAS_PANCREATICAS"],
     [{ perfilMetabolico: "Calcitonina 25 pg/mL" }, "CI_CALCITONINA"],
   ];
@@ -115,23 +115,31 @@ test("formulario incompleto nunca es APTO", () => {
   assert.ok(res.camposFaltantes.includes("antecedente de cáncer medular de tiroides / MEN2"));
 });
 
-test("IMC 27-29.9 requiere comorbilidad", () => {
-  const sin = evaluar({ ...base, pesoKg: 86 }); // IMC 28.1
-  assert.equal(sin.veredicto, "REQUIERE_EVALUACION");
-  assert.ok(codigos(sin).includes("PR_IMC_SIN_COMORBILIDAD"));
+test("modalidad: pérdida de peso con indicación estándar, recomposición sin ella", () => {
+  const obeso = evaluar(base); // IMC 32.7
+  assert.equal(obeso.modalidad, "perdida_peso");
+  assert.equal(obeso.plan.dosisMaximaMg, 15);
+
+  const sinCom = evaluar({ ...base, pesoKg: 86 }); // IMC 28.1 sin comorbilidad
+  assert.equal(sinCom.veredicto, "APTO");
+  assert.equal(sinCom.modalidad, "recomposicion");
+  assert.ok(codigos(sinCom).includes("INFO_RECOMPOSICION"));
+  assert.equal(sinCom.plan.dosisMaximaMg, 5);
+  assert.equal(sinCom.estiloVida.macros.proteinaGporKg, 1.8);
+  assert.ok(sinCom.estiloVida.metabolismo.deficitKcal <= 400);
+  assert.ok(sinCom.resumen.includes("recomposición"));
 
   const conCheckbox = evaluar({ ...base, pesoKg: 86, comorbilidades: ["hipertension"] });
-  assert.equal(conCheckbox.veredicto, "APTO");
+  assert.equal(conCheckbox.modalidad, "perdida_peso");
 
   const conLab = evaluar({ ...base, pesoKg: 86, perfilMetabolico: "Glucosa 112 mg/dL" });
-  assert.equal(conLab.veredicto, "APTO");
+  assert.equal(conLab.modalidad, "perdida_peso");
   assert.ok(codigos(conLab).includes("INFO_PREDIABETES"));
-});
 
-test("IMC 25-26.9 queda como límite", () => {
-  const res = evaluar({ ...base, pesoKg: 80 }); // IMC 26.1
-  assert.ok(codigos(res).includes("PR_IMC_LIMITE"));
-  assert.equal(res.veredicto, "REQUIERE_EVALUACION");
+  const normal = evaluar({ ...base, pesoKg: 70, pesoIdealKg: 65 }); // IMC 22.9
+  assert.equal(normal.veredicto, "APTO");
+  assert.equal(normal.modalidad, "recomposicion");
+  assert.equal(normal.plan.dosisInicialMg, 2.5);
 });
 
 test("parser de perfil metabólico", () => {

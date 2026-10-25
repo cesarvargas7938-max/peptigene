@@ -3,7 +3,7 @@
 // Se calcula a partir de las respuestas del formulario y, si existen, de los
 // laboratorios del perfil metabólico. Afinar aquí los factores y pautas.
 
-import type { Laboratorio, Respuestas } from "./evaluacion";
+import type { Laboratorio, Modalidad, Respuestas } from "./evaluacion";
 
 export type Metabolismo = {
   tmbKcal: number; // tasa metabólica basal (Mifflin-St Jeor)
@@ -58,8 +58,9 @@ export function tmbMifflin(pesoKg: number, estaturaCm: number, edad: number, sex
   return Math.round(sexo === "femenino" ? base - 161 : base + 5);
 }
 
-export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVida | null {
+export function planEstiloVida(r: Respuestas, labs: Laboratorio[], modalidad: Modalidad = "perdida_peso"): PlanEstiloVida | null {
   if (!r.pesoKg || !r.estaturaCm) return null;
+  const recomp = modalidad === "recomposicion";
 
   const supuestos: string[] = [];
   const edad = r.edad ?? 35;
@@ -82,7 +83,10 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
   const get = Math.round(tmb * act.factor);
   const minimoSeguro = sexo === "femenino" ? 1200 : 1500;
   // Déficit del 20–25 % del gasto total, acotado a 500–750 kcal.
-  let deficit = Math.min(750, Math.max(500, Math.round(get * 0.22)));
+  // En recomposición el déficit es suave (15 %, 250–400 kcal) para no perder músculo.
+  let deficit = recomp
+    ? Math.min(400, Math.max(250, Math.round(get * 0.15)))
+    : Math.min(750, Math.max(500, Math.round(get * 0.22)));
   let objetivo = r10(get - deficit);
   if (objetivo < minimoSeguro) {
     objetivo = minimoSeguro;
@@ -93,7 +97,7 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
   // Proteína sobre peso actual; con obesidad se usa 1.2–1.6 g/kg acotado por
   // el peso correspondiente a IMC 25 × 2 g/kg para no sobreestimar.
   const renal = com.has("renal") || (lab("tfg") !== undefined && lab("tfg")!.valor < 60);
-  const proteinaPorKg = renal ? 0.9 : imc >= 35 ? 1.3 : 1.5;
+  const proteinaPorKg = renal ? 0.9 : recomp ? 1.8 : imc >= 35 ? 1.3 : 1.5;
   const pesoImc25 = 25 * Math.pow(estatura / 100, 2);
   let proteinaG = Math.round(Math.min(peso * proteinaPorKg, pesoImc25 * 2));
   if (renal) proteinaG = Math.round(peso * proteinaPorKg);
@@ -152,6 +156,7 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
         : "Semanas 1–4: caminar 20 min diarios a paso cómodo. Semanas 5–8: 30 min a paso rápido. Meta al mes 3: 150 min/semana.";
   const pasos = nivel === "no" ? "Meta de pasos: empezar en 5 000/día y subir 500 cada semana hasta 8 000–10 000." : "Meta de pasos: 8 000–10 000/día además del entrenamiento.";
   const ejercicioPautas = [
+    ...(recomp ? ["En recomposición la fuerza es el tratamiento principal: 3 sesiones/semana con carga progresiva, aunque el nivel actual sea bajo (empezar con 2 y subir a 3 en el mes 2)."] : []),
     "La fuerza es innegociable: con los agonistas GLP-1 hasta un 25–40 % del peso perdido puede ser músculo si no se entrena ni se come proteína suficiente.",
     "Caminar 10–15 min después de las comidas principales reduce el pico de glucosa y mejora la digestión.",
     "Entrenar con el estómago poco lleno (1.5–2 h después de comer) para evitar náuseas; hidratarse antes y después.",
@@ -160,13 +165,14 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
   ];
 
   // --- Ritmo esperado ---------------------------------------------------
-  const kgSemanaMin = r1(peso * 0.005);
-  const kgSemanaMax = r1(peso * 0.01);
+  const kgSemanaMin = r1(peso * (recomp ? 0.0025 : 0.005));
+  const kgSemanaMax = r1(peso * (recomp ? 0.005 : 0.01));
   const kgMeta = r.pesoIdealKg ? r1(peso - r.pesoIdealKg) : null;
   const semanas = kgMeta && kgMeta > 0 ? Math.round(kgMeta / ((kgSemanaMin + kgSemanaMax) / 2)) : null;
 
   // --- Ajustes según perfil metabólico ----------------------------------
   const ajustes: string[] = [];
+  const seguimientoExtra: string[] = [];
   if (resistenciaInsulina) {
     ajustes.push(
       "Resistencia a la insulina / prediabetes: carbohidratos moderados (nunca solos: siempre con proteína o fibra), sin azúcar ni bebidas dulces, caminata después de comer y fuerza 3 veces por semana. Es el perfil que mejor responde al tratamiento.",
@@ -230,10 +236,16 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
   if (ajustes.length === 0) {
     ajustes.push("Sin alteraciones metabólicas reportadas: aplicar el plan general. Pedir perfil metabólico basal (glucosa, HbA1c, lípidos, TSH, lipasa) si aún no se tiene.");
   }
+  if (recomp) {
+    ajustes.unshift(
+      "Recomposición corporal: el objetivo es cambiar la composición, no el peso. Proteína 1.8 g/kg, déficit suave, fuerza 3 veces por semana con carga progresiva. Si la fuerza baja o el peso cae más de 0.5 % por semana, subir calorías. Medir cintura, fotos y, si es posible, composición corporal (bioimpedancia) cada 4 semanas.",
+    );
+    seguimientoExtra.push("Con IMC normal, una pérdida de solo 3–5 kg de grasa cambia visiblemente la figura: evaluar por cintura y fotos, no por balanza.");
+  }
 
   // --- Seguimiento ------------------------------------------------------
-  const seguimiento = [
-    `Ritmo saludable: ${kgSemanaMin}–${kgSemanaMax} kg por semana (0.5–1 % del peso).${kgMeta && semanas ? ` Para bajar ${kgMeta} kg: aproximadamente ${semanas} semanas (${Math.round(semanas / 4.3)} meses).` : ""}`,
+  const seguimiento = [...seguimientoExtra,
+    `Ritmo saludable: ${kgSemanaMin}–${kgSemanaMax} kg por semana (${recomp ? "0.25–0.5" : "0.5–1"} % del peso).${kgMeta && semanas ? ` Para bajar ${kgMeta} kg: aproximadamente ${semanas} semanas (${Math.round(semanas / 4.3)} meses).` : ""}`,
     "Pesarse 1 vez por semana, mismo día, en ayunas. Medir cintura cada 2 semanas. Fotos cada 4 semanas.",
     "Si la pérdida supera 1.5 % del peso por semana durante 2 semanas seguidas: subir calorías y proteína; se está perdiendo músculo.",
     "Si no hay cambio en 4 semanas con buena adherencia: revisar porciones y considerar aumento de dosis con el médico.",

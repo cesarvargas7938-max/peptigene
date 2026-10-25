@@ -304,7 +304,7 @@ Lipasa 41"></textarea>
     var el = $("#resultado");
     if (!resultado) { el.className = "panel vacio"; el.innerHTML = "Completa el formulario y pulsa <strong>Evaluar aptitud</strong>. El resultado aparecerá aquí con el detalle de contraindicaciones, precauciones, dosis inicial y plan de estilo de vida."; return; }
     var res = resultado, a = res.antropometria, html = "";
-    html += '<div class="cabecera"><div><h3 class="eyebrow">Resultado</h3><span class="badge ' + res.veredicto + '">' + ETIQUETA[res.veredicto] + '</span></div>' +
+    html += '<div class="cabecera"><div><h3 class="eyebrow">Resultado</h3><span class="badge ' + res.veredicto + '">' + ETIQUETA[res.veredicto] + '</span>' + (res.modalidad === "recomposicion" ? ' <span class="badge" style="background:var(--soft);color:var(--fg);border:1px solid var(--line-strong)">Recomposición corporal</span>' : "")</div>' +
       (a.imc !== null ? '<div class="imc"><b>' + a.imc + '</b><small>IMC · ' + esc(a.categoriaImc) + '</small></div>' : "") + '</div>';
     html += '<p class="resumen">' + esc(res.resumen) + '</p>';
     if (res.plan) {

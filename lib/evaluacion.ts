@@ -95,6 +95,11 @@ export type Hallazgo = {
 
 export type Veredicto = "APTO" | "REQUIERE_EVALUACION" | "NO_APTO";
 
+// Pérdida de peso: indicación estándar (IMC ≥ 30, o ≥ 27 con comorbilidad).
+// Recomposición corporal: IMC por debajo de ese criterio; se es flexible con el
+// peso y el objetivo es perder grasa conservando o ganando músculo.
+export type Modalidad = "perdida_peso" | "recomposicion";
+
 export type PlanDosis = {
   dosisInicialMg: number;
   via: string;
@@ -131,6 +136,7 @@ export type Resultado = {
   hallazgos: Hallazgo[];
   antropometria: Antropometria;
   laboratorios: Laboratorio[];
+  modalidad: Modalidad;
   plan: PlanDosis | null;
   estiloVida: PlanEstiloVida | null;
   camposFaltantes: string[];
@@ -721,12 +727,12 @@ export function evaluar(r: Respuestas): Resultado {
       detalle: "Requiere manejo por salud mental antes de considerar farmacoterapia para pérdida de peso.",
     });
   }
-  if (antro.imc !== null && antro.imc < 25) {
+  if (antro.imc !== null && antro.imc < 20) {
     h.push({
       nivel: "contraindicacion",
-      codigo: "CI_SIN_INDICACION",
-      titulo: `IMC ${antro.imc} (${antro.categoriaImc}): sin indicación`,
-      detalle: "Estos tratamientos están indicados con IMC ≥ 30, o ≥ 27 con al menos una comorbilidad asociada al peso.",
+      codigo: "CI_IMC_BAJO",
+      titulo: `IMC ${antro.imc} (${antro.categoriaImc}): demasiado bajo para cualquier modalidad`,
+      detalle: "Por debajo de IMC 20 no hay grasa que perder con seguridad; el riesgo de pérdida muscular y de trastorno alimentario es alto. No usar.",
     });
   }
 
@@ -970,29 +976,29 @@ export function evaluar(r: Respuestas): Resultado {
   if (dislipidemiaPorLab && !com.has("dislipidemia")) comorbilidadesIndicacion.push("Dislipidemia (por laboratorio)");
   if (homa && homa.estado === "alto" && !com.has("prediabetes")) comorbilidadesIndicacion.push("Resistencia a la insulina (HOMA-IR)");
 
-  if (antro.imc !== null && antro.imc >= 25 && antro.imc < 27) {
-    h.push({
-      nivel: "precaucion",
-      codigo: "PR_IMC_LIMITE",
-      titulo: `IMC ${antro.imc} (${antro.categoriaImc}): por debajo del criterio estándar`,
-      detalle: "La indicación habitual es IMC ≥ 27 con comorbilidad o ≥ 30. Solo con justificación médica.",
-    });
-  } else if (antro.imc !== null && antro.imc >= 27 && antro.imc < 30 && comorbilidadesIndicacion.length === 0) {
-    h.push({
-      nivel: "precaucion",
-      codigo: "PR_IMC_SIN_COMORBILIDAD",
-      titulo: `IMC ${antro.imc} (${antro.categoriaImc}) sin comorbilidad documentada`,
-      detalle: "Con IMC 27–29.9 se requiere al menos una comorbilidad asociada al peso. Completar perfil metabólico.",
-    });
-  } else if (antro.imc !== null && antro.imc >= 27) {
+  // Modalidad: pérdida de peso cuando cumple la indicación estándar; de lo
+  // contrario, recomposición corporal (flexible con el peso).
+  const cumpleIndicacion =
+    antro.imc !== null && (antro.imc >= 30 || (antro.imc >= 27 && comorbilidadesIndicacion.length > 0));
+  const modalidad: Modalidad = antro.imc === null || cumpleIndicacion ? "perdida_peso" : "recomposicion";
+
+  if (cumpleIndicacion && antro.imc !== null) {
     h.push({
       nivel: "info",
       codigo: "INFO_CUMPLE_INDICACION",
-      titulo: `IMC ${antro.imc} (${antro.categoriaImc}): cumple criterio de indicación`,
+      titulo: `IMC ${antro.imc} (${antro.categoriaImc}): cumple criterio de pérdida de peso`,
       detalle:
         comorbilidadesIndicacion.length > 0
           ? `Comorbilidades asociadas: ${comorbilidadesIndicacion.join(", ")}.`
           : "Obesidad por IMC, sin comorbilidades reportadas.",
+    });
+  } else if (modalidad === "recomposicion" && antro.imc !== null) {
+    h.push({
+      nivel: "info",
+      codigo: "INFO_RECOMPOSICION",
+      titulo: `IMC ${antro.imc} (${antro.categoriaImc}): modalidad recomposición corporal`,
+      detalle:
+        "No cumple el criterio estándar de pérdida de peso (IMC ≥ 30, o ≥ 27 con comorbilidad), así que se maneja como recomposición: perder grasa conservando músculo. Dosis conservadora, déficit calórico suave, proteína alta y entrenamiento de fuerza obligatorio. Uso fuera de indicación: debe quedar documentado con consentimiento informado.",
     });
   }
 
@@ -1064,7 +1070,7 @@ export function evaluar(r: Respuestas): Resultado {
   const hayPR = h.some((x) => x.nivel === "precaucion");
   const veredicto: Veredicto = hayCI ? "NO_APTO" : hayPR ? "REQUIERE_EVALUACION" : "APTO";
 
-  const plan = veredicto === "NO_APTO" ? null : planDosis(r.tratamiento, veredicto);
+  const plan = veredicto === "NO_APTO" ? null : planDosis(r.tratamiento, veredicto, modalidad);
 
   const nombre = r.nombre.trim() || "La persona";
   const resumen =
@@ -1072,11 +1078,11 @@ export function evaluar(r: Respuestas): Resultado {
       ? `${nombre} NO es candidata al tratamiento con ${nombreTratamiento(r.tratamiento)} por contraindicación.`
       : veredicto === "REQUIERE_EVALUACION"
         ? `${nombre} podría ser candidata a ${nombreTratamiento(r.tratamiento)}, pero requiere evaluación médica antes de iniciar.`
-        : `${nombre} es candidata al tratamiento con ${nombreTratamiento(r.tratamiento)}. Dosis inicial sugerida: ${plan?.dosisInicialMg} mg semanal.`;
+        : `${nombre} es candidata al tratamiento con ${nombreTratamiento(r.tratamiento)}${modalidad === "recomposicion" ? " en modalidad recomposición corporal" : ""}. Dosis inicial sugerida: ${plan?.dosisInicialMg} mg semanal.`;
 
-  const estiloVida = veredicto === "NO_APTO" ? null : planEstiloVida(r, labs);
+  const estiloVida = veredicto === "NO_APTO" ? null : planEstiloVida(r, labs, modalidad);
 
-  return { veredicto, resumen, hallazgos: h, antropometria: antro, laboratorios: labs, plan, estiloVida, camposFaltantes: faltantes };
+  return { veredicto, resumen, hallazgos: h, antropometria: antro, laboratorios: labs, modalidad, plan, estiloVida, camposFaltantes: faltantes };
 }
 
 export function nombreTratamiento(t: Tratamiento): string {
@@ -1084,8 +1090,28 @@ export function nombreTratamiento(t: Tratamiento): string {
 }
 
 // Esquema de dosis. Afinar aquí si cambia el protocolo de la clínica.
-export function planDosis(t: Tratamiento, veredicto: Veredicto): PlanDosis {
+export function planDosis(t: Tratamiento, veredicto: Veredicto, modalidad: Modalidad = "perdida_peso"): PlanDosis {
   const condicionado = veredicto === "REQUIERE_EVALUACION";
+  if (modalidad === "recomposicion") {
+    const rec: PlanDosis = {
+      dosisInicialMg: 2.5,
+      via: "Subcutánea (abdomen, muslo o brazo; rotar sitio)",
+      frecuencia: "Una vez por semana, el mismo día",
+      duracionInicialSemanas: 4,
+      escalado:
+        "Recomposición corporal: mantener 2.5 mg y subir a 5 mg solo si hay buena tolerancia y la respuesta es insuficiente a las 4–8 semanas. No superar 5 mg sin justificación médica.",
+      dosisMaximaMg: 5,
+      notas: [
+        "Objetivo: perder grasa conservando músculo, no bajar peso rápido. La balanza puede moverse poco; medir cintura y fotos.",
+        "Ciclo corto: 8–12 semanas y reevaluar. Suspender si pierde más del 1 % del peso por semana o si baja fuerza en el gimnasio.",
+        "Proteína ≥ 1.6 g/kg/día y entrenamiento de fuerza 3 veces por semana son condición del tratamiento, no una sugerencia.",
+        "Suspender y consultar ante dolor abdominal intenso persistente, vómito incoercible o ictericia.",
+        "Uso fuera de indicación: consentimiento informado firmado y aval del médico tratante.",
+      ],
+    };
+    if (condicionado) rec.notas.unshift("Plan condicionado: iniciar solo después de resolver las precauciones señaladas y con aval médico.");
+    return rec;
+  }
   const base: PlanDosis = {
     dosisInicialMg: 2.5,
     via: "Subcutánea (abdomen, muslo o brazo; rotar sitio)",
@@ -1128,7 +1154,7 @@ export function resumenTexto(r: Respuestas, res: Resultado): string {
       `Edad ${r.edad ?? "?"} · Peso ${r.pesoKg ?? "?"} kg · Estatura ${r.estaturaCm ?? "?"} cm · IMC ${res.antropometria.imc ?? "?"} (${res.antropometria.categoriaImc})`,
     );
   }
-  lineas.push(`Resultado: ${etiqueta[res.veredicto]}`);
+  lineas.push(`Resultado: ${etiqueta[res.veredicto]}${res.modalidad === "recomposicion" ? " · Modalidad: recomposición corporal" : ""}`);
   lineas.push("");
   const porNivel = (n: Nivel) => res.hallazgos.filter((x) => x.nivel === n);
   const ci = porNivel("contraindicacion");

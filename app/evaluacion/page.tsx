@@ -577,6 +577,9 @@ function ResultadoPanel({
         <div>
           <h3 className="eyebrow text-olive-600 mb-2">Resultado</h3>
           <BadgeVeredicto veredicto={resultado.veredicto} />
+          {resultado.modalidad === "recomposicion" && (
+            <span className="ml-2 inline-block rounded-full border border-olive-300 px-3 py-1 text-xs text-olive-800">Recomposición corporal</span>
+          )}
         </div>
         {resultado.antropometria.imc !== null && (
           <div className="text-right">
