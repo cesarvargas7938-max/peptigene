@@ -54,6 +54,8 @@ export const COMORBILIDADES: { id: string; label: string; cuentaParaIndicacion: 
   { id: "retinopatia", label: "Retinopatía diabética", cuentaParaIndicacion: false },
   { id: "salud_mental", label: "Depresión o antecedente de ideación suicida", cuentaParaIndicacion: false },
   { id: "trastorno_alimentario", label: "Trastorno de la conducta alimentaria", cuentaParaIndicacion: false },
+  { id: "hipotiroidismo", label: "Hipotiroidismo (en tratamiento)", cuentaParaIndicacion: false },
+  { id: "gastritis", label: "Gastritis o reflujo", cuentaParaIndicacion: false },
 ];
 
 export const respuestasVacias: Respuestas = {
@@ -563,6 +565,14 @@ const REGLAS_MEDICAMENTOS: ReglaMed[] = [
       "Cuenta como comorbilidad asociada al peso. La presión suele bajar con la pérdida de peso: controlarla semanalmente y ajustar el antihipertensivo con el médico si hay hipotensión o mareo.",
   },
   {
+    patron: /\b(omeprazol|esomeprazol|pantoprazol|lansoprazol|rabeprazol|ranitidina|famotidina|sucralfato|antiacido|antiácido)\b/,
+    nivel: "info",
+    codigo: "MED_GASTRICO",
+    titulo: "Usa protector gástrico: gastritis o reflujo",
+    detalle:
+      "No contraindica. El retraso del vaciamiento gástrico puede aumentar reflujo y dispepsia: mantener el protector las primeras semanas, comidas pequeñas y no acostarse hasta 2–3 h después de comer.",
+  },
+  {
     patron: /\b(levotiroxina|eutirox|synthroid|levotiroxina sodica|levotiroxina sódica)\b/,
     nivel: "info",
     codigo: "MED_LEVOTIROXINA",
@@ -829,6 +839,23 @@ export function evaluar(r: Respuestas): Resultado {
       codigo: "PR_RETINOPATIA",
       titulo: "Retinopatía diabética",
       detalle: "La mejoría rápida de la glucemia puede empeorar transitoriamente la retinopatía. Control oftalmológico.",
+    });
+  }
+  if (com.has("gastritis")) {
+    h.push({
+      nivel: "info",
+      codigo: "INFO_GASTRITIS",
+      titulo: "Gastritis o reflujo",
+      detalle:
+        "No es contraindicación (la contraindicación es gastroparesia o enfermedad GI grave). Debe estar controlada antes de iniciar: si hay síntomas activos, tratar primero (y descartar H. pylori). Con el tratamiento, comidas pequeñas, evitar fritos, picante, café en exceso y alcohol, y no acostarse hasta 2–3 h después de comer.",
+    });
+  }
+  if (com.has("hipotiroidismo") && !/levotiroxina|eutirox|synthroid/.test(normalizar(r.medicamentos))) {
+    h.push({
+      nivel: "precaucion",
+      codigo: "PR_HIPOTIROIDISMO_SIN_TRATAR",
+      titulo: "Hipotiroidismo sin tratamiento reportado",
+      detalle: "Compensar la función tiroidea antes de iniciar: pedir TSH y valorar levotiroxina.",
     });
   }
   if (com.has("salud_mental")) {

@@ -237,3 +237,14 @@ test("antihipertensivo cuenta como comorbilidad y el diurético genera vigilanci
   assert.ok(res.estiloVida.ajustesMetabolicos.some((x) => x.startsWith("Hipertensión")));
   assert.ok(res.estiloVida.ajustesMetabolicos.some((x) => x.startsWith("Usa diurético")));
 });
+
+test("gastritis e hipotiroidismo tratados quedan como información", () => {
+  const res = evaluar({ ...base, comorbilidades: ["gastritis", "hipotiroidismo"], medicamentos: "Levotiroxina 125 mcg" });
+  assert.equal(res.veredicto, "APTO");
+  const c = codigos(res);
+  assert.ok(c.includes("INFO_GASTRITIS"));
+  assert.ok(c.includes("MED_LEVOTIROXINA"));
+  const sinTrat = evaluar({ ...base, comorbilidades: ["hipotiroidismo"] });
+  assert.equal(sinTrat.veredicto, "REQUIERE_EVALUACION");
+  assert.ok(codigos(sinTrat).includes("PR_HIPOTIROIDISMO_SIN_TRATAR"));
+});
