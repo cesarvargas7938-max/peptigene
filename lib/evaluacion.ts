@@ -7,7 +7,7 @@
 // IMPORTANTE: es una herramienta de apoyo. La decisión final y la prescripción
 // corresponden siempre a un profesional de la salud.
 
-import { planEstiloVida, planEstiloVidaTexto, type PlanEstiloVida } from "./estilo-vida.ts";
+import { planEstiloVida, planEstiloVidaTexto, PATRON_ANTIHIPERTENSIVO, PATRON_DIURETICO, type PlanEstiloVida } from "./estilo-vida.ts";
 
 export type Tratamiento = "tirzepatida" | "retatrutida";
 export type Sexo = "femenino" | "masculino" | "";
@@ -547,6 +547,22 @@ const REGLAS_MEDICAMENTOS: ReglaMed[] = [
     detalle: "El retraso del vaciamiento gástrico puede alterar sus niveles. Requiere monitoreo.",
   },
   {
+    patron: PATRON_DIURETICO,
+    nivel: "info",
+    codigo: "MED_DIURETICO",
+    titulo: "Usa diurético",
+    detalle:
+      "Compatible, pero con náuseas o vómito del tratamiento sube el riesgo de deshidratación y lesión renal. Hidratación estricta; conocer creatinina basal.",
+  },
+  {
+    patron: PATRON_ANTIHIPERTENSIVO,
+    nivel: "info",
+    codigo: "MED_ANTIHIPERTENSIVO",
+    titulo: "Usa antihipertensivo: hipertensión tratada",
+    detalle:
+      "Cuenta como comorbilidad asociada al peso. La presión suele bajar con la pérdida de peso: controlarla semanalmente y ajustar el antihipertensivo con el médico si hay hipotensión o mareo.",
+  },
+  {
     patron: /\b(levotiroxina|eutirox|synthroid|levotiroxina sodica|levotiroxina sódica)\b/,
     nivel: "info",
     codigo: "MED_LEVOTIROXINA",
@@ -917,9 +933,11 @@ export function evaluar(r: Respuestas): Resultado {
   }
 
   // --- Indicación por IMC + comorbilidades ------------------------------
+  const hipertensionPorMed = !com.has("hipertension") && PATRON_ANTIHIPERTENSIVO.test(normalizar(r.medicamentos));
   const comorbilidadesIndicacion = COMORBILIDADES.filter(
     (c) => c.cuentaParaIndicacion && com.has(c.id),
   ).map((c) => c.label);
+  if (hipertensionPorMed) comorbilidadesIndicacion.push("Hipertensión (por medicación)");
   if (prediabetesPorLab && !com.has("prediabetes")) comorbilidadesIndicacion.push("Prediabetes (por laboratorio)");
   if (diabetesPorLab && !com.has("dm2")) comorbilidadesIndicacion.push("Diabetes (por laboratorio)");
   if (dislipidemiaPorLab && !com.has("dislipidemia")) comorbilidadesIndicacion.push("Dislipidemia (por laboratorio)");

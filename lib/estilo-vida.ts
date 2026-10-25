@@ -34,6 +34,11 @@ export type PlanEstiloVida = {
   supuestos: string[];
 };
 
+// Antihipertensivos comunes: implican hipertensión tratada (comorbilidad asociada al peso).
+export const PATRON_ANTIHIPERTENSIVO =
+  /\b(losartan|losartán|valsartan|valsartán|irbesartan|irbesartán|olmesartan|olmesartán|telmisartan|telmisartán|candesartan|candesartán|enalapril|captopril|lisinopril|ramipril|perindopril|amlodipino|amlodipina|nifedipino|verapamilo|diltiazem|hidroclorotiazida|clortalidona|indapamida|furosemida|espironolactona|metoprolol|atenolol|bisoprolol|carvedilol|propranolol|nebivolol|prazosina|doxazosina|clonidina|antihipertensivo|presion alta|presión alta|hipertension|hipertensión)\b/;
+export const PATRON_DIURETICO = /\b(hidroclorotiazida|clortalidona|indapamida|furosemida|espironolactona|diuretico|diurético)\b/;
+
 const FACTOR_ACTIVIDAD: Record<string, { factor: number; nombre: string }> = {
   no: { factor: 1.2, nombre: "sedentario" },
   ocasional: { factor: 1.375, nombre: "actividad ligera" },
@@ -66,6 +71,8 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
 
   const lab = (clave: string) => labs.find((l) => l.clave === clave);
   const com = new Set(r.comorbilidades);
+  const medsNorm = r.medicamentos.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  if (PATRON_ANTIHIPERTENSIVO.test(medsNorm)) com.add("hipertension");
   const peso = r.pesoKg;
   const estatura = r.estaturaCm;
   const imc = peso / Math.pow(estatura / 100, 2);
@@ -185,7 +192,10 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[]): PlanEstiloVi
     ajustes.push("Hígado graso / transaminasas altas: cero alcohol, evitar fructosa añadida (jarabe de maíz, jugos), café sin azúcar 2–3 tazas/día ayuda. Mejora notablemente con 7–10 % de pérdida de peso.");
   }
   if (com.has("hipertension")) {
-    ajustes.push("Hipertensión: sodio < 2 g/día (no añadir sal, evitar enlatados y embutidos), potasio de frutas y verduras. La presión suele bajar con el tratamiento: controlarla semanalmente.");
+    ajustes.push("Hipertensión: sodio < 2 g/día (no añadir sal, evitar enlatados y embutidos), potasio de frutas y verduras. La presión suele bajar con el tratamiento: controlarla semanalmente; si baja de 110/70 o hay mareo, el médico debe reducir el antihipertensivo.");
+  }
+  if (PATRON_DIURETICO.test(medsNorm)) {
+    ajustes.push("Usa diurético: sumado a las náuseas o vómito del tratamiento aumenta el riesgo de deshidratación y daño renal. Hidratación estricta, y si hay vómito o diarrea suspender el diurético ese día y consultar.");
   }
   if (renal) {
     ajustes.push("Función renal disminuida: proteína moderada (0.9 g/kg), hidratación estricta y control de creatinina a las 4–8 semanas. Evitar antiinflamatorios.");

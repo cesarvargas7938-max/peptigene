@@ -226,3 +226,14 @@ test("no apto no genera plan de estilo de vida", () => {
   const res = evaluar({ ...base, tiroidesCmtMen2: "si" });
   assert.equal(res.estiloVida, null);
 });
+
+test("antihipertensivo cuenta como comorbilidad y el diurético genera vigilancia", () => {
+  const res = evaluar({ ...base, pesoKg: 86, medicamentos: "Valsartán 160 mg + hidroclorotiazida 25 mg" }); // IMC 28.1
+  assert.equal(res.veredicto, "APTO");
+  const c = codigos(res);
+  assert.ok(c.includes("MED_ANTIHIPERTENSIVO"));
+  assert.ok(c.includes("MED_DIURETICO"));
+  assert.ok(res.hallazgos.find((h) => h.codigo === "INFO_CUMPLE_INDICACION").detalle.includes("Hipertensión (por medicación)"));
+  assert.ok(res.estiloVida.ajustesMetabolicos.some((x) => x.startsWith("Hipertensión")));
+  assert.ok(res.estiloVida.ajustesMetabolicos.some((x) => x.startsWith("Usa diurético")));
+});
