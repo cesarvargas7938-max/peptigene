@@ -256,3 +256,9 @@ test("gastritis e hipotiroidismo tratados quedan como información", () => {
   assert.equal(sinTrat.veredicto, "REQUIERE_EVALUACION");
   assert.ok(codigos(sinTrat).includes("PR_HIPOTIROIDISMO_SIN_TRATAR"));
 });
+
+test("cirugía abdominal reciente pospone el inicio", () => {
+  const res = evaluar({ ...base, comorbilidades: ["cirugia_reciente"] });
+  assert.equal(res.veredicto, "REQUIERE_EVALUACION");
+  assert.ok(codigos(res).includes("PR_CIRUGIA_RECIENTE"));
+});

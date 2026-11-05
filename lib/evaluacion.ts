@@ -56,6 +56,7 @@ export const COMORBILIDADES: { id: string; label: string; cuentaParaIndicacion: 
   { id: "trastorno_alimentario", label: "Trastorno de la conducta alimentaria", cuentaParaIndicacion: false },
   { id: "hipotiroidismo", label: "Hipotiroidismo (en tratamiento)", cuentaParaIndicacion: false },
   { id: "gastritis", label: "Gastritis o reflujo", cuentaParaIndicacion: false },
+  { id: "cirugia_reciente", label: "Cirugía abdominal o pélvica en los últimos 3 meses", cuentaParaIndicacion: false },
 ];
 
 export const respuestasVacias: Respuestas = {
@@ -862,6 +863,15 @@ export function evaluar(r: Respuestas): Resultado {
       codigo: "PR_HIPOTIROIDISMO_SIN_TRATAR",
       titulo: "Hipotiroidismo sin tratamiento reportado",
       detalle: "Compensar la función tiroidea antes de iniciar: pedir TSH y valorar levotiroxina.",
+    });
+  }
+  if (com.has("cirugia_reciente")) {
+    h.push({
+      nivel: "precaucion",
+      codigo: "PR_CIRUGIA_RECIENTE",
+      titulo: "Cirugía abdominal o pélvica reciente",
+      detalle:
+        "No iniciar en el posoperatorio: la cicatrización necesita buena ingesta de proteína y calorías, el fármaco retrasa el vaciamiento gástrico (riesgo de íleo y náuseas) y el dolor abdominal posoperatorio se confunde con pancreatitis. Esperar al menos 6–8 semanas, con alta definitiva del cirujano y hemograma de control.",
     });
   }
   if (com.has("salud_mental")) {
