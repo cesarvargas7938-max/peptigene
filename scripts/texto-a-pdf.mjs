@@ -43,6 +43,11 @@ for (let raw of lineas) {
 }
 cerrar();
 
+// La última sección viaja junto con la firma para que la firma nunca quede sola en una página.
+const corte = html.lastIndexOf("<h2>");
+const htmlAntes = corte >= 0 ? html.slice(0, corte) : html;
+const htmlFinal = corte >= 0 ? html.slice(corte) : "";
+
 const doc = `<!doctype html><html lang="es-CO"><head><meta charset="utf-8"><title>Evaluación</title><style>
 @page { size: A4; margin: 13mm 14mm 15mm 14mm; }
 body { font-family: "Outfit", "Segoe UI", system-ui, sans-serif; color: ${marca.color}; font-size: 10pt; line-height: 1.42; margin: 0; }
@@ -56,6 +61,7 @@ h2.seccion { font-family: Georgia, serif; font-size: 16pt; letter-spacing: -0.01
 p { margin: 0 0 5px; }
 p.dato { color: ${marca.acento}; font-size: 10pt; margin: 0 0 3px; }
 p.meta { background: ${marca.suave}; border: 1px solid ${marca.linea}; border-radius: 8px; padding: 6px 10px; font-size: 9.5pt; margin: 4px 0; }
+.final { break-inside: avoid; }
 .firma { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; font-size: 9pt; break-inside: avoid; }
 .firma div { border-top: 1px solid ${marca.color}; padding-top: 4px; }
 .firma small { display: block; color: ${marca.acento}; font-size: 8pt; }
@@ -66,12 +72,15 @@ li.warn { color: #78350f; } li.bad { color: #7f1d1d; }
 p.legal { margin-top: 18px; padding-top: 8px; border-top: 1px solid ${marca.linea}; font-size: 8.5pt; color: ${marca.acento}; }
 </style></head><body>
 <header><div class="logo"><i>${esc(marca.inicial)}</i> ${esc(marca.nombre)}</div><div class="fecha">${esc(marca.subtitulo)}<br>${new Date().toLocaleDateString("es-CO", { day: "2-digit", month: "long", year: "numeric" })}</div></header>
-${html}
+${htmlAntes}
+<div class="final">
+${htmlFinal}
 <div class="firma">
   <div>${esc(marca.medico || "Médico evaluador")}<small>${esc(marca.registro || "Registro médico")}</small></div>
   <div>Paciente<small>Recibí y comprendí las recomendaciones</small></div>
 </div>
 ${marca.contacto ? `<p class="legal" style="border:0;margin-top:8px">${esc(marca.contacto)}</p>` : ""}
+</div>
 </body></html>`;
 
 const { chromium } = await import("playwright");
