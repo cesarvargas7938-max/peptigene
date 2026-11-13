@@ -362,7 +362,9 @@ const LABS: DefLab[] = [
     alias: /\b(b12|cobalamina)\b/i,
     unidad: "pg/mL",
     min: 200,
-    rango: "≥ 200",
+    max: 900,
+    rango: "200–900",
+    comentar: (v) => (v > 900 ? "Elevada: habitualmente por suplementación (complejo B, inyecciones). Si no suplementa, evaluar causa" : undefined),
   },
   {
     clave: "hemoglobina",
