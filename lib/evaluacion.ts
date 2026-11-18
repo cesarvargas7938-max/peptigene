@@ -49,6 +49,7 @@ export const COMORBILIDADES: { id: string; label: string; cuentaParaIndicacion: 
   { id: "higado_graso", label: "Hígado graso", cuentaParaIndicacion: true },
   { id: "sop", label: "Síndrome de ovario poliquístico", cuentaParaIndicacion: true },
   { id: "cardiovascular", label: "Enfermedad cardiovascular", cuentaParaIndicacion: true },
+  { id: "obesidad_abdominal", label: "Obesidad abdominal (cintura > 88 cm mujer / > 102 cm hombre, o grasa visceral alta en bioimpedancia)", cuentaParaIndicacion: true },
   { id: "renal", label: "Enfermedad renal crónica", cuentaParaIndicacion: false },
   { id: "hepatica", label: "Enfermedad hepática (cirrosis, hepatitis)", cuentaParaIndicacion: false },
   { id: "retinopatia", label: "Retinopatía diabética", cuentaParaIndicacion: false },
