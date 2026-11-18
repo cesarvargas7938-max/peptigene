@@ -250,6 +250,7 @@ export function planEstiloVida(r: Respuestas, labs: Laboratorio[], modalidad: Mo
     "Si la pérdida supera 1.5 % del peso por semana durante 2 semanas seguidas: subir calorías y proteína; se está perdiendo músculo.",
     "Si no hay cambio en 4 semanas con buena adherencia: revisar porciones y considerar aumento de dosis con el médico.",
     "Laboratorios de control a las 12 semanas: glucosa, HbA1c, lípidos, creatinina, lipasa si hubo síntomas.",
+    "Vigilancia biliar en cada control: preguntar por cólico o dolor en la parte superior derecha del abdomen después de comer, sobre todo comidas grasosas. La pérdida rápida de peso con estos fármacos favorece los cálculos; ante cualquier episodio, ecografía hepatobiliar.",
     "Al llegar a la meta: no suspender de golpe; planear mantenimiento con el médico (dosis de sostén o retiro gradual) manteniendo fuerza y proteína.",
   ];
 
