@@ -262,3 +262,11 @@ test("cirugía abdominal reciente pospone el inicio", () => {
   assert.equal(res.veredicto, "REQUIERE_EVALUACION");
   assert.ok(codigos(res).includes("PR_CIRUGIA_RECIENTE"));
 });
+
+test("inmunosupresor es precaución y biotina es aviso de laboratorio", () => {
+  const res = evaluar({ ...base, medicamentos: "Arava 20 mg", suplementos: "Biotina y omega 3" });
+  assert.equal(res.veredicto, "REQUIERE_EVALUACION");
+  const c = codigos(res);
+  assert.ok(c.includes("MED_INMUNOSUPRESOR"));
+  assert.ok(c.includes("INFO_BIOTINA"));
+});

@@ -583,6 +583,22 @@ const REGLAS_MEDICAMENTOS: ReglaMed[] = [
       "No contraindica. El retraso del vaciamiento gástrico puede aumentar reflujo y dispepsia: mantener el protector las primeras semanas, comidas pequeñas y no acostarse hasta 2–3 h después de comer.",
   },
   {
+    patron: /\b(leflunomida|arava|metotrexato|metotrexate|azatioprina|micofenolato|ciclosporina|tacrolimus|tofacitinib|baricitinib|upadacitinib|adalimumab|etanercept|infliximab|tocilizumab|rituximab|inmunosupresor)\b/,
+    nivel: "precaucion",
+    codigo: "MED_INMUNOSUPRESOR",
+    titulo: "Usa inmunosupresor o modulador de enfermedad autoinmune",
+    detalle:
+      "Requiere aval del reumatólogo o especialista tratante. Vigilar transaminasas (varios de estos fármacos son hepatotóxicos), tolerancia digestiva (se suman náuseas y diarrea) y, con leflunomida o metotrexato, anticoncepción estricta por teratogenicidad.",
+  },
+  {
+    patron: /\b(biotina|biotin|vitamina b7|vitamina h)\b/,
+    nivel: "info",
+    codigo: "MED_BIOTINA",
+    titulo: "Toma biotina",
+    detalle:
+      "Interfiere con los exámenes de tiroides (TSH falsamente baja, T4 falsamente alta) y otros inmunoanálisis. Suspenderla 5–7 días antes de cualquier laboratorio.",
+  },
+  {
     patron: /\b(levotiroxina|eutirox|synthroid|levotiroxina sodica|levotiroxina sódica)\b/,
     nivel: "info",
     codigo: "MED_LEVOTIROXINA",
@@ -1039,6 +1055,14 @@ export function evaluar(r: Respuestas): Resultado {
   // Medicamentos y suplementos
   h.push(...evaluarMedicamentos(r.medicamentos));
   const sup = normalizar(r.suplementos).trim();
+  if (/\b(biotina|biotin)\b/.test(sup) && !/\b(biotina|biotin)\b/.test(normalizar(r.medicamentos))) {
+    h.push({
+      nivel: "info",
+      codigo: "INFO_BIOTINA",
+      titulo: "Toma biotina",
+      detalle: "Interfiere con los exámenes de tiroides (TSH falsamente baja, T4 falsamente alta). Suspenderla 5–7 días antes de cualquier laboratorio.",
+    });
+  }
   if (sup && !/^(no|ninguno|ninguna|nada)\.?$/.test(sup)) {
     h.push({
       nivel: "info",
