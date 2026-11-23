@@ -1,82 +1,83 @@
-# WhatsApp · Apertura en frío · Black Friday
+# WhatsApp · Apertura en frío a desconocidos · Black Friday
 
-> Mensajes cortos para WhatsApp. Tono: "usted", cercano, sin presión.
+> Para personas que NO lo conocen. Tono: "usted", respetuoso, sin presión.
 > Beneficios de la campaña: envío gratis + agua bacteriostática gratis.
-> Objetivo: que respondan. La venta viene en el segundo mensaje, no en el primero.
+> Objetivo del primer mensaje: que respondan algo, lo que sea. La venta viene después.
 
 ---
 
-## REGLAS RÁPIDAS
+## REGLAS PARA MENSAJES EN FRÍO
 
-- Máximo 4 líneas en el primer mensaje. En WhatsApp lo largo no se lee.
-- Siempre con nombre. Un mensaje sin nombre parece masivo.
-- Terminar con una pregunta fácil de responder con una palabra.
-- No enviar precios en el primer mensaje. Primero curiosidad, después oferta.
-- Nunca más de 2 mensajes sin respuesta. Si no contestan, se deja.
-
----
-
-## 1. CLIENTES ANTERIORES (ya compraron antes)
-
-**Opción A · Actualización + curiosidad**
-> Hola [Nombre], ¿cómo va todo? Le escribo porque esta semana tenemos algo que solo abrimos una vez al año y quise avisarle primero a quienes ya conocen el producto. ¿Le cuento?
-
-**Opción B · Directo al beneficio**
-> Hola [Nombre], un gusto saludarle. Por Black Friday estamos incluyendo el envío gratis y el agua bacteriostática sin costo en todos los pedidos de esta semana. Si estaba pensando en reponer, este es el momento. ¿Qué está usando actualmente?
-
-**Opción C · Seguimiento de resultados**
-> Hola [Nombre], ¿cómo le ha ido con el [producto que compró]? Le escribo porque tenemos una ventana de Black Friday con envío y agua bacteriostática gratis, y quería saber si le sirve que le reserve antes de que se acabe el inventario.
+- Diga quién es y por qué escribe en las dos primeras líneas. Un desconocido desconfía si no lo entiende de inmediato.
+- Dé una salida fácil: "si no le interesa, no hay problema". Baja la defensa y aumenta las respuestas.
+- Una sola pregunta al final, que se pueda responder con "sí" o "no".
+- Sin precios ni listas en el primer mensaje.
+- Varíe la primera frase entre contactos. WhatsApp bloquea números que repiten el mismo texto.
+- Nunca más de un recordatorio. Si no responden, se deja.
 
 ---
 
-## 2. PERSONAS QUE PREGUNTARON PERO NO COMPRARON
+## 1. PRIMER MENSAJE (elija uno por contacto)
 
-**Opción A · Retomar la conversación**
-> Hola [Nombre], hace un tiempo me escribió preguntando por péptidos y quedamos en que lo pensaría. Le aviso porque esta semana tenemos las mejores condiciones del año: envío gratis y el agua bacteriostática incluida. ¿Sigue interesado en [lo que preguntó]?
+**Opción A · Curiosidad**
+> Hola [Nombre], mi nombre es [Su nombre]. No nos conocemos, le escribo porque trabajo con péptidos certificados y esta semana tenemos una condición que solo abrimos una vez al año. No sé si es un tema que le interese, ¿le cuento en dos líneas?
 
-**Opción B · Curiosidad**
-> Hola [Nombre], ¿se acuerda que hablamos de péptidos? Tengo una novedad que le puede interesar y es solo por esta semana. ¿Le mando la información?
+**Opción B · Directo y respetuoso**
+> Hola [Nombre], soy [Su nombre]. Le escribo sin que nos conozcamos, así que voy al punto: trabajo con péptidos certificados, con acompañamiento y envíos a Colombia y Estados Unidos. Por Black Friday el envío y el agua bacteriostática van gratis. Si el tema no es para usted, no hay problema. ¿Le interesa saber más?
+
+**Opción C · Pregunta primero**
+> Hola [Nombre], mi nombre es [Su nombre] y trabajo en el tema de péptidos para piel, recuperación y composición corporal. ¿Es un tema que haya considerado o que tenga en el radar? Le pregunto porque esta semana tenemos condiciones especiales y no quiero molestarle si no le interesa.
+
+**Opción D · Educativo**
+> Hola [Nombre], soy [Su nombre]. Le escribo porque ayudo a personas a empezar con péptidos de forma segura: producto certificado, dosis correcta y acompañamiento. Esta semana por Black Friday incluimos el envío y el agua bacteriostática sin costo. ¿Le gustaría que le explique cómo funciona?
+
+**Opción E · Muy corto**
+> Hola [Nombre], soy [Su nombre]. Trabajo con péptidos certificados y por Black Friday el envío y el agua bacteriostática son gratis esta semana. ¿Le interesa el tema?
 
 ---
 
-## 3. CONTACTOS NUEVOS (referidos o base de datos fría)
+## 2. SI PREGUNTAN "¿QUIÉN ES USTED?" O "¿DE DÓNDE TIENE MI NÚMERO?"
 
-**Opción A · Presentación breve**
-> Hola [Nombre], soy [Su nombre]. Trabajo con péptidos certificados, con acompañamiento y envíos a toda Colombia y Estados Unidos. Le escribo porque por Black Friday el envío y el agua bacteriostática van sin costo. ¿Le interesa que le cuente cómo funciona?
+> Con gusto. Soy [Su nombre], llevo años trabajando con péptidos y estudiando este mercado. Su número lo tengo por [referido / base de contactos interesados en bienestar / evento]. Si prefiere que no le escriba más, me lo dice y lo respeto.
 
-**Opción B · Con referido**
-> Hola [Nombre], [Nombre del referido] me pasó su contacto porque me comentó que le interesaba el tema de péptidos. Esta semana tenemos envío gratis y agua bacteriostática incluida por Black Friday. ¿Le parece si le explico brevemente?
+Responder siempre, con calma y sin justificarse de más. Si piden no recibir más mensajes, se elimina el contacto.
 
 ---
 
-## 4. SEGUNDO MENSAJE (cuando responden "sí, cuénteme")
+## 3. SI RESPONDEN "SÍ, CUÉNTEME"
 
-> Perfecto. Le resumo:
+> Perfecto, le resumo. Los péptidos son compuestos que apoyan procesos específicos del cuerpo: piel, recuperación, composición corporal o pérdida de peso. Lo importante es la fuente: trabajamos con producto certificado en pureza y esterilidad, le damos la dosificación y lo acompañamos en el proceso.
 >
 > Esta semana, por Black Friday, todos los pedidos incluyen:
 > • Envío gratis a toda Colombia y Estados Unidos
-> • Agua bacteriostática sin costo (normalmente va aparte)
-> • Certificados de pureza y esterilidad de cada producto
-> • Guía de dosificación y acompañamiento durante el proceso
+> • Agua bacteriostática sin costo, que es la que se usa para preparar el producto
 >
-> Aplica hasta el [fecha]. ¿Qué está buscando trabajar: piel, recuperación, composición corporal o pérdida de peso? Así le recomiendo lo adecuado para su caso.
+> ¿Qué le gustaría trabajar? Así le recomiendo lo adecuado para su caso.
 
 ---
 
-## 5. RECORDATORIO (24 a 48 horas sin respuesta, solo uno)
+## 4. SI RESPONDEN "¿QUÉ SON LOS PÉPTIDOS?"
 
-> Hola [Nombre], le escribo solo para recordarle que la promoción de envío y agua bacteriostática gratis termina el [fecha]. Si no es el momento, no hay problema. Quedo atento por si lo necesita más adelante.
+> Son moléculas que el cuerpo reconoce y que ayudan a modular procesos específicos: por ejemplo, producción de colágeno en la piel, recuperación de tejidos o control del apetito. No son hormonas ni esteroides. Lo que marca la diferencia es usar producto certificado, con la dosis correcta y acompañamiento. ¿Hay algo en particular que le gustaría mejorar?
 
 ---
 
-## 6. CIERRE DE CAMPAÑA (último día)
+## 5. SI RESPONDEN "NO ME INTERESA"
 
-> [Nombre], hoy es el último día de Black Friday. Después de hoy el envío y el agua bacteriostática vuelven a cobrarse. Si quiere aprovecharlo, me confirma y le reservo de una vez.
+> Entendido, gracias por responder. Que esté muy bien.
+
+No insistir. Un "gracias" deja la puerta abierta para más adelante.
+
+---
+
+## 6. RECORDATORIO ÚNICO (48 horas sin respuesta)
+
+> Hola [Nombre], le escribí hace un par de días sobre péptidos certificados. Solo le recuerdo que el envío y el agua bacteriostática gratis terminan el [fecha]. Si no es un tema para usted, no hay problema y no le vuelvo a escribir.
 
 ---
 
 ## NOTAS
 
-- "Agua bacteriostática" en vez de "agua B": el cliente nuevo no sabe qué es "agua B". Para clientes antiguos puede usar "agua B" sin problema.
-- Evitar en WhatsApp palabras como "cura", "tratamiento médico" o resultados garantizados. Mantener "apoya", "acompañamiento", "certificado".
-- Si envía a muchos contactos, cambiar la primera línea en cada uno. WhatsApp bloquea números que envían el mismo texto repetido.
+- "Agua bacteriostática" siempre completo. Un desconocido no sabe qué es "agua B".
+- Evitar "cura", "tratamiento", "garantizado". Usar "apoya", "ayuda", "certificado", "acompañamiento".
+- Las opciones A y C son las que más respuestas suelen generar en frío porque piden permiso antes de vender. La E es para cuando se envían muchos mensajes y hay poco tiempo.
