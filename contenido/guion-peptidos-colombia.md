@@ -8,9 +8,9 @@
 
 ## BLOQUE 1 · Gancho
 
-Lo que usted se aplica no es el problema. El problema es no saber con certeza qué se está aplicando.
+Llevo años usando péptidos en mi propio cuerpo y años estudiando este mercado. Hay tres cosas que me hubiera gustado saber antes de empezar. Hoy se las voy a contar a usted.
 
-Llevo años estudiando el mercado de los péptidos, y llevo años usándolos en mi propio cuerpo. En todo ese tiempo he visto a muchas personas empezar con grandes expectativas y quedarse a medio camino. Y casi nunca es culpa del péptido. Es culpa de tres errores que se repiten una y otra vez, incluso entre personas que tienen acceso a lo mejor.
+Porque en todo este tiempo he visto a muchas personas empezar con grandes expectativas y quedarse a medio camino. Y casi nunca es culpa del péptido. Es culpa de tres errores que se repiten una y otra vez, incluso entre personas que tienen acceso a lo mejor.
 
 Si usted ya los usa, si está evaluando empezar o si simplemente los tiene en el radar, acompáñeme hasta el final. El tercer error es el que más les ha costado a las personas que conozco, en resultados y en salud.
 
@@ -102,16 +102,15 @@ Y si este video le aportó claridad, compártalo con alguien que esté pensando 
 
 ---
 
-## ANEXO A · Variantes de gancho
+## ANEXO A · Gancho elegido y alternativas
 
-**Confrontación elegante:**
-"Lo que usted se aplica no es el problema. El problema es no saber con certeza qué se está aplicando."
+**Gancho principal (en uso):**
+"Llevo años usando péptidos en mi propio cuerpo y años estudiando este mercado. Hay tres cosas que me hubiera gustado saber antes de empezar. Hoy se las voy a contar a usted."
 
-**Curiosidad:**
-"Hay un error que comete casi todo el que empieza con péptidos. Y no tiene nada que ver con el péptido."
-
-**Autoridad:**
-"Llevo años estudiando este mercado y usándolos en mi propio cuerpo. Hoy le cuento los tres errores que más veo, para que usted no los cometa."
+**Alternativas para reels o pruebas A/B:**
+- "Una persona que conozco bajó diez kilos en mes y medio, sin rebote y con la piel firme. No fue suerte ni genética. Fue hacer bien tres cosas que la mayoría hace mal."
+- "Los péptidos pueden transformar su piel, su recuperación y su metabolismo. O pueden costarle la salud. La diferencia no está en el péptido. Está en cómo y dónde lo consigue."
+- "Le han dicho que los péptidos son peligrosos. Le han dicho que son milagrosos. Las dos cosas son falsas. Hoy le explico qué son realmente y qué tiene que exigir antes de usarlos."
 
 ---
 
