@@ -1,112 +1,104 @@
-# Péptidos: lo que nadie le cuenta antes de empezar (versión Colombia · público premium)
+# Péptidos: lo que nadie le cuenta antes de empezar (guion hablado · Colombia · público premium)
 
-> Versión corta para video de 4 a 5 minutos. Registro elegante y sobrio, para un público exigente
-> que invierte en su bienestar y su longevidad. Tratamiento: "usted". Sin jerga.
-
----
-
-## 1. GANCHO (0:00 – 0:15)
-
-**Lo que usted se aplica no es el problema. El problema es no saber con certeza qué se está aplicando.**
-
-Llevo años estudiando el mercado de los péptidos y años usándolos en mi propio cuerpo. Y puedo decirle con claridad que las personas no fracasan por el péptido. Fracasan por tres errores que veo repetirse una y otra vez, incluso en quienes tienen acceso a lo mejor.
-
-Si ya los usa, si está evaluando empezar o si los tiene en el radar, **acompáñeme hasta el final**. El último error es el que más les ha costado, en resultados y en salud, a personas que conozco.
+> Guion para narrar en cámara o en voz en off. Entre 4 y 5 minutos.
+> Los títulos de bloque son solo guía de producción, no se leen.
+> Registro: "usted", sobrio, cercano, sin jerga. Objetivo: que la persona escriba pidiendo información.
 
 ---
 
-## 2. LOS PÉPTIDOS NO SON EL PROBLEMA (0:15 – 0:50)
+## BLOQUE 1 · Gancho
 
-Si está considerando los péptidos, le felicito. Es una de las decisiones más inteligentes que puede tomar por su piel, su recuperación y su metabolismo, siempre que se haga con criterio.
+Lo que usted se aplica no es el problema. El problema es no saber con certeza qué se está aplicando.
 
-Pero hay demasiada información imprecisa circulando, en redes y en el propio mercado.
+Llevo años estudiando el mercado de los péptidos, y llevo años usándolos en mi propio cuerpo. En todo ese tiempo he visto a muchas personas empezar con grandes expectativas y quedarse a medio camino. Y casi nunca es culpa del péptido. Es culpa de tres errores que se repiten una y otra vez, incluso entre personas que tienen acceso a lo mejor.
 
-Seamos claros: **los péptidos no son malos.** Son moléculas diseñadas en laboratorio para modular procesos muy específicos del cuerpo. No son una moda ni un atajo, y tampoco el riesgo que algunos describen.
-
-Lo que ocurre adentro se refleja afuera. Cuando entendí eso, dejé de buscar soluciones únicamente externas y empecé a trabajar desde adentro. Ahí fue donde todo cambió.
+Si usted ya los usa, si está evaluando empezar o si simplemente los tiene en el radar, acompáñeme hasta el final. El tercer error es el que más les ha costado a las personas que conozco, en resultados y en salud.
 
 ---
 
-## 3. LOS TRES ERRORES (0:50 – 1:40)
+## BLOQUE 2 · Reencuadre
 
-Entonces, si el péptido no es el problema, ¿cuál es? Son tres:
+Antes de hablar de los errores, quiero decirle algo. Si usted está considerando los péptidos, va por buen camino. Pocas herramientas tienen el potencial de transformar al mismo tiempo la piel, la recuperación y el metabolismo. Pero ese potencial solo aparece cuando se hace con criterio.
 
-1. **Comprar sin trazabilidad.** Sin certificado de esterilidad ni de pureza. Es decir, sin ninguna forma de confirmar que el producto es lo que dice ser.
-2. **Automedicarse.** Sin una evaluación de su caso, sin saber qué es compatible con usted y qué no.
-3. **Manejar mal la dosis.** Sobre todo en la titulación: la subida gradual al inicio y la bajada controlada al final. Ahí es donde más personas se equivocan.
+Y ahí está el problema. Hay demasiada información imprecisa circulando, en redes y en el propio mercado. Por eso quiero empezar aclarando lo más básico: los péptidos no son malos. Son moléculas diseñadas en laboratorio para modular procesos muy específicos del cuerpo. No son una moda, no son un atajo, y tampoco son el riesgo que algunos describen.
 
-Adquirirlo por recomendación informal, "porque a alguien le funcionó", es el riesgo más frecuente en este mercado. Y también el más fácil de evitar.
-
-**Recuerde esto: el abuso es lo que hace daño. El compuesto bien manejado, no.**
+Yo mismo tardé en entenderlo. Durante años busqué resultados en la piel con tratamientos externos, hasta que comprendí algo sencillo: lo que ocurre adentro se refleja afuera. Cuando empecé a trabajar desde adentro, con acompañamiento, fue cuando todo cambió.
 
 ---
 
-## 4. MI EXPERIENCIA (1:40 – 2:50)
+## BLOQUE 3 · Los tres errores
 
-Le hablo desde la experiencia, no desde la teoría. Siempre con dosis controlada, producto verificado y acompañamiento profesional.
+Ahora sí, los tres errores.
 
-**Piel: GHK-Cu y Glow** (la combinación de GHK-Cu con otros péptidos). La diferencia es evidente: una piel más luminosa, una textura mucho más sana y, en mi caso, la desaparición completa de una dermatitis seborreica que tenía. Mejor cicatrización, menos caída del cabello y mayor elasticidad.
+El primero es comprar sin trazabilidad. Productos sin certificado de esterilidad, sin certificado de pureza, sin ninguna forma de confirmar que lo que llega es realmente lo que dice ser. Es el error más común y el más peligroso.
 
-Hay un detalle que pocos mencionan: cuando una persona baja de peso, la piel tiende a perder firmeza. El GHK-Cu ayuda a que ese proceso sea mucho menos visible, porque estimula el colágeno desde adentro, algo que ninguna aplicación tópica logra de la misma manera.
+El segundo es automedicarse. Empezar sin que nadie evalúe su caso, sin saber qué compuesto es compatible con usted y cuál no. Lo que a una persona le funcionó puede no ser lo indicado para otra.
 
-**Recuperación: BPC-157 y TB-500.** Entreno con más tranquilidad porque los tejidos responden mejor y la recuperación es más rápida.
+Y el tercero, el que más daño hace, es manejar mal la dosis. Especialmente en la titulación, que es la subida gradual al inicio y la bajada controlada al final. Ahí es donde más personas se equivocan, y donde aparecen los problemas que después se le atribuyen al péptido.
 
-**Composición corporal: Tesamorelin.** Ha sido una herramienta valiosa en composición corporal y en ciertos marcadores metabólicos.
-
-Después de años, el balance es sencillo: **mejor piel, mejor recuperación y mejor control del metabolismo.**
+Si algo quiero que se lleve de este video, es esto: el abuso es lo que hace daño. El compuesto bien manejado, no.
 
 ---
 
-## 5. LA PREGUNTA MÁS FRECUENTE: RETATRUTIDE (2:50 – 3:50)
+## BLOQUE 4 · Mi experiencia
 
-Yo no lo he usado, pero conozco de cerca a una persona que sí.
+Le cuento lo que yo he vivido, siempre con dosis controlada, producto verificado y acompañamiento profesional.
 
-Primero, transparencia: retatrutide **aún no cuenta con aprobación de la FDA**. Está en fase 3. Lo que le voy a contar es un caso real, no una promesa.
+Empecé por la piel, con GHK-Cu y Glow, que es la combinación de GHK-Cu con otros péptidos. La diferencia fue evidente: una piel más luminosa, una textura mucho más sana y, en mi caso, la desaparición completa de una dermatitis seborreica que llevaba años conmigo. Mejoró la cicatrización, bajó la caída del cabello y la piel recuperó elasticidad.
 
-Esa persona tenía sobrepeso, se había sometido a cirugías estéticas y nunca había logrado reducir el porcentaje de grasa como lo logró con este compuesto:
+Y hay algo que pocos mencionan. Cuando una persona baja de peso, la piel tiende a perder firmeza. El GHK-Cu ayuda a que ese proceso sea mucho menos visible, porque estimula el colágeno desde adentro, algo que ninguna crema logra de la misma manera.
 
-- En un mes y medio bajó 10 kilos, algo que nunca había conseguido.
-- La pérdida fue uniforme: rostro, brazos, piernas y tronco.
-- Le ayudó a controlar la ansiedad y la cantidad de comida.
-- A los cuatro meses, con unos 17 kilos menos, pasó a una fase de ganar masa muscular, lo suspendió y continuó con otros péptidos de apoyo.
+Después vino la recuperación, con BPC-157 y TB-500. Hoy entreno con más tranquilidad porque los tejidos responden mejor y me recupero más rápido.
 
-El detalle clave: lo hizo **con acompañamiento** y con una titulación correcta. En su caso, con el protocolo bien ejecutado, no presentó el efecto rebote que tanto se asocia a otros compuestos.
+Y en composición corporal he trabajado con Tesamorelin, que ha sido una herramienta valiosa en ciertos marcadores metabólicos.
 
-Y la regla sigue siendo la misma: **asegúrese de que sea realmente retatrutide**, con la pureza y el perfil que debe tener.
+Después de años, el balance es sencillo: mejor piel, mejor recuperación y mejor control del metabolismo.
 
 ---
 
-## 6. NO TODO ES PARA TODAS LAS PERSONAS (3:50 – 4:15)
+## BLOQUE 5 · Retatrutide
 
-Por ejemplo, CJC-1295 + Ipamorelin es una combinación muy atractiva: apoya la masa magra y la liberación natural de hormona de crecimiento durante el sueño. Pero si usted tiene la glucosa elevada o ciertas condiciones, **no es la opción adecuada para usted**.
+Hay un compuesto por el que me preguntan constantemente, y es retatrutide. Yo no lo he usado, pero conozco de cerca a una persona que sí, y su caso vale la pena contarlo.
+
+Antes de eso, algo que debe saber: retatrutide aún no cuenta con aprobación de la FDA. Está en fase 3 de ensayos clínicos. Así que lo que le voy a contar es un caso real, no una promesa.
+
+Esta persona tenía sobrepeso, se había sometido a cirugías estéticas y nunca había logrado reducir su porcentaje de grasa de forma significativa. Con retatrutide, en un mes y medio bajó diez kilos. La pérdida fue uniforme, en rostro, brazos, piernas y tronco, y además le ayudó a controlar la ansiedad y la cantidad de comida. A los cuatro meses, con unos diecisiete kilos menos, pasó a una fase de ganar masa muscular, suspendió el compuesto y continuó con otros péptidos de apoyo.
+
+Lo importante aquí es cómo lo hizo: con acompañamiento y con una titulación correcta. En su caso, con el protocolo bien ejecutado, no presentó el efecto rebote que tanto se asocia a otros compuestos.
+
+Y la regla fue la misma de siempre: asegurarse de que fuera realmente retatrutide, con la pureza y el perfil que debe tener.
+
+---
+
+## BLOQUE 6 · No todo es para todas las personas
+
+Esto me lleva a un punto que casi nadie dice. No todos los péptidos son para todas las personas.
+
+Por ejemplo, la combinación de CJC-1295 con Ipamorelin es muy atractiva, porque apoya la masa magra y la liberación natural de hormona de crecimiento durante el sueño. Pero si usted tiene la glucosa elevada o ciertas condiciones, no es la opción adecuada.
 
 Un proveedor serio se lo dice antes de venderle. Uno que no lo es, se lo vende igual.
 
 ---
 
-## 7. CÓMO RECONOCER UNA FUENTE SERIA (4:15 – 4:50)
+## BLOQUE 7 · La fuente correcta
 
-Si va a dar este paso, en Colombia o en Estados Unidos, una fuente seria le entrega:
+Entonces, ¿cómo se reconoce una fuente seria? Es más sencillo de lo que parece.
 
-- **Certificado de esterilidad.** Es un producto que usted se aplica directamente. Un producto no estéril puede causar una infección grave.
-- **Certificado de pureza**, idealmente del 99 % o cercano, **verificado por terceros independientes**.
-- **Trazabilidad.** Un código que usted mismo puede verificar en línea.
-- **Dosificación y acompañamiento real**, con una evaluación de su caso.
-- **Logística confiable**, con envíos nacionales e internacionales.
+Le entrega certificado de esterilidad, porque es un producto que usted se aplica directamente y un producto no estéril puede causar una infección grave. Le entrega certificado de pureza, idealmente del 99 por ciento o cercano, verificado por terceros independientes. Le da trazabilidad, un código que usted mismo puede verificar en línea. Le explica la dosificación y lo acompaña durante el proceso, después de evaluar su caso. Y tiene una logística confiable, con envíos nacionales e internacionales.
 
-No invierta en un producto cuyo origen no puede comprobar. En este tema, lo barato se paga con salud.
+Si una fuente no cumple con esto, no invierta ahí. En este tema, lo barato se paga con salud.
 
 ---
 
-## 8. CIERRE (4:50 – 5:10)
+## BLOQUE 8 · Cierre y llamado a la acción
 
-Se lo resumo en una frase:
+Se lo resumo en una frase. Los péptidos no son el problema. El problema es automedicarse, hacerlo sin acompañamiento y comprar donde no existen certificados.
 
-**Los péptidos no son el problema. El problema es automedicarse, hacerlo sin acompañamiento y comprar donde no existen certificados.**
+Yo trabajo con un proveedor que cumple con ese estándar: certificados, guía y acompañamiento real. Envían a toda Colombia y también a Estados Unidos.
 
-Yo trabajo con un proveedor que cumple con ese estándar: certificados, guía y acompañamiento. Si desea el contacto directo, escríbame y con gusto le comparto la información. Envían a toda Colombia y también a Estados Unidos.
+Si usted está evaluando dar este paso y quiere hacerlo bien desde el principio, escríbame. Con gusto le comparto el contacto directo para que pueda resolver sus dudas con ellos, sin compromiso.
 
-Y si este contenido le aportó claridad, compártalo con alguien que esté evaluando este camino. Puede ahorrarle un problema serio.
+Y si este video le aportó claridad, compártalo con alguien que esté pensando en empezar. Puede ahorrarle un problema serio.
 
 ---
 
@@ -127,13 +119,14 @@ Y si este contenido le aportó claridad, compártalo con alguien que esté evalu
 
 - "El abuso es lo que hace daño. El compuesto bien manejado, no."
 - "Un proveedor serio le dice qué no es para usted. Uno que no lo es, se lo vende igual."
-- "Sin trazabilidad no hay criterio. Y sin criterio no hay resultados."
 - "Lo que ocurre adentro se refleja afuera."
 - "En este tema, lo barato se paga con salud."
+- "Lo que a una persona le funcionó puede no ser lo indicado para otra."
 
 ---
 
 ## ANEXO C · Notas de publicación
 
-- Registro: "usted" colombiano, sobrio y cercano. Vocabulario de criterio, inversión, estándar y trazabilidad. Sin jerga.
+- Todo el texto está escrito para ser dicho, no leído. Las transiciones entre bloques son frases habladas, no títulos.
 - Se mantiene la aclaración de la FDA, el "en su caso" en el testimonio y nada de "cura" para la dermatitis.
+- El llamado a la acción está en una sola dirección: escribir para pedir el contacto.
