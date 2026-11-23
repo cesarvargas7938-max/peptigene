@@ -1,100 +1,100 @@
-# Péptidos: lo que nadie le cuenta antes de ponerse el primero (versión Colombia)
+# Péptidos: lo que nadie le cuenta antes de empezar (versión Colombia · público premium)
 
-> Versión corta para video de 4 a 5 minutos. Español colombiano natural, cercano y profesional.
-> Tratamiento: "usted". Jerga mínima y solo donde suena natural.
+> Versión corta para video de 4 a 5 minutos. Registro elegante y sobrio, para un público exigente
+> que invierte en su bienestar y su longevidad. Tratamiento: "usted". Sin jerga.
 
 ---
 
 ## 1. GANCHO (0:00 – 0:15)
 
-**Lo que usted se está inyectando no es el problema. El problema es que no sabe qué se está inyectando.**
+**Lo que usted se aplica no es el problema. El problema es no saber con certeza qué se está aplicando.**
 
-Llevo años estudiando el mercado de los péptidos y años usándolos en mi propio cuerpo. Y le voy a hablar claro: la gente no fracasa por el péptido. Fracasa por tres errores que veo repetirse una y otra vez.
+Llevo años estudiando el mercado de los péptidos y años usándolos en mi propio cuerpo. Y puedo decirle con claridad que las personas no fracasan por el péptido. Fracasan por tres errores que veo repetirse una y otra vez, incluso en quienes tienen acceso a lo mejor.
 
-Si ya los usa, si está pensando en empezar o si los tiene en el radar, **quédese hasta el final**. El último error es el que más plata y más salud le ha costado a gente que conozco.
+Si ya los usa, si está evaluando empezar o si los tiene en el radar, **acompáñeme hasta el final**. El último error es el que más les ha costado, en resultados y en salud, a personas que conozco.
 
 ---
 
 ## 2. LOS PÉPTIDOS NO SON EL PROBLEMA (0:15 – 0:50)
 
-Si está pensando en péptidos, bien hecho. Es una de las decisiones más inteligentes que puede tomar por su piel, su recuperación y su metabolismo.
+Si está considerando los péptidos, le felicito. Es una de las decisiones más inteligentes que puede tomar por su piel, su recuperación y su metabolismo, siempre que se haga con criterio.
 
-Pero ya me cansé de ver la misma información mal repetida en redes y en el mercado.
+Pero hay demasiada información imprecisa circulando, en redes y en el propio mercado.
 
-Hablemos claro: **los péptidos no son malos.** Son moléculas diseñadas en laboratorio para modular procesos muy específicos del cuerpo. No son un truco ni tampoco el villano que algunos pintan.
+Seamos claros: **los péptidos no son malos.** Son moléculas diseñadas en laboratorio para modular procesos muy específicos del cuerpo. No son una moda ni un atajo, y tampoco el riesgo que algunos describen.
 
-Lo que pasa adentro se nota afuera. Cuando entendí eso, dejé de gastar plata solo en cremas y empecé a mirar hacia adentro. Y ahí fue donde todo cambió.
+Lo que ocurre adentro se refleja afuera. Cuando entendí eso, dejé de buscar soluciones únicamente externas y empecé a trabajar desde adentro. Ahí fue donde todo cambió.
 
 ---
 
 ## 3. LOS TRES ERRORES (0:50 – 1:40)
 
-Entonces, si el péptido no es el problema, ¿cuál es? Ojo con estos tres:
+Entonces, si el péptido no es el problema, ¿cuál es? Son tres:
 
-1. **Comprar de dudosa procedencia.** Sin certificado de esterilidad ni de pureza. Es decir, sin ninguna forma de saber si eso es lo que dicen que es.
-2. **Automedicarse.** Sin que nadie revise su caso, sin saber qué le sirve a usted y qué no.
-3. **Equivocarse con la dosis.** Sobre todo al subir despacio al inicio y bajar controlado al final. Ahí es donde más gente se tropieza.
+1. **Comprar sin trazabilidad.** Sin certificado de esterilidad ni de pureza. Es decir, sin ninguna forma de confirmar que el producto es lo que dice ser.
+2. **Automedicarse.** Sin una evaluación de su caso, sin saber qué es compatible con usted y qué no.
+3. **Manejar mal la dosis.** Sobre todo en la titulación: la subida gradual al inicio y la bajada controlada al final. Ahí es donde más personas se equivocan.
 
-Comprárselo al amigo del gimnasio "porque a él le funcionó" es el riesgo más común que hay en este mercado. Y es el más fácil de evitar.
+Adquirirlo por recomendación informal, "porque a alguien le funcionó", es el riesgo más frecuente en este mercado. Y también el más fácil de evitar.
 
-**Grábese esto: el abuso es lo que hace daño. El compuesto bien manejado, no.**
+**Recuerde esto: el abuso es lo que hace daño. El compuesto bien manejado, no.**
 
 ---
 
-## 4. LO QUE YO HE VIVIDO (1:40 – 2:50)
+## 4. MI EXPERIENCIA (1:40 – 2:50)
 
 Le hablo desde la experiencia, no desde la teoría. Siempre con dosis controlada, producto verificado y acompañamiento profesional.
 
-**Piel: GHK-Cu y Glow** (la combinación de GHK-Cu con otros péptidos). La diferencia se nota: la piel más luminosa, una textura mucho más sana y, en mi caso, se me quitó por completo una dermatitis seborreica que tenía. Mejor cicatrización, menos caída de pelo, más elasticidad.
+**Piel: GHK-Cu y Glow** (la combinación de GHK-Cu con otros péptidos). La diferencia es evidente: una piel más luminosa, una textura mucho más sana y, en mi caso, la desaparición completa de una dermatitis seborreica que tenía. Mejor cicatrización, menos caída del cabello y mayor elasticidad.
 
-Y un detalle que casi nadie dice: cuando uno baja de peso, la piel se suelta. El GHK-Cu ayuda a que eso se note mucho menos, porque estimula el colágeno desde adentro, no como una crema que se queda por fuera.
+Hay un detalle que pocos mencionan: cuando una persona baja de peso, la piel tiende a perder firmeza. El GHK-Cu ayuda a que ese proceso sea mucho menos visible, porque estimula el colágeno desde adentro, algo que ninguna aplicación tópica logra de la misma manera.
 
-**Recuperación: BPC-157 y TB-500.** Entreno más tranquilo porque los tejidos aguantan mejor y me recupero más rápido.
+**Recuperación: BPC-157 y TB-500.** Entreno con más tranquilidad porque los tejidos responden mejor y la recuperación es más rápida.
 
-**Composición corporal: Tesamorelin.** Me ha servido mucho en composición corporal y en ciertos marcadores metabólicos.
+**Composición corporal: Tesamorelin.** Ha sido una herramienta valiosa en composición corporal y en ciertos marcadores metabólicos.
 
 Después de años, el balance es sencillo: **mejor piel, mejor recuperación y mejor control del metabolismo.**
 
 ---
 
-## 5. EL QUE TODOS ME PREGUNTAN: RETATRUTIDE (2:50 – 3:50)
+## 5. LA PREGUNTA MÁS FRECUENTE: RETATRUTIDE (2:50 – 3:50)
 
 Yo no lo he usado, pero conozco de cerca a una persona que sí.
 
-Primero, claridad: retatrutide **todavía no está aprobado por la FDA**. Va en fase 3. Esto es un caso real, no una promesa.
+Primero, transparencia: retatrutide **aún no cuenta con aprobación de la FDA**. Está en fase 3. Lo que le voy a contar es un caso real, no una promesa.
 
-Esa persona venía con sobrepeso y hasta cirugías encima, y nunca había logrado bajar el porcentaje de grasa como lo logró con esto:
+Esa persona tenía sobrepeso, se había sometido a cirugías estéticas y nunca había logrado reducir el porcentaje de grasa como lo logró con este compuesto:
 
-- En mes y medio bajó 10 kilos. Nunca lo había logrado.
-- Bajó parejo: cara, brazos, piernas y tronco.
+- En un mes y medio bajó 10 kilos, algo que nunca había conseguido.
+- La pérdida fue uniforme: rostro, brazos, piernas y tronco.
 - Le ayudó a controlar la ansiedad y la cantidad de comida.
-- A los cuatro meses, con unos 17 kilos menos, pasó a ganar músculo, lo dejó y se quedó con otros péptidos de apoyo.
+- A los cuatro meses, con unos 17 kilos menos, pasó a una fase de ganar masa muscular, lo suspendió y continuó con otros péptidos de apoyo.
 
-El detalle clave: lo hizo **acompañado** y con la dosis bien titulada. En su caso, con el protocolo bien hecho, no tuvo el rebote que tanto se escucha de otros compuestos.
+El detalle clave: lo hizo **con acompañamiento** y con una titulación correcta. En su caso, con el protocolo bien ejecutado, no presentó el efecto rebote que tanto se asocia a otros compuestos.
 
-Pero ojo, la regla es la misma de siempre: **asegúrese de que sea retatrutide de verdad**, con la pureza que debe tener.
-
----
-
-## 6. NO TODO ES PARA TODO EL MUNDO (3:50 – 4:15)
-
-Por ejemplo, CJC-1295 + Ipamorelin suena muy bien: apoya la masa magra y la hormona de crecimiento mientras usted duerme. Pero si tiene la glucosa alta o ciertas condiciones, **eso no es para usted**.
-
-Un buen proveedor se lo dice antes de venderle. Uno malo se lo vende igual.
+Y la regla sigue siendo la misma: **asegúrese de que sea realmente retatrutide**, con la pureza y el perfil que debe tener.
 
 ---
 
-## 7. CÓMO SABER SI LA FUENTE ES SERIA (4:15 – 4:50)
+## 6. NO TODO ES PARA TODAS LAS PERSONAS (3:50 – 4:15)
 
-Si va a entrar en esto, en Colombia o en Estados Unidos, una fuente seria le entrega:
+Por ejemplo, CJC-1295 + Ipamorelin es una combinación muy atractiva: apoya la masa magra y la liberación natural de hormona de crecimiento durante el sueño. Pero si usted tiene la glucosa elevada o ciertas condiciones, **no es la opción adecuada para usted**.
 
-- **Certificado de esterilidad.** Usted se lo está inyectando. Un producto no estéril le puede causar una infección seria.
-- **Certificado de pureza**, idealmente del 99 % o cercano, **verificado por terceros**.
-- **Trazabilidad.** Un código que usted mismo puede revisar en internet.
-- **Dosis y acompañamiento de verdad**, no un "póngase esto y ya".
-- **Envíos** a todo el país y al exterior.
+Un proveedor serio se lo dice antes de venderle. Uno que no lo es, se lo vende igual.
 
-No se gaste la plata en algo que no sabe de dónde salió. Lo barato termina saliendo caro, y aquí se paga con salud.
+---
+
+## 7. CÓMO RECONOCER UNA FUENTE SERIA (4:15 – 4:50)
+
+Si va a dar este paso, en Colombia o en Estados Unidos, una fuente seria le entrega:
+
+- **Certificado de esterilidad.** Es un producto que usted se aplica directamente. Un producto no estéril puede causar una infección grave.
+- **Certificado de pureza**, idealmente del 99 % o cercano, **verificado por terceros independientes**.
+- **Trazabilidad.** Un código que usted mismo puede verificar en línea.
+- **Dosificación y acompañamiento real**, con una evaluación de su caso.
+- **Logística confiable**, con envíos nacionales e internacionales.
+
+No invierta en un producto cuyo origen no puede comprobar. En este tema, lo barato se paga con salud.
 
 ---
 
@@ -102,38 +102,38 @@ No se gaste la plata en algo que no sabe de dónde salió. Lo barato termina sal
 
 Se lo resumo en una frase:
 
-**Los péptidos no son el problema. El problema es automedicarse, hacerlo solo y comprar donde no le dan certificados.**
+**Los péptidos no son el problema. El problema es automedicarse, hacerlo sin acompañamiento y comprar donde no existen certificados.**
 
-Yo trabajo con un proveedor que cumple con eso: certificados, guía y acompañamiento. Si quiere el contacto directo, escríbame y le paso la información. Envían a toda Colombia y también a Estados Unidos.
+Yo trabajo con un proveedor que cumple con ese estándar: certificados, guía y acompañamiento. Si desea el contacto directo, escríbame y con gusto le comparto la información. Envían a toda Colombia y también a Estados Unidos.
 
-Y si esto le sirvió, mándeselo a ese amigo que está comprando péptidos en el gimnasio. Le puede ahorrar un problema grande.
+Y si este contenido le aportó claridad, compártalo con alguien que esté evaluando este camino. Puede ahorrarle un problema serio.
 
 ---
 
 ## ANEXO A · Variantes de gancho
 
-**Confrontación:**
-"Lo que usted se inyecta no es el problema. El problema es que no sabe qué se está inyectando."
+**Confrontación elegante:**
+"Lo que usted se aplica no es el problema. El problema es no saber con certeza qué se está aplicando."
 
 **Curiosidad:**
 "Hay un error que comete casi todo el que empieza con péptidos. Y no tiene nada que ver con el péptido."
 
-**Advertencia directa:**
-"Si usted le compró péptidos al del gimnasio, ojo con este video."
+**Autoridad:**
+"Llevo años estudiando este mercado y usándolos en mi propio cuerpo. Hoy le cuento los tres errores que más veo, para que usted no los cometa."
 
 ---
 
 ## ANEXO B · Frases para clips y subtítulos
 
 - "El abuso es lo que hace daño. El compuesto bien manejado, no."
-- "Comprárselo al amigo del gimnasio es el riesgo más común que hay."
-- "Un buen proveedor le dice qué no es para usted. Uno malo se lo vende igual."
-- "Lo barato termina saliendo caro, y aquí se paga con salud."
-- "Lo que pasa adentro se nota afuera."
+- "Un proveedor serio le dice qué no es para usted. Uno que no lo es, se lo vende igual."
+- "Sin trazabilidad no hay criterio. Y sin criterio no hay resultados."
+- "Lo que ocurre adentro se refleja afuera."
+- "En este tema, lo barato se paga con salud."
 
 ---
 
 ## ANEXO C · Notas de publicación
 
-- Tono: "usted" cercano, como se habla en Colombia en una conversación seria entre conocidos. Sin modismos regionales que suenen forzados.
+- Registro: "usted" colombiano, sobrio y cercano. Vocabulario de criterio, inversión, estándar y trazabilidad. Sin jerga.
 - Se mantiene la aclaración de la FDA, el "en su caso" en el testimonio y nada de "cura" para la dermatitis.
