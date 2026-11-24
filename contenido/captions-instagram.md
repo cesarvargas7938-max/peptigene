@@ -41,19 +41,47 @@ Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
 
 ---
 
-## TIKTOK · PARTE 1
+## TIKTOK · VIDEO COMPLETO (un solo video)
 
-Este video lo debí grabar hace años. Cada semana me escribe gente que ya compró péptidos y no sabe si lo que tiene es real. Véalo antes de comprar, no después. Parte 2 mañana 👉 Comenta INFO y te paso el contacto. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+Este video lo debí grabar hace años. Cada semana me escribe gente que ya compró péptidos y no sabe si lo que tiene es real, o lleva meses usándolos "sin resultados". Casi nunca es el péptido. Véalo antes de comprar, no después. Comenta INFO y te paso el contacto de la fuente con la que trabajo. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
 
 #peptidos #peptidoscolombia #biohacking #longevidad #saludpreventiva #parati
 
 ---
 
-## TIKTOK · PARTE 2
+## TIKTOK · FRAGMENTOS (publicar en los días siguientes al completo)
 
-Dudé en hablar de retatrutide en público. Es el que más me preguntan y el que más se vende sin certificados. Guarda la lista del final y pregúntale esas 5 cosas a cualquiera que te ofrezca péptidos. Comenta INFO y te paso el contacto. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+**Dónde cortar en el guion:**
+- Clip 1: desde "Ahora sí, los tres errores" hasta "Es el error más común y el más peligroso." (escena 7)
+- Clip 2: desde "El segundo es automedicarse" hasta "puede no ser lo indicado para otra." (escena 8)
+- Clip 3: desde "Y el tercero, el que más daño hace" hasta "El compuesto bien manejado, no." (escenas 9 y 10)
+- Clip 4 (opcional): desde "Hay un compuesto por el que me preguntan constantemente" hasta "no una promesa." (escena 13)
 
-#peptidos #retatrutide #peptidoscolombia #biohacking #composicioncorporal #parati
+Cada clip termina con texto en pantalla: "Video completo en mi perfil 👆"
+
+### Clip 1 · Comprar sin trazabilidad
+
+El error número 1, y el más peligroso. Lo veo todas las semanas: gente que compró "péptidos" y no tiene ni un papel que diga qué hay dentro del frasco. Si no puede verificar la pureza y la esterilidad, no es un péptido, es una apuesta. Video completo en mi perfil. Comenta INFO si quieres una fuente certificada.
+
+#peptidos #peptidoscolombia #biohacking #saludpreventiva #parati
+
+### Clip 2 · Automedicarse
+
+El error número 2 es el que más me cuesta ver. Alguien copia el protocolo de un amigo, de un video o de un grupo, y espera el mismo resultado. Cada cuerpo responde distinto. Sin evaluar su caso, está adivinando. Video completo en mi perfil. Comenta INFO y te paso el contacto.
+
+#peptidos #peptidoscolombia #biohacking #longevidad #parati
+
+### Clip 3 · Manejar mal la dosis
+
+El error número 3 es el que más daño hace, y el que más se le atribuye al péptido después. Si usted ha escuchado "a fulano le fue mal con péptidos", pregunte cómo subió la dosis y cómo la bajó. Casi siempre la respuesta está ahí. Video completo en mi perfil. Comenta INFO y te paso el contacto.
+
+#peptidos #peptidoscolombia #biohacking #saludpreventiva #parati
+
+### Clip 4 · Retatrutide (opcional)
+
+No había hablado de retatrutide en público porque es el que más se vende sin certificados. Lo hice con todas las aclaraciones, en el video completo que está en mi perfil. Si alguien te lo está ofreciendo, mira eso primero. Comenta INFO y te paso una fuente certificada.
+
+#peptidos #retatrutide #peptidoscolombia #biohacking #parati
 
 ---
 
