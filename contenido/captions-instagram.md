@@ -1,111 +1,71 @@
-# Captions Instagram · Video en dos partes
+# Captions · Instagram y TikTok · Video en dos partes
 
-> Regla de Instagram: solo se ven las dos primeras líneas antes del "más". Ahí va el gancho.
-> El llamado a la acción es una palabra en comentarios, porque Instagram premia los comentarios
-> y le permite responder por DM con el contacto.
-
----
-
-## PARTE 1 (gancho, los tres errores, mi experiencia)
-
-### Opción A · Recomendada
-
-Llevo años usando péptidos. Hay 3 cosas que me hubiera gustado saber antes de empezar.
-
-La mayoría de las personas que fracasan con péptidos no fracasan por el péptido. Fracasan por tres errores que se repiten una y otra vez:
-
-1. Comprar sin trazabilidad.
-2. Automedicarse.
-3. Manejar mal la dosis.
-
-En este video le explico los tres y le cuento qué ha hecho GHK-Cu, BPC-157, TB-500 y Tesamorelin en mi propio cuerpo, siempre con producto certificado y acompañamiento.
-
-El abuso es lo que hace daño. El compuesto bien manejado, no.
-
-👉 Parte 2 en el siguiente video: retatrutide y cómo reconocer una fuente seria.
-
-Si quiere el contacto de un proveedor con certificados y acompañamiento, comente INFO y le escribo.
-
-Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
-
-#peptidos #peptidoscolombia #ghkcu #bpc157 #tb500 #tesamorelin #longevidad #biohacking #saludpreventiva #composicioncorporal #bienestar #antienvejecimiento #recuperacionmuscular #medicinapreventiva #colombia
-
-### Opción B · Corta
-
-3 errores que cometen casi todos los que empiezan con péptidos. Y ninguno tiene que ver con el péptido.
-
-Los explico en este video, desde años de uso propio y de estudiar este mercado.
-
-Parte 2 en el siguiente post.
-
-Comente INFO si quiere el contacto de un proveedor certificado. Envíos a Colombia y Estados Unidos.
-
-#peptidos #peptidoscolombia #longevidad #biohacking #saludpreventiva #bienestar #composicioncorporal
+> Principio: el caption no repite el video. El video explica; el caption cuenta por qué lo hizo,
+> agrega algo que no se dijo en cámara y lleva a la acción.
 
 ---
 
-## PARTE 2 (retatrutide, no todo es para todos, la fuente correcta, cierre)
+## INSTAGRAM · PARTE 1
 
-### Opción A · Recomendada
+Este video lo debí haber grabado hace años.
 
-10 kilos en mes y medio, sin rebote. Esto es lo que casi nadie cuenta sobre retatrutide.
+Cada semana me escriben personas que ya compraron péptidos y no saben si lo que tienen en la nevera es real. Otras llevan meses usándolos sin resultados y creen que "no les funcionan". Y otras se asustaron con algo que leyeron y no se atreven a empezar.
 
-Yo no lo he usado, pero conozco de cerca a quien sí. Y antes de contarle su caso, lo que debe saber: retatrutide aún no está aprobado por la FDA, está en fase 3. Esto es un caso real, no una promesa.
+En casi todos los casos el problema es el mismo, y no es el péptido.
 
-En esta segunda parte le explico:
+Grabé esto para que lo vea antes de comprar, no después. Son 3 minutos que le pueden ahorrar meses y mucho dinero.
 
-• Cómo lo hizo esa persona para no tener rebote.
-• Por qué no todos los péptidos son para todas las personas.
-• Las 5 cosas que le debe entregar una fuente seria: esterilidad, pureza, trazabilidad, acompañamiento y logística.
+Mañana publico la segunda parte, con el caso que más me preguntan y una lista para evaluar a cualquier proveedor.
 
-Los péptidos no son el problema. El problema es automedicarse, hacerlo sin acompañamiento y comprar donde no existen certificados.
-
-Si quiere el contacto directo de un proveedor que cumple ese estándar, comente INFO y le escribo. Sin compromiso.
+Si quiere que le pase el contacto de la fuente con la que yo trabajo, comente INFO y le escribo por DM.
 
 Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
 
-#peptidos #retatrutide #peptidoscolombia #perdidadepeso #composicioncorporal #longevidad #biohacking #saludpreventiva #bienestar #glp1 #cjc1295 #ipamorelin #medicinapreventiva #colombia
+#peptidos #peptidoscolombia #longevidad #biohacking #saludpreventiva #composicioncorporal #bienestar #medicinapreventiva #colombia
 
-### Opción B · Corta
+---
 
-Los péptidos no son el problema. El problema es dónde los compra y cómo los usa.
+## INSTAGRAM · PARTE 2
 
-Parte 2: retatrutide, un caso real, y las 5 cosas que debe exigirle a cualquier proveedor antes de comprar.
+Segunda parte. Si no vio la primera, está fijada en el perfil.
 
-Comente INFO y le paso el contacto. Envíos a Colombia y Estados Unidos.
+Dudé mucho en hablar de retatrutide públicamente. Es el compuesto por el que más me preguntan y también el que más se vende sin certificados, sin dosis y sin nadie que acompañe. Preferí contarlo con todas las aclaraciones, caso real incluido, antes que dejar que la gente lo siga comprando a ciegas.
 
-#peptidos #retatrutide #peptidoscolombia #longevidad #biohacking #saludpreventiva #bienestar
+Lo que más quiero que se lleve de este video no es el caso. Es la lista del final: las 5 cosas que le debe entregar cualquier proveedor antes de que usted le pase un peso. Guárdela, y la próxima vez que alguien le ofrezca péptidos, pregúntele por las cinco.
+
+Si quiere el contacto de una fuente que las cumple, comente INFO y le escribo. Sin compromiso.
+
+Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+
+#peptidos #retatrutide #peptidoscolombia #perdidadepeso #composicioncorporal #longevidad #biohacking #saludpreventiva #medicinapreventiva #colombia
+
+---
+
+## TIKTOK · PARTE 1
+
+Este video lo debí grabar hace años. Cada semana me escribe gente que ya compró péptidos y no sabe si lo que tiene es real. Véalo antes de comprar, no después. Parte 2 mañana 👉 Comenta INFO y te paso el contacto. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+
+#peptidos #peptidoscolombia #biohacking #longevidad #saludpreventiva #parati
+
+---
+
+## TIKTOK · PARTE 2
+
+Dudé en hablar de retatrutide en público. Es el que más me preguntan y el que más se vende sin certificados. Guarda la lista del final y pregúntale esas 5 cosas a cualquiera que te ofrezca péptidos. Comenta INFO y te paso el contacto. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+
+#peptidos #retatrutide #peptidoscolombia #biohacking #composicioncorporal #parati
 
 ---
 
 ## CONFIGURACIÓN DEL POST
 
 - **Portada:** texto grande en el primer fotograma. Parte 1: "3 errores con péptidos". Parte 2: "10 kg sin rebote".
-- **Comentario fijado:** "Parte 2 ya está en el perfil 👉" en el video 1, y "Parte 1 aquí 👈" en el video 2. Así se enlazan.
-- **Respuesta al comentario INFO:** responder en público "Le escribí por DM 📩" y enviar por mensaje el contacto. Eso genera más comentarios porque la gente ve que sí responde.
-- **Primer comentario propio:** poner ahí los hashtags si prefiere que el caption se vea limpio.
-- **Historias:** subir los dos videos a historias con el sticker "Enlace" o "Comparte tu opinión". Fijar ambos en destacados como "Péptidos".
-- **Horario:** publicar la parte 1 y la parte 2 con 24 horas de diferencia, misma hora.
+- **Comentario fijado:** en el video 1, "Parte 2 ya está en el perfil 👉". En el video 2, "Parte 1 aquí 👈".
+- **Respuesta al comentario INFO:** responder en público "Le escribí por DM 📩" y enviar el contacto por mensaje.
+- **Historias:** subir ambos videos a historias y fijarlos en un destacado llamado "Péptidos".
+- **Horario:** parte 2 veinticuatro horas después de la parte 1, a la misma hora.
 
 ## NOTA DE CUMPLIMIENTO
 
-- El caption de la parte 2 mantiene la aclaración de la FDA y el "caso real, no promesa". No quitarla: Instagram restringe contenido de pérdida de peso con resultados prometidos.
-- Evitar "cura", "tratamiento", "garantizado" en captions y comentarios.
-
----
-
-# CAPTIONS TIKTOK
-
-> En TikTok el caption es corto: una frase de gancho, una de contexto, el llamado a la acción y 4 a 6 hashtags. El texto en pantalla y el audio hacen el resto.
-
-## PARTE 1
-
-3 errores que cometen casi todos los que empiezan con péptidos. Y ninguno tiene que ver con el péptido. Años usándolos y estudiando este mercado. Parte 2 en el perfil 👉 Comenta INFO si quieres el contacto de un proveedor certificado. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
-
-#peptidos #peptidoscolombia #biohacking #longevidad #saludpreventiva #parati
-
-## PARTE 2
-
-10 kilos en mes y medio, sin rebote. Lo que casi nadie cuenta sobre retatrutide (aún sin aprobación FDA, fase 3, caso real, no promesa). Y las 5 cosas que debe exigirle a cualquier proveedor. Comenta INFO y te paso el contacto. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
-
-#peptidos #retatrutide #peptidoscolombia #biohacking #composicioncorporal #parati
+- No usar "cura", "tratamiento" ni "garantizado" en captions ni en comentarios.
+- La aclaración de la FDA sobre retatrutide está en el video. En el caption se menciona el "caso real" sin prometer resultados.
