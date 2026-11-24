@@ -91,3 +91,21 @@ Comente INFO y le paso el contacto. Envíos a Colombia y Estados Unidos.
 
 - El caption de la parte 2 mantiene la aclaración de la FDA y el "caso real, no promesa". No quitarla: Instagram restringe contenido de pérdida de peso con resultados prometidos.
 - Evitar "cura", "tratamiento", "garantizado" en captions y comentarios.
+
+---
+
+# CAPTIONS TIKTOK
+
+> En TikTok el caption es corto: una frase de gancho, una de contexto, el llamado a la acción y 4 a 6 hashtags. El texto en pantalla y el audio hacen el resto.
+
+## PARTE 1
+
+3 errores que cometen casi todos los que empiezan con péptidos. Y ninguno tiene que ver con el péptido. Años usándolos y estudiando este mercado. Parte 2 en el perfil 👉 Comenta INFO si quieres el contacto de un proveedor certificado. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+
+#peptidos #peptidoscolombia #biohacking #longevidad #saludpreventiva #parati
+
+## PARTE 2
+
+10 kilos en mes y medio, sin rebote. Lo que casi nadie cuenta sobre retatrutide (aún sin aprobación FDA, fase 3, caso real, no promesa). Y las 5 cosas que debe exigirle a cualquier proveedor. Comenta INFO y te paso el contacto. Envíos a Colombia 🇨🇴 y Estados Unidos 🇺🇸
+
+#peptidos #retatrutide #peptidoscolombia #biohacking #composicioncorporal #parati
