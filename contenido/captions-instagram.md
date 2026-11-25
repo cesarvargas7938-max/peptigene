@@ -97,3 +97,38 @@ No había hablado de retatrutide en público porque es el que más se vende sin 
 
 - No usar "cura", "tratamiento" ni "garantizado" en captions ni en comentarios.
 - La aclaración de la FDA sobre retatrutide está en el video. En el caption se menciona el "caso real" sin prometer resultados.
+
+---
+
+# CAPTIONS PARA PAUTA (TikTok Ads)
+
+> Reglas que cumplen estos captions: sin nombres de compuestos, sin cifras de peso ni tiempos,
+> sin "envíos", sin "proveedor", sin "inyectable", sin FDA, sin "comenta INFO y te paso el contacto".
+> Enfoque educativo. El llamado a la acción es orientación, no producto.
+> Pautar solo con los clips 1, 2 y 3. Nunca el video completo ni el clip de retatrutide.
+
+## Opción 1 · Educativa (recomendada)
+
+Casi todo el que empieza con péptidos comete uno de estos 3 errores, y ninguno tiene que ver con el compuesto. Años estudiando este mercado, resumidos en 3 minutos. Si está evaluando empezar y quiere hacerlo con criterio, escríbame.
+
+#peptidos #saludpreventiva #longevidad #bienestar #educacion
+
+## Opción 2 · Sin la palabra "péptidos" (máxima seguridad)
+
+Antes de empezar cualquier protocolo de bienestar, hay 3 errores que debe conocer. Los veo repetirse una y otra vez, incluso en personas con acceso a lo mejor. Véalo antes de decidir. Si quiere orientación, escríbame.
+
+#saludpreventiva #longevidad #bienestar #habitossaludables #educacion
+
+## Opción 3 · Pregunta
+
+¿Cómo sabe si lo que le están ofreciendo es confiable? Hay 3 preguntas que debería hacer antes de decir que sí. Se las explico en este video. Si quiere orientación para su caso, escríbame.
+
+#saludpreventiva #bienestar #longevidad #criterio #educacion
+
+## Checklist del video que se pauta
+
+- Texto en pantalla sin nombres de compuestos ni cifras de kilos.
+- Sin la frase "envíos a Colombia y Estados Unidos".
+- Sin "producto certificado" ni "proveedor" en pantalla. En audio, "fuente seria" o "acompañamiento" está bien.
+- Audiencia 18+ obligatoria.
+- Página de destino (si la usa): WhatsApp o perfil, nunca una tienda con los productos.
