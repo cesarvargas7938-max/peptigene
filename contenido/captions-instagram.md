@@ -132,3 +132,55 @@ Antes de empezar cualquier protocolo de bienestar, hay 3 errores que debe conoce
 - Sin "producto certificado" ni "proveedor" en pantalla. En audio, "fuente seria" o "acompañamiento" está bien.
 - Audiencia 18+ obligatoria.
 - Página de destino (si la usa): WhatsApp o perfil, nunca una tienda con los productos.
+
+---
+
+# CAPTION COMPLETO PARA PAUTA (con todos los mensajes, sin lo que rechazan)
+
+Llevo años estudiando este mercado y usándolos en mi propio cuerpo. Hay 3 cosas que me hubiera gustado saber antes de empezar.
+
+Casi nadie fracasa por el compuesto. Fracasa por tres errores que se repiten una y otra vez, incluso en personas con acceso a lo mejor:
+
+1. Empezar sin poder verificar lo que está usando.
+2. Hacerlo solo, sin que nadie evalúe su caso.
+3. Manejar mal la dosis, sobre todo al subir y al bajar.
+
+El abuso es lo que hace daño. Lo bien manejado, no.
+
+Lo que ocurre adentro se refleja afuera. Cuando entendí eso, dejé de buscar soluciones solo externas y todo cambió.
+
+Si está evaluando empezar y quiere hacerlo con criterio desde el principio, escríbame y con gusto le oriento. Sin compromiso.
+
+#peptidos #saludpreventiva #longevidad #bienestar #criterio #educacion
+
+> Lo que se quitó respecto al caption orgánico: nombres de compuestos, retatrutide, cifras de kilos y tiempos, FDA, "envíos a Colombia y Estados Unidos", "proveedor", "certificados" y "comenta INFO y te paso el contacto". Todo lo demás se mantiene.
+
+---
+
+# GUION VERSIÓN PAUTA (corte de 60 a 90 segundos)
+
+> El guion completo NO se puede pautar. Este corte usa solo las escenas que no mencionan
+> compuestos, cifras ni venta. Mismo avatar, mismo estilo, mismas indicaciones de cámara.
+
+[ESCENA 1 · Plano medio corto, zoom in lento. Tres dedos en "tres cosas". Texto en pantalla: "3 cosas que me hubiera gustado saber"]
+Llevo años estudiando este mercado y usándolos en mi propio cuerpo. Hay tres cosas que me hubiera gustado saber antes de empezar. Hoy se las voy a contar a usted.
+
+[ESCENA 2 · Plano medio, dos pasos lentos a un lado. Texto en pantalla: "Casi nunca es culpa del compuesto"]
+Porque en todo este tiempo he visto a muchas personas empezar con grandes expectativas y quedarse a medio camino. Y casi nunca es culpa del compuesto. Es culpa de tres errores que se repiten una y otra vez.
+
+[ESCENA 3 · Corte seco a plano medio, índice en alto. Texto en pantalla: "ERROR 1: No poder verificar lo que usa"]
+El primero es empezar sin poder verificar lo que está usando. Sin ninguna forma de confirmar que lo que llega es realmente lo que dice ser. Es el error más común y el más peligroso.
+
+[ESCENA 4 · Plano medio corto, dos dedos. Texto en pantalla: "ERROR 2: Hacerlo solo"]
+El segundo es hacerlo solo. Empezar sin que nadie evalúe su caso, sin saber qué es compatible con usted y qué no. Lo que a una persona le funcionó puede no ser lo indicado para otra.
+
+[ESCENA 5 · Plano medio con zoom in lento, tres dedos. La mano sube y baja. Texto en pantalla: "ERROR 3: Manejar mal la dosis"]
+Y el tercero, el que más daño hace, es manejar mal la dosis. Especialmente al subir al inicio y al bajar al final. Ahí es donde más personas se equivocan.
+
+[ESCENA 6 · Primer plano fijo, sin gestos, pausa antes de hablar. Texto en pantalla: "El abuso hace daño. Lo bien manejado, no."]
+Si algo quiero que se lleve de este video, es esto: el abuso es lo que hace daño. Lo bien manejado, no.
+
+[ESCENA 7 · Plano medio con dolly lento. Mano al pecho, luego simula escribir en el celular. Sonrisa final. Texto en pantalla: "Escríbame y le oriento"]
+Si usted está evaluando dar este paso y quiere hacerlo bien desde el principio, escríbame. Con gusto le oriento, sin compromiso.
+
+> Cambios frente al original: "péptido" pasa a "compuesto" en pantalla, "comprar sin trazabilidad" pasa a "no poder verificar lo que usa", "automedicarse" pasa a "hacerlo solo", se quita "titulación". Se eliminan las escenas de experiencia personal, retatrutide, la lista de proveedor y "envíos".
